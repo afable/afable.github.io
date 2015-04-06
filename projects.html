@@ -62,6 +62,44 @@
 						<td><h3>Description</h3></td>
 					</tr>
                     <tr>
+						<td><p>Shoal<br />
+                        <a href="http://web.uvic.ca/~eafable/shoal/index.html" target="_blank">Website</a><br />
+                        <a href="http://web.uvic.ca/~eafable/shoal/deliverables.html" target="_blank">Read Report</a><br />
+                        <a href="https://github.com/499/shoal/tree/master" target="_blank">Project Source Code</a>
+                        </p></td>
+						<td><p>2014-04-04</p></td>
+                        <td><p>Web, Shoal<br />Squid Cache<br />Tornado<br />Javascript</p></td>
+                        <td><p>
+						We sought to improve upon Shoal's current Web.py framework in terms of performance and scalability.
+Specifically, we aimed to increase the number of requests the server can handle per second and decrease the
+average time it takes to do geographical distance calculations. We also wanted to improve the feel of the web interface to allow less knowledgeable
+clients to see what Shoal is doing.
+In order to achieve the aforementioned goals, the following approach was taken:<br /><br />
+
+1. Employed a new Python framework tailored for performance. The Tornado Python web server was
+considered as a replacement for the current Web.py web server.<br /><br />
+2. Implemented a new algorithm and utilized caching to speed up computationally expensive operations,
+among which was the geographical distance calculation.<br /><br />
+3. Implemented a new web interface for tracking proxy servers using Ajax and the JavaScript library DataDriven
+Documents, D3.js.
+                        <br /><br />
+                        <img class="img-responsive img-rounded center-block" src="./images/projects/squid.png" />
+                        </p></td>
+					</tr>
+                    <tr>
+						<td><p>Healthy Tweets<br />
+                        <a href="http://afable.github.io/HealthyTweets/" target="_blank">Website</a><br />
+                        <a href="https://github.com/afable/HealthyTweets" target="_blank">Project Source Code</a>
+                        </p></td>
+						<td><p>2013-10-25</p></td>
+                        <td><p>Web, Twitter<br />Python<br />Google APIs<br />Map Reduce</p></td>
+                        <td><p>
+						There are a lot of opinions and research denoting a correlation between self awareness and well-being. Healthy Tweets explores how much the level of self consciousness actually relates to self-health in modern society. If we analyze tweet data of people who are always tweeting about worrying of how fit they are or about their diet, can we correlate those findings with census data on clinical visits, number of unhealthy diagnosis, mental clinic populations, or medical costs per province? Can we contrast negative vs positive self images and their effect to possible health issues? These are some of the many questions we would like to answer.
+                        <br /><br />
+                        <img class="img-responsive center-block" src="./images/projects/healthytweets.png" />
+                        </p></td>
+					</tr>
+                    <tr>
 						<td><p>First Game Engine<br />
                         <a href="http://www.youtube.com/watch?v=Wea4-eTkD1A" target="_blank">Demo</a><br />
                         <a href="https://github.com/afable/game_engine" target="_blank">Project Source Code</a>
@@ -87,7 +125,7 @@
                         <td><p>Mac OSX<br />Xcode 4<br />G++, GNU Make<br />C++, OpenGL, GLUT</p></td>
                         <td><p>A simple ray tracer that uses OpenGL to color in the resulting pixel color of each ray after all calculations (ambient, diffuse, specular values, reflection, and refraction) from the eye to the viewing window.
                         <br /><br />
-                        <img class="img-responsive" src="./images/projects/ray_trace.png" />
+                        <img class="img-responsive center-block" src="./images/projects/ray_trace.png" />
                         </p></td>
 					</tr>
                     <tr>
@@ -101,8 +139,8 @@
 					</tr>
                     <tr>
 						<td><p>Extremely Fast File System<br />
-                        <a href="projects/effs_v3.tar.gz" target="_blank">Read Report</a></p></td>
-                        <a href="projects/effs_v3.tar.gz" target="_blank">effs_v3.tar.gz</a></p></td>
+                        <a href="https://github.com/afable/effs/blob/master/EFFS_Report.pdf" target="_blank">Read Report</a>
+                        <a href="https://github.com/afable/effs" target="_blank">Project Source Code</a></p></td>
 						<td><p>2011-12-02</p></td>
                         <td><p>Ubuntu 10.04<br />JEdit<br />GCC, GNU Make<br />C</p></td>
                         <td><p>The Extremely Fast File System (EFFS) simulates the file system of a hard disk. The lower layer driver of the file system is "fisk.h". "effs.c" consists of the main code base of the file system and accesses the "fisk.h" API. The test harness "effs_test.c" and interactive shell "shell.c" sit above "effs.c" and access its API. EFFS is based on the old Unix File System that uses 12 direct pointers to data and then single, double, and triple levels of indirection. EFFS consists of a superblock, inode space, and data space.<br /><br />
@@ -110,7 +148,7 @@
 					</tr>
                     <tr>
 						<td><p>Simple Thread Library Implementation<br />
-                        <a href="projects/simplethreads.tar.gz" target="_blank">simplethreads.tar.gz</a></p></td>
+                        <a href="https://github.com/afable/simplethreads" target="_blank">Project Source Code</a></p></td>
 						<td><p>2011-10-20</p></td>
                         <td><p>Ubuntu 10.04<br />JEdit<br />GCC, GNU Make<br />C</p></td>
                         <td><p>I implemented the /lib/sthread_user.c file within Rick Cox's Simplethreads Instructional Threads Package. The sthread_user.c file works with the tests in /simplethreads-1.30/test/. Specific tests (such as test-preempt.c that requires input) can be run from /simplethreads-1.30/test/.<br /><br />
@@ -118,36 +156,35 @@
 					</tr>
                     <tr>
 						<td><p>Producer Consumer<br />
-                        <a href="projects/prodcons.tar.gz" target="_blank">prodcons.tar.gz</a></p></td>
+                        <a href="https://github.com/afable/prodcons" target="_blank">Project Source Code</a></p></td>
 						<td><p>2011-10-03</p></td>
                         <td><p>Ubuntu 10.04<br />JEdit, Valgrind<br />GCC, GNU Make<br />C</p></td>
                         <td><p>A simple threaded producer/consumer program using a circular array and semaphores. Producers sleep either 1 or 4 seconds after each production. Consumers sleep either 1 or 5 seconds after each consumption.</p></td>
 					</tr>
                     <tr>
 						<td><p>Kapish Interactive Shell<br />
-                        <a href="projects/kapish.tar.gz" target="_blank">kapish.tar.gz</a></p></td>
+                        <a href="https://github.com/afable/kapish" target="_blank">Project Source Code</a></p></td>
 						<td><p>2011-09-26</p></td>
                         <td><p>Ubuntu 10.04<br />JEdit, Valgrind<br />GCC, GNU Make<br />C</p></td>
                         <td><p>A very simple Unix shell. To run a program, Kapish forks a child process, searches for the program in the environmental variables file, and execs the path of the executed program in the forked child process.</p></td>
 					</tr>
                     <tr>
 						<td><p>Fractional Calculator<br />
-                        <a href="projects/Fraction_Calculator.zip" target="_blank">Fraction_Calculator.zip</a></p></td>
+                        <a href="https://github.com/afable/Fraction_Calculator" target="_blank">Project Source Code</a></p></td>
 						<td><p>2011-09-04</p></td>
                         <td><p>Mac OSX<br />Xcode 4<br />Apple LLVM<br />Objective-C</p></td>
                         <td><p>The final project of Programming in Objective-C by Stephen Kochan. I developed and tested the fractional calculator app in Xcode 4 using Xcode's iOS simulator. Unfortunately, I did not have a physical iPhone to test.<br /><br />
-                        <img class="img-responsive" src="./images/projects/fracCalc.png"/></p></td>
+                        <img class="img-responsive center-block" src="./images/projects/fracCalc.png"/></p></td>
 					</tr>
                     <tr>
 						<td><p>Random Movie Selector<br />
-                        <a href="projects/recursiveRename.rar" target="_blank">recursiveRename.rar</a><br />
-                        <a href="projects/selectRandomMovie.rar" target="_blank">selectRandomMovie.rar</a></p></td>
+                        <a href="https://github.com/afable/randomMovieSelector" target="_blank">Project Source Code</a><br />
 						<td><p>2011-07-13</p></td>
                         <td><p>Windows<br />IDLE<br />Python 2.7.2</p></td>
                         <td><p>I watch a lot of movies at home with my girlfriend. Unfortunately, we often can't decide what to watch. I created two simple python scripts to solve our dilemma: recursiveRename.py and selectRandomMovie.py.<br /><br />
-                        Description of recursiveRename.py:<br />
-                        Recursively walk through each folder and file starting from the current directory and rename any of '(', ')', ' ' to '.' so that selectRandomMovie.py will work properly.<br /><br />
-                        Description of selectRandomMovie.py:<br />
+                        recursiveRename.py:<br />
+                        Recursively walk through each folder and file starting from the current directory and rename any of "(", ")", and spaces to periods so that selectRandomMovie.py will work properly.<br /><br />
+                        selectRandomMovie.py:<br />
                         Randomly selects and plays a movie from the current directory. The current directory must contain only sub-directories with a playable movie in the first sub-directory level.
                         </p></td>
 					</tr>
