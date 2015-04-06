@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="afable : web portal">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>afable</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/afable/afable.github.io">View on GitHub</a>
+
+          <h1 id="project_title">afable</h1>
+          <h2 id="project_tagline">web portal</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/afable/afable.github.io/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/afable/afable.github.io/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+    <!-- HEADER -->
+
+
+<section class="inner">
+<ul class="nav nav-pills">
+  <li role="presentation"><a href="http://afable.github.io/index.html">Home</a></li>
+  <li role="presentation" class="active"><a href="http://afable.github.io/projects.html">Projects</a></li>
+</ul>
+</section>
+
+
+
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<td><h3>Project</h3></td>
+						<td><h3>Last Updated</h3></td>
+   						<td><h3>Dev. Platform</h3></td>
+						<td><h3>Description</h3></td>
+					</tr>
+                    <tr>
+						<td><p>First Game Engine<br />
+                        <a href="http://www.youtube.com/watch?v=Wea4-eTkD1A" target="_blank">Demo</a><br />
+                        <a href="https://github.com/afable/game_engine" target="_blank">Project Source Code</a>
+                        </p></td>
+						<td><p>2012-05-07</p></td>
+                        <td><p>Mac OSX<br />Xcode 4<br />G++, GNU Make<br />C++, OpenGL, SDL</p></td>
+                        <td><p>A 3D platformer game engine created in OpenGL, SDL, and C++. Simple collision detection is done by flattening circle and square collisions in the xz plane. generally, if the y-value of 2 objects are at a level where the 2 objects can interact, the game engine first tests an outter bounding circle for collisions and then (if passed) an inner bounding square for collisions. a base actor class was created and all objects are instantiations of derived classes from the base actor class.<br /><br /> A demo of the program can be found <a href="http://www.youtube.com/watch?v=Wea4-eTkD1A" target="_blank">here</a>. The demo first navigates a test map used to debug the game engine as I developed it and second navigates through my current iteration of the game engine (simple static models, textures, and a map level included).
+                        </p></td>
+					</tr>
+                    <tr>
+						<td><p>Simple Particle System<br />
+                        <a href="http://www.youtube.com/watch?v=DBiua8HTWSg" target="_blank">Demo</a><br />
+                        <a href="https://github.com/afable/particle_system" target="_blank">Project Source Code</a></p></td>
+						<td><p>2012-04-14</p></td>
+                        <td><p>Mac OSX<br />Xcode 4<br />G++, GNU Make<br />C++, OpenGL, GLUT</p></td>
+                        <td><p>A simple particle system that simulates a spewing teapot using OpenGL pixels. Particles fade and change color from blue to white as time passes. Simple particle-to-ground collision is enabled. A particle will be reproduced at the teapot's spout at the end of its life (faded out or collision with floor).<br /><br /> A demo of the program can be found <a href="http://www.youtube.com/watch?v=DBiua8HTWSg" target="_blank">here</a>. The demo navigates around the spewing teapot and toggles the number of particles emitted from the teapot's spout.
+                        </p></td>
+					</tr>
+                    <tr>
+						<td><p>Simple Ray Tracer<br />
+                        <a href="https://github.com/afable/ray_tracer" target="_blank">Project Source Code</a></p></td>
+						<td><p>2012-03-25</p></td>
+                        <td><p>Mac OSX<br />Xcode 4<br />G++, GNU Make<br />C++, OpenGL, GLUT</p></td>
+                        <td><p>A simple ray tracer that uses OpenGL to color in the resulting pixel color of each ray after all calculations (ambient, diffuse, specular values, reflection, and refraction) from the eye to the viewing window.
+                        <br /><br />
+                        <img src="projects/ray_trace.png" />
+                        </p></td>
+					</tr>
+                    <tr>
+						<td><p>World Crawler and Arcball<br />
+                        <a href="http://www.youtube.com/watch?v=Xcm5j0kkxO0" target="_blank">Demo</a><br />
+                        <a href="https://github.com/afable/world_crawler_and_arc_ball" target="_blank">Project Source Code</a></p></td>
+						<td><p>2012-03-04</p></td>
+                        <td><p>Mac OSX<br />Xcode 4<br />G++, GNU Make<br />C++, OpenGL, GLUT</p></td>
+                        <td><p>A simple world crawler and arcball program. A demo of the program can be found <a href="http://www.youtube.com/watch?v=Xcm5j0kkxO0" target="_blank">here</a>. The demo shows navigation through the world crawler view and rotation around the arcball view.
+                        </p></td>
+					</tr>
+                    <tr>
+						<td><p>Extremely Fast File System<br />
+                        <a href="projects/effs_v3.tar.gz" target="_blank">effs_v3.tar.gz</a></p></td>
+						<td><p>2011-12-02</p></td>
+                        <td><p>Ubuntu 10.04<br />JEdit<br />GCC, GNU Make<br />C</p></td>
+                        <td><p>The Extremely Fast File System (EFFS) simulates the file system of a hard disk. The lower layer driver of the file system is "fisk.h". "effs.c" consists of the main code base of the file system and accesses the "fisk.h" API. The test harness "effs_test.c" and interactive shell "shell.c" sit above "effs.c" and access its API. EFFS is based on the old Unix File System that uses 12 direct pointers to data and then single, double, and triple levels of indirection. EFFS consists of a superblock, inode space, and data space.<br /><br />
+                        I have included a readme that specifies a few simplifying assumptions and outlines how to use the EFFS shell. I have also included a report written by Jaime Lai and Nazma Panjwani which goes into further detail of the file system's design.</p></td>
+					</tr>
+                    <tr>
+						<td><p>Simple Thread Library Implementation<br />
+                        <a href="projects/simplethreads.tar.gz" target="_blank">simplethreads.tar.gz</a></p></td>
+						<td><p>2011-10-20</p></td>
+                        <td><p>Ubuntu 10.04<br />JEdit<br />GCC, GNU Make<br />C</p></td>
+                        <td><p>I implemented the /lib/sthread_user.c file within Rick Cox's Simplethreads Instructional Threads Package. The sthread_user.c file works with the tests in /simplethreads-1.30/test/. Specific tests (such as test-preempt.c that requires input) can be run from /simplethreads-1.30/test/.<br /><br />
+						I have included an implementation report that outlines how to test the code base, specifies a few simplifying assumptions, describes design details and uncaught errors, and provides justification for my design.</p></td>
+					</tr>
+                    <tr>
+						<td><p>Producer Consumer<br />
+                        <a href="projects/prodcons.tar.gz" target="_blank">prodcons.tar.gz</a></p></td>
+						<td><p>2011-10-03</p></td>
+                        <td><p>Ubuntu 10.04<br />JEdit, Valgrind<br />GCC, GNU Make<br />C</p></td>
+                        <td><p>A simple threaded producer/consumer program using a circular array and semaphores. Producers sleep either 1 or 4 seconds after each production. Consumers sleep either 1 or 5 seconds after each consumption.</p></td>
+					</tr>
+                    <tr>
+						<td><p>Kapish Interactive Shell<br />
+                        <a href="projects/kapish.tar.gz" target="_blank">kapish.tar.gz</a></p></td>
+						<td><p>2011-09-26</p></td>
+                        <td><p>Ubuntu 10.04<br />JEdit, Valgrind<br />GCC, GNU Make<br />C</p></td>
+                        <td><p>A very simple Unix shell. To run a program, Kapish forks a child process, searches for the program in the environmental variables file, and execs the path of the executed program in the forked child process.</p></td>
+					</tr>
+                    <tr>
+						<td><p>Fractional Calculator<br />
+                        <a href="projects/Fraction_Calculator.zip" target="_blank">Fraction_Calculator.zip</a></p></td>
+						<td><p>2011-09-04</p></td>
+                        <td><p>Mac OSX<br />Xcode 4<br />Apple LLVM<br />Objective-C</p></td>
+                        <td><p>The final project of Programming in Objective-C by Stephen Kochan. I developed and tested the fractional calculator app in Xcode 4 using Xcode's iOS simulator. Unfortunately, I did not have a physical iPhone to test.<br /><br />
+                        <img src="projects/fracCalc.png" class="fracCalc"/></p></td>
+					</tr>
+                    <tr>
+						<td><p>Random Movie Selector<br />
+                        <a href="projects/recursiveRename.rar" target="_blank">recursiveRename.rar</a><br />
+                        <a href="projects/selectRandomMovie.rar" target="_blank">selectRandomMovie.rar</a></p></td>
+						<td><p>2011-07-13</p></td>
+                        <td><p>Windows<br />IDLE<br />Python 2.7.2</p></td>
+                        <td><p>I watch a lot of movies at home with my girlfriend. Unfortunately, we often can't decide what to watch. I created two simple python scripts to solve our dilemma: recursiveRename.py and selectRandomMovie.py.<br /><br />
+                        Description of recursiveRename.py:<br />
+                        Recursively walk through each folder and file starting from the current directory and rename any of '(', ')', ' ' to '.' so that selectRandomMovie.py will work properly.<br /><br />
+                        Description of selectRandomMovie.py:<br />
+                        Randomly selects and plays a movie from the current directory. The current directory must contain only sub-directories with a playable movie in the first sub-directory level.
+                        </p></td>
+					</tr>
+				</table>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">afable maintained by <a href="https://github.com/afable">afable</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-61562068-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
