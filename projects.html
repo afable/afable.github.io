@@ -18,12 +18,18 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 	<style>
 		p #wBorder {
 			border: 1px solid #000;
 		}
+		
+		.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+			background-color: #000;
+		}
+		
 	</style>
 </head>
 
@@ -43,7 +49,6 @@
 			</section>
 		</header>
 	</div>
-	<!-- HEADER -->
 
 	<!--NAVIGATION-->
 	<section class="inner">
@@ -52,12 +57,13 @@
 			<li role="presentation" class="active"><a href="http://afable.github.io/projects.html">Projects</a></li>
 		</ul>
 	</section>
-	<!--NAVIGATION-->
+
+
 
 	<!-- MAIN CONTENT -->
 	<div id="main_content_wrap" class="outer">
 		<section id="main_content" class="inner">
-			<table class="table table-striped table-bordered table-hover table-condensed">
+			<table class="table table-striped table-bordered table-hover">
 				<!--TITLE BAR-->
 				<tr>
 					<td>
