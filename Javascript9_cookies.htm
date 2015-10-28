@@ -26,21 +26,22 @@
 		
 		function getCookie(name)
 		{
-			var cookieName = name.value
-			var allCookies = document.cookie.split(";");
+			console.log(allCookies);
 			
-			var cookieData = "";
+			// var cookieName = name.value
+			// var allCookies = document.cookie.split(";");
 			
-			for (var i=0; i < allCookies.length; ++i)
-			{
-				if ( (allCookies[i].indexOf(cookieName)) !== -1 )
-				{
-					// var match = allCookies[i].replace(" ", "");
-					// cookieData = match.substr((cookieName.length+1));
-					cookieData = allCookies;
-					console.log(cookieName, " ", cookieData);
-				}
-			}
+			// var cookieData = "";
+			
+			// for (var i=0; i < allCookies.length; ++i)
+			// {
+			// 	if ( (allCookies[i].indexOf(cookieName)) !== -1 )
+			// 	{
+			// 		var match = allCookies[i].replace(" ", "");
+			// 		cookieData = match.substr((cookieName.length+1));
+			// 		console.log(cookieName, " ", cookieData);
+			// 	}
+			// }
 		}
 		
 		function createCookie(newCookie)
