@@ -7,24 +7,32 @@
 	<base href="" target="_blank" />
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 
 <body>
-	<div id="wrapper">
-		<header>
-			<h1>header</h1>
-		</header>
-		<nav>nav
-			<h3>nav (left)</h3>
+	<div class="wrapper">
+		<nav class="top navToTop">
+			<h3>nav (top)</h3>
 			<ul>
-				<li>li<a href="#">go here 1</a></li>
-				<li><a href="#">go here 2</a></li>
-				<li><a href="#">go here 3</a></li>
-				<li><a href="#">go here 4</a></li>
+				<li class="index reveal1 active">li <a href="#" target="_self">go here 1</a></li>
+				<li class="projects reveal2"><a href="#" target="_self">go here 2</a></li>
+				<li class="rand1 reveal3"><a href="#" target="_self">go here 3</a></li>
+				<li class="rand2 reveal3"><a href="#" target="_self">go here 4</a></li>
 			</ul>
 		</nav>
-		<main id='index'>
+		<header class="reveal1">
+			<h1>header</h1>
+		</header>
+		<nav class="map reveal2">
+			nav map
+			<aside class="map">
+				<p>map item information.
+				</p>
+			</aside>
+		</nav>
+		<main class="reveal3">
 			<section>
 				<h2>section 1</h2>
 				<article>
@@ -35,24 +43,14 @@
 					</p>
 				</article>
 			</section>
-			<section>
-				<h2>section 2</h2>
-				<article>
-					<h2>article 2</h2>
-
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet ut massa ac pellentesque. Nulla facilisi. Proin
-						a lacinia quam, vel ultrices eros. Suspendisse dictum lacinia eros quis placerat.
-					</p>
-				</article>
-			</section>
+			<aside>
+				<h3>aside (right)</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet ut massa ac pellentesque. Nulla facilisi. Proin
+					a lacinia quam, vel ultrices eros. Suspendisse dictum lacinia eros quis placerat.
+				</p>
+			</aside>
 		</main>
-		<aside>
-			<h3>aside (right)</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet ut massa ac pellentesque. Nulla facilisi. Proin
-				a lacinia quam, vel ultrices eros. Suspendisse dictum lacinia eros quis placerat.
-			</p>
-		</aside>
-		<footer>
+		<footer class="reveal3">
 			<h3>footer</h3>
 		</footer>
 	</div>

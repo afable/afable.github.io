@@ -89,17 +89,128 @@ img {
 }
 
 /*******************************************************************************
-large layout
+keyframes
 *******************************************************************************/
 
-
-
-
+@keyframes navToTop {
+	0% { top: 500px; } 100% { top: 0px; }
+}
+.navToTop {
+	animation: navToTop .6s 0s 1 cubic-bezier(0,1.26,.74,1) forwards;
+}
+@keyframes reveal1 {
+	0% { opacity: 0; } 100% { opacity: 1; }
+}
+.reveal1 {
+	opacity: 0;
+	animation: reveal1 1s .6s 1 cubic-bezier(0,1.26,.74,1) forwards;
+}
+@keyframes reveal2 {
+	0% { opacity: 0; } 100% { opacity: 1; }
+}
+.reveal2 {
+	opacity: 0;
+	animation: reveal2 1s .9s 1 cubic-bezier(0,1.26,.74,1) forwards;
+}
+@keyframes reveal3 {
+	0% { opacity: 0; } 100% { opacity: 1; }
+}
+.reveal3 {
+	opacity: 0;
+	animation: reveal3 1s 1.2s 1 cubic-bezier(0,1.26,.74,1) forwards;
+}
 
 /*******************************************************************************
-small layout
+large screens (640px, infinity)
 *******************************************************************************/
 
+div.wrapper {
+	margin: 0px auto;
+	width: 90%;
+}
+
+nav {
+	background: #dfd;
+	border-radius: 16px;
+}
+
+nav.top {
+	position: relative;
+	top: 0px;
+}
+
+nav.top > ul {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+nav.top > ul > li {
+	background: #ddf;
+	border-radius: 16px;
+	flex: 1 1 auto;
+}
+
+nav.top > ul > li.active {
+	background: #fda;
+}
+
+nav.top > ul > li:hover {
+	background: #fdf;
+}
+
+header {
+	background: #fdd;
+	border-radius: 16px;
+}
+
+nav.map {
+	height: 250px;
+}
+
+nav.map > aside {
+	width: 38%;
+	height: 200px;
+	overflow: auto;
+	margin: 20px;
+	float: right;
+	opacity: 0;
+}
+
+main {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+section {
+	background: #dff;
+	border-radius: 16px;
+	flex: 3 3 62%;
+}
+
+article {
+	background: #ffd;
+	border-radius: 16px;
+}
+
+aside {
+	background: #fdf;
+	border-radius: 16px;
+	flex: 1 1 38%;
+}
+
+footer {
+	background: #eee;
+	border-radius: 16px;
+}
+
+/*******************************************************************************
+small screens [0px, 640px]
+*******************************************************************************/
+
+@media all and (max-width: 640px) {
+  section { flex: 3 3 100%; }
+  aside { flex: 1 1 100%; }
+}
 
 
 
