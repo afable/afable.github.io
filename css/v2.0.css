@@ -13,10 +13,18 @@ html {
 
 body {
 	margin: 10px;
-    font: xx-large/1.5 'Source Sans Pro', monospace;
+    font: 2em/1.5 'Source Sans Pro', monospace;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
 	background: #999;
+}
+
+.small {
+    font-size: 1.5em; /* 75% of the baseline */
+}
+
+.large {
+    font-size: 2.5em; /* 125% of the baseline */
 }
 
 h1,
