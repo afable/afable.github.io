@@ -36,8 +36,8 @@ var ae = {}; //closure namespace to avoid collisions with other js functions and
 				$("nav.top li").removeClass("active");
 				$(this).addClass("active");
 
-				$("main." + pageCurr).removeClass("active").fadeOut("fast", function () {
-					$("main." + pageNext).addClass("active").fadeIn("fast");
+				$("main." + pageCurr + ", footer").removeClass("active").fadeOut("fast", function () {
+					$("main." + pageNext + ", footer").addClass("active").fadeIn("fast");
 				});
 			}
 		});
