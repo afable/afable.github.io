@@ -7,7 +7,8 @@
 	<base href="" target="_blank" />
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
-	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!--<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
+	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/main.js"></script>
 </head>
 
@@ -16,25 +17,24 @@
 		<nav class="top navToTop">
 			<h3>nav (top)</h3>
 			<ul>
-				<li class="index reveal1 active">li <a href="#" target="_self">go here 1</a></li>
-				<li class="projects reveal2"><a href="#" target="_self">go here 2</a></li>
-				<li class="rand1 reveal3"><a href="#" target="_self">go here 3</a></li>
-				<li class="rand2 reveal3"><a href="#" target="_self">go here 4</a></li>
+				<li class="home reveal1 active">li <a href="#" target="_self">home</a></li>
+				<li class="projects reveal2"><a href="#" target="_self">projects</a></li>
+				<li class="secret reveal3"><a href="#" target="_self">secret</a></li>
 			</ul>
 		</nav>
-		<header class="reveal1">
+		<header class="reveal2">
 			<h1>header</h1>
 		</header>
-		<nav class="map reveal2">
-			nav map
-			<aside class="map">
-				<p>map item information.
-				</p>
-			</aside>
-		</nav>
-		<main class="reveal3">
+		<main class="home reveal3 active">
+			<nav class="map">
+				nav map
+				<aside class="map">
+					<p>map item information.
+					</p>
+				</aside>
+			</nav>
 			<section>
-				<h2>section 1</h2>
+				<h2>home section 1</h2>
 				<article>
 					<h2>article 1</h2>
 
@@ -44,11 +44,35 @@
 				</article>
 			</section>
 			<aside>
-				<h3>aside (right)</h3>
+				<h3>home aside (right)</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet ut massa ac pellentesque. Nulla facilisi. Proin
 					a lacinia quam, vel ultrices eros. Suspendisse dictum lacinia eros quis placerat.
 				</p>
 			</aside>
+		</main>
+		<main class="projects reveal3">
+			<section>
+				<h2>projects section 1</h2>
+				<article>
+					<h2>article 1</h2>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet ut massa ac pellentesque. Nulla facilisi. Proin
+						a lacinia quam, vel ultrices eros. Suspendisse dictum lacinia eros quis placerat.
+					</p>
+				</article>
+			</section>
+		</main>
+		<main class="secret reveal3">
+			<section>
+				<h2>secret section 1</h2>
+				<article>
+					<h2>article 1</h2>
+
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet ut massa ac pellentesque. Nulla facilisi. Proin
+						a lacinia quam, vel ultrices eros. Suspendisse dictum lacinia eros quis placerat.
+					</p>
+				</article>
+			</section>
 		</main>
 		<footer class="reveal3">
 			<h3>footer</h3>

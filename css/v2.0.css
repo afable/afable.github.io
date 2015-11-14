@@ -96,33 +96,34 @@ keyframes
 	0% { top: 500px; } 100% { top: 0px; }
 }
 .navToTop {
-	animation: navToTop .6s 0s 1 cubic-bezier(0,1.26,.74,1) forwards;
+	animation: navToTop .6s 0s 1 cubic-bezier(0,1.26,.74,1) backwards;
 }
 @keyframes reveal1 {
 	0% { opacity: 0; } 100% { opacity: 1; }
 }
 .reveal1 {
-	opacity: 0;
-	animation: reveal1 1s .6s 1 cubic-bezier(0,1.26,.74,1) forwards;
+	animation: reveal1 1s .6s 1 cubic-bezier(0,1.26,.74,1) backwards;
 }
 @keyframes reveal2 {
 	0% { opacity: 0; } 100% { opacity: 1; }
 }
 .reveal2 {
-	opacity: 0;
-	animation: reveal2 1s .9s 1 cubic-bezier(0,1.26,.74,1) forwards;
+	animation: reveal2 1s .9s 1 cubic-bezier(0,1.26,.74,1) backwards;
 }
 @keyframes reveal3 {
 	0% { opacity: 0; } 100% { opacity: 1; }
 }
 .reveal3 {
-	opacity: 0;
-	animation: reveal3 1s 1.2s 1 cubic-bezier(0,1.26,.74,1) forwards;
+	animation: reveal3 1s 1.2s 1 cubic-bezier(0,1.26,.74,1) backwards;
 }
 
 /*******************************************************************************
 large screens (640px, infinity)
 *******************************************************************************/
+
+html {
+	overflow-y: scroll;
+}
 
 div.wrapper {
 	margin: 0px auto;
@@ -136,26 +137,33 @@ nav {
 
 nav.top {
 	position: relative;
+	overflow: hidden;
 	top: 0px;
 }
 
 nav.top > ul {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 }
 
 nav.top > ul > li {
 	background: #ddf;
 	border-radius: 16px;
 	flex: 1 1 auto;
+	padding: 5px;
+}
+
+nav.top > ul > li:hover {
+	border: 5px solid #000;
+	padding: 0px;
 }
 
 nav.top > ul > li.active {
 	background: #fda;
 }
 
-nav.top > ul > li:hover {
-	background: #fdf;
+nav.top > ul > li > a:active {
+	background: #000;
 }
 
 header {
@@ -163,22 +171,28 @@ header {
 	border-radius: 16px;
 }
 
-nav.map {
-	height: 250px;
-}
-
-nav.map > aside {
-	width: 38%;
-	height: 200px;
-	overflow: auto;
-	margin: 20px;
-	float: right;
-	opacity: 0;
-}
-
 main {
 	display: flex;
 	flex-flow: row wrap;
+	align-items: stretch;
+	min-height: 1000px;
+}
+
+main.home nav.map {
+	position: relative;
+	min-height: 250px;
+	flex: 0 0 100%;
+}
+
+main.home nav.map > aside {
+	position: absolute;
+	top: 10%;
+	right: 5%;
+	bottom: 25%;
+	width: 38%;
+	min-height: 200px;
+	overflow: auto;
+	opacity: 1;
 }
 
 section {
