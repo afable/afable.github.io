@@ -192,7 +192,7 @@ main.home nav.map > aside {
 	width: 38%;
 	min-height: 200px;
 	overflow: auto;
-	opacity: 1;
+	opacity: 0;
 }
 
 section {
