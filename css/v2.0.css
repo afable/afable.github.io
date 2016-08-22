@@ -1,0 +1,230 @@
+/*******************************************************************************
+by Erik Afable @superafable
+*******************************************************************************/
+
+/*******************************************************************************
+foundation.css
+*******************************************************************************/
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 10px;
+    font: 2em/1.5 'Source Sans Pro', monospace;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+	background: #999;
+}
+
+.small {
+    font-size: 1.5em; /* 75% of the baseline */
+}
+
+.large {
+    font-size: 2.5em; /* 125% of the baseline */
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul,
+dl {
+    margin: 0;
+    padding: 0;
+}
+
+main,
+li {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-size: inherit;
+}
+
+strong {
+    font-weight: bold;
+}
+
+a,
+button {
+    color: inherit;
+    transition: 300ms;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    overflow: visible;
+    border: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+}
+
+::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+/*******************************************************************************
+keyframes
+*******************************************************************************/
+
+@keyframes navToTop {
+	0% { top: 500px; } 100% { top: 0px; }
+}
+.navToTop {
+	animation: navToTop .6s 0s 1 cubic-bezier(0,1.26,.74,1) backwards;
+}
+@keyframes reveal1 {
+	0% { opacity: 0; } 100% { opacity: 1; }
+}
+.reveal1 {
+	animation: reveal1 1s .6s 1 cubic-bezier(0,1.26,.74,1) backwards;
+}
+@keyframes reveal2 {
+	0% { opacity: 0; } 100% { opacity: 1; }
+}
+.reveal2 {
+	animation: reveal2 1s .9s 1 cubic-bezier(0,1.26,.74,1) backwards;
+}
+@keyframes reveal3 {
+	0% { opacity: 0; } 100% { opacity: 1; }
+}
+.reveal3 {
+	animation: reveal3 1s 1.2s 1 cubic-bezier(0,1.26,.74,1) backwards;
+}
+
+/*******************************************************************************
+large screens (640px, infinity)
+*******************************************************************************/
+
+html {
+	overflow-y: scroll;
+}
+
+div.wrapper {
+	margin: 0px auto;
+	width: 90%;
+}
+
+nav {
+	background: #dfd;
+	border-radius: 16px;
+}
+
+nav.top {
+	position: relative;
+	overflow: hidden;
+	top: 0px;
+}
+
+nav.top > ul {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+nav.top > ul > li {
+	background: #ddf;
+	border-radius: 16px;
+	flex: 1 1 auto;
+	padding: 5px;
+}
+
+nav.top > ul > li:hover {
+	border: 5px solid #000;
+	padding: 0px;
+}
+
+nav.top > ul > li.active {
+	background: #fda;
+}
+
+nav.top > ul > li > a:active {
+	background: #000;
+}
+
+header {
+	background: #fdd;
+	border-radius: 16px;
+}
+
+main {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+	min-height: 1000px;
+}
+
+main.home nav.map {
+	position: relative;
+	min-height: 250px;
+	flex: 0 0 100%;
+}
+
+main.home nav.map > aside {
+	position: absolute;
+	top: 10%;
+	right: 5%;
+	bottom: 25%;
+	width: 38%;
+	min-height: 200px;
+	overflow: auto;
+	opacity: 0;
+}
+
+section {
+	background: #dff;
+	border-radius: 16px;
+	flex: 3 3 62%;
+}
+
+article {
+	background: #ffd;
+	border-radius: 16px;
+}
+
+aside {
+	background: #fdf;
+	border-radius: 16px;
+	flex: 1 1 38%;
+}
+
+footer {
+	background: #eee;
+	border-radius: 16px;
+}
+
+/*******************************************************************************
+small screens [0px, 640px]
+*******************************************************************************/
+
+@media all and (max-width: 640px) {
+  section { flex: 3 3 100%; }
+  aside { flex: 1 1 100%; }
+}
+
+
+
