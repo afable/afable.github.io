@@ -1,29 +1,28 @@
 CACHE MANIFEST
-# the above line is required
+# 2016-09-02:v1
 
-# this is a comment
-# there can be as many of these anywhere in the file
-# they are all ignored
-  # comments can have spaces before them
-  # but must be alone on the line
-
-# blank lines are ignored too
-
-# these are files that need to be cached they can either be listed
-# first, or a "CACHE:" header could be put before them, as is done
-# lower down.
+# Files listed under this header (or immediately after the 
+# CACHE MANIFEST) will be explicitly cached after they're 
+# downloaded for the first time.
 CACHE:
-# nothing to cache
-#images/sound-icon.png
-#images/background.png
-# note that each file has to be put on its own line
+index.html
+https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css
+https://code.jquery.com/jquery-2.2.4.js
+https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js
 
+# An optional section specifying fallback pages if a resource is 
+# inaccessible. The first URI is the resource, the second is the 
+# fallback used if the network request fails or errors. Both URIs 
+# must from the same origin as the manifest file. You can capture 
+# specific URLs but also URL prefixes. "images/large/" will capture 
+# failures from URLs such as "images/large/whatever/img.jpg".
 FALLBACK:
 #/ /no/fallback
 
-# here is a file for the online whitelist -- it isn't cached, and
-# references to this file will bypass the cache, always hitting the
-# network (or trying to, if the user is offline).
+# Files listed in this section may come from the network if they 
+# aren't in the cache, otherwise the network isn't used, even if 
+# the user is online. You can white-list specific URLs here, or 
+# simply "*", which allows all URLs. Most sites need "*".
 NETWORK:
 *
 
