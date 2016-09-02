@@ -12,19 +12,19 @@ CACHE MANIFEST
 # these are files that need to be cached they can either be listed
 # first, or a "CACHE:" header could be put before them, as is done
 # lower down.
+CACHE:
+# nothing to cache
 #images/sound-icon.png
 #images/background.png
 # note that each file has to be put on its own line
+
+FALLBACK:
+#/ /no/fallback
 
 # here is a file for the online whitelist -- it isn't cached, and
 # references to this file will bypass the cache, always hitting the
 # network (or trying to, if the user is offline).
 NETWORK:
 *
-#comm.cgi
 
 
-
-# here is another set of files to cache, this time just the CSS file.
-CACHE:
-#style/default.css
