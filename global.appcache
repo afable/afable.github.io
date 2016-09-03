@@ -5,10 +5,6 @@ CACHE MANIFEST
 # CACHE MANIFEST) will be explicitly cached after they're 
 # downloaded for the first time.
 CACHE:
-index.html
-https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css
-https://code.jquery.com/jquery-2.2.4.js
-https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js
 
 # An optional section specifying fallback pages if a resource is 
 # inaccessible. The first URI is the resource, the second is the 
@@ -17,7 +13,7 @@ https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js
 # specific URLs but also URL prefixes. "images/large/" will capture 
 # failures from URLs such as "images/large/whatever/img.jpg".
 FALLBACK:
-#/ /no/fallback
+/ /offline.html
 
 # Files listed in this section may come from the network if they 
 # aren't in the cache, otherwise the network isn't used, even if 
@@ -25,5 +21,3 @@ FALLBACK:
 # simply "*", which allows all URLs. Most sites need "*".
 NETWORK:
 *
-
-
