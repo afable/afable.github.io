@@ -1,82 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>afable</title>
+<head>
+	<title>afable</title>
 
-		<!-- META -->
-		<meta charset='utf-8'>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- META -->
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		 <!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">	
-		
-	</head>
-	<body>
-		<!-- Navigation -->
-		<div id="nav-wrapper" class="outer">
-			<div id="nav" class="inner">
-				<ul class="nav-list">
-					<li class="nav-item">1</li>
-					<li class="nav-item">1</li>
-				</ul>
-			</div>
-		</div>
-		<!-- Navigation end  
-		================================================== -->
-
-		<!-- Main Content -->
-		<div id="main-wrapper" class="outer">
-			<section id="main-content-1" class="inner">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">	
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	
+</head>
+<body>
+	<div data-role="page" id="page-1">
+		<div data-role="header" class="header" data-position="fixed" data-fullscreen="true"> 
+			<nav id="nav">
+				<a href="#page-1" data-role="button" data-transition="fade">helloBOY1</a>
+				<a href="#page-2" data-role="button" data-transition="flip">helloGIRL2</a>
+				<a href="#page-3" data-role="button" data-transition="pop">a</a>
+				<a href="#page-5" data-role="button" data-transition="flow">c</a>
+				<a href="#page-6" data-role="button" data-transition="slidefade">d</a>
+				<a href="#page-8" data-role="button" data-transition="slideup">f</a>
+				<a href="#page-9" data-role="button" data-transition="slidedown">g</a>
+			</nav>
+		</div><!-- /header -->
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
 				<h3>Some Title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<pre><code>
-		while ( alive() )	
-		{
-			make_games(♥);
-		};
-				</code></pre>
 			</section>
-			<section id="main-content-2" class="inner">
-				<h3>Some Title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<pre><code>
-		while ( alive() )	
-		{
-			make_games(♥);
-		};
-				</code></pre>
-			</section>
-			<section id="main-content-3" class="inner">
-				<h3>Some Title</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<pre><code>
-		while ( alive() )	
-		{
-			make_games(♥);
-		};
-				</code></pre>
-			</section>
-		</div>
-		<!-- Main Content end
-		================================================== -->
-
-		<!-- Footer -->
-		<div id="footer-wrapper" class="outer">
-			<footer class="inner">
+		</div><!-- /main -->
+		<div data-role="footer" id="footer" data-position="fixed" data-fullscreen="true"> <footer> 
 				<p>Written and coded by 
-				<a href="https://www.freecodecamp.com/afable" target="_blank">afable</a> 
-				<a href="https://github.com/afable" target="_blank"><i class="fa fa-github fa-lg"></i></a> 
-				<a href="https://twitter.com/superafable" target="_blank"><i class="fa fa-twitter fa-lg"></i></a> 
-				<a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a>
 				</p>
 			</footer>
-		</div>
-		<!-- Footer end
-		================================================== -->
+		</div><!-- /footer -->
+	</div><!-- /page-1 -->
+			
+			
+	<div data-role="page" id="page-2">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
 
-		<!-- JS (bottom since scripts block parallel downloads) -->
-		<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-		<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+	<div data-role="page" id="page-3">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-4">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-5">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-6">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-7">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-8">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-9">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	<div data-role="page" id="page-10">
+		<div role="main" class="ui-content" id="main">
+			<section id="content-1" class="content">
+				<pre><code>
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+		while ( alive() )	
+		{
+			make_games(♥);
+		};
+				</code></pre>
+			</section>
+		</div><!-- /main -->
+	</div><!-- /page-2 -->
+	
+			
 
-	</body>
+	<!-- JS (bottom since scripts block parallel downloads) -->
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
 </html>
