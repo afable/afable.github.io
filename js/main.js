@@ -10,13 +10,11 @@
 		++iPageCounter;
 		if ( $(this)[0].getAttribute("id") !== "page-1" ) {
 			// prepend header clone from #page-1
-			var hdr = $("#page-1 > div.header")[0].cloneNode(true);
-			$(this).prepend(hdr);
+			$("#page-1 > div.header").clone().prependTo(this);
 			console.log("cloning header for page " + iPageCounter);
 
 			// prepend footer clone from #page-1
-			var ftr = $("#page-1 > div.footer")[0].cloneNode(true);
-			$(this).append(ftr);
+			$("#page-1 > div.footer").clone().appendTo(this);
 			console.log("cloning footer for page" + iPageCounter);
 		}
 		console.log("creating page " + iPageCounter);
