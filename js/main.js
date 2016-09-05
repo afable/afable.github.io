@@ -1,5 +1,4 @@
-var hdr;
-// (function() {
+(function() {
 
 	// bind an event handler to the "pagecreate" event for all "data-role='page'
 	// elements
@@ -10,10 +9,15 @@ var hdr;
 		// that are not #page-1
 		++iPageCounter;
 		if ( $(this)[0].getAttribute("id") !== "page-1" ) {
-			hdr = $("#page-1 > div.header")[0].cloneNode(true);
-			console.log($("this"))
+			// prepend header clone from #page-1
+			var hdr = $("#page-1 > div.header")[0].cloneNode(true);
 			$(this).prepend(hdr);
 			console.log("cloning header for page " + iPageCounter);
+
+			// prepend footer clone from #page-1
+			var ftr = $("#page-1 > div.footer")[0].cloneNode(true);
+			$(this).append(ftr);
+			console.log("cloning footer for page" + iPageCounter);
 		}
 		console.log("creating page " + iPageCounter);
 	});
@@ -26,4 +30,4 @@ var hdr;
 		console.log("window.onload...");
 	};
 	
-// })();
+})();
