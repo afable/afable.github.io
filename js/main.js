@@ -15,6 +15,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	arrPages.push( {id: "slamsorrow", data: "<p>Young HARLEM.</p>"} );
 
 
+	// create pages dynamically
 	// create nav links first so they can be inserted into each page
 	var strNav = "";
 	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
@@ -22,7 +23,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button">` + arrPages[i].id + `</a>`
 	}
 
-	// create all pages dynamically
+	// now create the pages including...
 	for ( var i = 0; i < arrPages.length; ++i ) {
 		// header (from previously created strNav), main, and footer
 		var newPage = $(`
@@ -43,34 +44,10 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 			</div>
 		`);
 
-		// prepend it to the page container
-		// newPage.prependTo( $.mobile.pageContainer );
+		// prepend new page to the page container (manually used body since
+		// page container isn't initialized yet at this point)
 		newPage.prependTo( $("body") );
-		console.log("NEW PAGES CREATED");
-
-		
 	}
-
-
-	// // bind an event handler to the "pagecreate" event for all
-	// // "data-role='page'" elements
-	// var iPageCounter = 0;
-	// $(document).on("pagecreate", "[data-role='page']", function () {
-
-	// 	// prepend header and append footer divs to all newly created pages
-	// 	// that are not the first page
-	// 	++iPageCounter;
-	// 	if ( $(this)[0].getAttribute("id") !== "afable" ) {
-	// 		console.log("cloning header & footer for " + $(this)[0].getAttribute("id"));
-
-	// 		// prepend header clone from #afable
-	// 		$("#afable > div.header").clone(true).prependTo(this);
-
-	// 		// append footer clone from #afable
-	// 		$("#afable > div.footer").clone(true).appendTo(this);
-	// 	}
-	// 	console.log(iPageCounter + " pages created...");
-	// });
 
 
 	// change .ui-btn-active manually as it does not persist after transitions
