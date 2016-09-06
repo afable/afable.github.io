@@ -23,9 +23,10 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button">` + arrPages[i].id + `</a>`
 	}
 
-	// now create the pages including...
-	for ( var i = 0; i < arrPages.length; ++i ) {
-		// header (from previously created strNav), main, and footer
+	// now create the pages by prepending to body (#afable comes last so that
+	// it is the first page element in body)
+	for ( var i = arrPages.length-1; i >= 0; --i ) {
+		// create header (from previously created strNav), main, and footer
 		var newPage = $(`
 			<div data-role=page id=` + arrPages[i].id + ` class=ui-page>
 				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit" data-position="fixed" data-fullscreen="true" data-tap-toggle="true" role="banner"> 
