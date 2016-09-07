@@ -19,6 +19,8 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	arrPages.push( {id: "country", data: "<p>sizlzling turkey on a stikck.</p>"} );
 	arrPages.push( {id: "ROAD", data: "<p>mayheM makers.</p>"} );
 	arrPages.push( {id: "machi", data: "<p>it means town.</p>"} );
+	arrPages.push( {id: "sound", data: "<p>scent of your hair.</p>"} );
+	arrPages.push( {id: "realize", data: "<p>that you twirl in your fingers.</p>"} );
 
 
 	// create pages dynamically
@@ -39,14 +41,13 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 					<nav id="nav">` + strNav + `</nav>
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
-					<section style="background-color: #fef; height: 111px;" class="content">
+					<section class="content">
 						<h3>Some Title</h3>
 					</section>
 				</div><!-- /main -->
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
 					<footer> 
-						<p>Written and coded by <a href="#afable">afable</a> <a href="https://github.com/afable" target="_blank"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></p>
-						<p></p>
+						<p>Written and coded by <a href="#afable">afable</a> <a href="https://github.com/afable" target="_blank"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://jsfiddle.net/user/afable/fiddles/" target="_blank"><i class="fa fa-jsfiddle fa-lg"></i></a> <a href="http://bl.ocks.org/afable" target="_blank"><i class="fa fa-square-o fa-lg"></i></a></p>
 					</footer>
 				</div><!-- /footer -->
 			</div>
@@ -73,6 +74,14 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
     	if ( $(".ui-fixed-hidden").length ) {
 			$(".ui-fixed-hidden").toolbar('show');
 		}		
+
+		// display window sizes for different viewports somewhere
+		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ")";
+		if ( $(".ui-page-active #displayviewport").length === 0 ) {
+			$(".ui-page-active .content").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
+		} else {
+			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
+		}
 	});
 
 

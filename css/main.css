@@ -1,10 +1,35 @@
 /* main.css: afable 2016 */
 
-body {
-	background-color: #000 !important;	/* bkg color during transitions */	
+html {
+	height: 100%;
 }
 
+/* bkg color during transitions */
+body {
+	background-color: #fef !important;
+}
+
+/* center header nav buttons and footer content */
 .center-content {
 	text-align: center;
 	margin: 0 auto;
 }
+
+/* main content wrapper for each page should be full device height */
+.main {
+	height: 100vh !important;
+	background-color: #fef;
+}
+
+.nav-button {
+	height: 20vh;
+	width: 10.9vw;
+	margin: 0;
+	padding: 0;
+}
+
+/* handle nav-button-widths to fit the screen perfectly on various viewports */
+@media all and (max-width: 640px) { .nav-button { width: 10.8vw; } }
+@media all and (max-width: 360px) {	.nav-button { width: 10.5vw; } }
+
+
