@@ -38,7 +38,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		var newPage = $(`
 			<div data-role=page id=` + arrPages[i].id + ` class=ui-page>
 				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true" role="banner"> 
-					<nav id="nav">` + strNav + `</nav>
+					<nav class="nav">` + strNav + `</nav>
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
 					<section class="content">

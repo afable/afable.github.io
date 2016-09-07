@@ -21,15 +21,19 @@ body {
 	background-color: #fef;
 }
 
+.nav {
+	background-color: #fef;
+}
+
 .nav-button {
 	height: 20vh;
-	width: 10.9vw;
 	margin: 0;
 	padding: 0;
 }
 
 /* handle nav-button-widths to fit the screen perfectly on various viewports */
-@media all and (max-width: 640px) { .nav-button { width: 10.8vw; } }
-@media all and (max-width: 360px) {	.nav-button { width: 10.5vw; } }
+@media all and (min-width: 360px) {	.nav-button { width: 10.5vw; } }
+@media all and (min-width: 640px) { .nav-button { width: 10.8vw; } }
+@media all and (min-width: 943px) { .nav-button { width: 10.9vw; } }
 
 
