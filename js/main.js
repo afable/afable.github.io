@@ -1,3 +1,5 @@
+/* main.js: afable 2016 */
+
 // document and window ready functions (test which loads first)
 window.onload = function() { console.log("LOADED window.onload..."); };
 (function() { console.log("LOADED IIFE.."); })();
@@ -33,7 +35,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// create header (from previously created strNav), main, and footer
 		var newPage = $(`
 			<div data-role=page id=` + arrPages[i].id + ` class=ui-page>
-				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit" data-position="fixed" data-fullscreen="true" data-tap-toggle="true" role="banner"> 
+				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true" role="banner"> 
 					<nav id="nav">` + strNav + `</nav>
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
@@ -41,9 +43,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 						<h3>Some Title</h3>
 					</section>
 				</div><!-- /main -->
-				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
+				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
 					<footer> 
-						<p>Written and coded by <a href="#">afable</a></p>
+						<p>Written and coded by <a href="#">afable</a> 2016</p>
 					</footer>
 				</div><!-- /footer -->
 			</div>
