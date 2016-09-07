@@ -13,6 +13,10 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	arrPages.push( {id: "afable", data: "<p>Paragraph element for #afable.</p>"} );
 	arrPages.push( {id: "hamtarro", data: "<p>Because he likes cheese.</p>"} );
 	arrPages.push( {id: "slamsorrow", data: "<p>Young HARLEM.</p>"} );
+	arrPages.push( {id: "contraBand", data: "<p>HARLEM.</p>"} );
+	arrPages.push( {id: "country", data: "<p>sizlzling turkey on a stikck.</p>"} );
+	arrPages.push( {id: "ROAD", data: "<p>mayheM makers.</p>"} );
+	arrPages.push( {id: "machi", data: "<p>it means town.</p>"} );
 
 
 	// create pages dynamically
@@ -60,36 +64,31 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 		// add .ui-btn-active to the current active page
 		$(currPage + " a[href='" + currPage + "']").addClass("ui-btn-active");
-
-		console.log("currPage page is " + currPage);
 	});
 
 
 	// capture left swipes on header, main, and footer
 	// left swipes move to next page in sequience
-	$(document).on("swipeleft", "[data-role='header']", function() {
-		console.log("swiped left on header");
+	$(document).on("swipeleft", function() {
+		// get current page and transition to next page
 		var currPage = $(".ui-page-active").prop("id");
-		
+		var iPage = arrPages.findIndex(p => p.id === currPage);
+		// stay on current page if we are on the last page
+		var nextPage = ( arrPages[iPage+1] === undefined )? currPage : arrPages[iPage+1].id;
+		$.mobile.changePage("#" + nextPage, { transition: 'flow', reverse: false });
+		console.log(nextPage);
 	});
-	$(document).on("swipeleft", "[role='main']", function() {
-		console.log("swiped left on main");
-	});
-	$(document).on("swipeleft", "[data-role='footer']", function() {
-		console.log("swiped left on footer");
-	});
-
 
 	// capture right swipes on header, main, and footer
 	// right swipes move to previous page in sequence
-	$(document).on("swiperight", "[data-role='header']", function() {
-		console.log("swiped right on header");
-	});
-	$(document).on("swiperight", "[role='main']", function() {
-		console.log("swiped right on main");
-	});
-	$(document).on("swiperight", "[data-role='footer']", function() {
-		console.log("swiped right on footer");
+	$(document).on("swiperight", function() {
+		// get current page and transition to previous page
+		var currPage = $(".ui-page-active").prop("id");
+		var iPage = arrPages.findIndex(p => p.id === currPage);
+		// stay on current page if we are on the first page
+		var prevPage = ( arrPages[iPage-1] === undefined )? currPage : arrPages[iPage-1].id;
+		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
+		console.log(prevPage);
 	});
 
 
