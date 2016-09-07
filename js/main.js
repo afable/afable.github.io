@@ -76,7 +76,6 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// stay on current page if we are on the last page
 		var nextPage = ( arrPages[iPage+1] === undefined )? currPage : arrPages[iPage+1].id;
 		$.mobile.changePage("#" + nextPage, { transition: 'flow', reverse: false });
-		console.log(nextPage);
 	});
 
 	// capture right swipes on header, main, and footer
@@ -88,7 +87,6 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// stay on current page if we are on the first page
 		var prevPage = ( arrPages[iPage-1] === undefined )? currPage : arrPages[iPage-1].id;
 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
-		console.log(prevPage);
 	});
 
 
