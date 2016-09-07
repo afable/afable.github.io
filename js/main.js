@@ -67,6 +67,12 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 		// add .ui-btn-active to the current active page
 		$(currPage + " a[href='" + currPage + "']").addClass("ui-btn-active");
+
+		// show any hidden ui after page transition (sometimes header and footer
+		//  will be hidden after a transition)
+    	if ( $(".ui-fixed-hidden").length ) {
+			$(".ui-fixed-hidden").toolbar('show');
+		}		
 	});
 
 
