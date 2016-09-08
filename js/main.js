@@ -9,6 +9,10 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 // encapsulate js so there are no naming conflicts
 (function($) {
 
+	
+	// get if this viewport is hortizontal or vertical
+	var bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+
 
 	// initialize page data for all pages
 	var arrPages = [];
@@ -31,6 +35,10 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button">` + arrPages[i].id + `</a>`
 	}
 
+	// create main's section .content and base image sizes on whether viewport
+	// is landscape vs portrait
+	strImgSize = ( bLandscape )? "width: 50vh; height: 50vh;" : "width: 50vw; height: 50vw;";
+
 	// now create the pages by prepending to body (#afable comes last so that
 	// it is the first page element in body)
 	for ( var i = arrPages.length-1; i >= 0; --i ) {
@@ -42,7 +50,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
 					<section class="content">
-						<h3>Some Title</h3>
+						<a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable" style="` + strImgSize + `"></a>
 					</section>
 				</div><!-- /main -->
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
@@ -73,15 +81,19 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		//  will be hidden after a transition)
     	if ( $(".ui-fixed-hidden").length ) {
 			$(".ui-fixed-hidden").toolbar('show');
-		}		
-
-		// display window sizes for different viewports somewhere
-		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ")";
-		if ( $(".ui-page-active #displayviewport").length === 0 ) {
-			$(".ui-page-active .content").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
-		} else {
-			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
 		}
+		
+		// display viewport information on page changes
+		displayViewport();
+	});
+
+
+	// update viewport display on orientation changes (resize event is more
+	// secure/supported and worked better in this case
+	// http://davidwalsh.name/orientation-change)
+	$(window).on("resize", function() {
+		// display viewport information on page changes
+		displayViewport();
 	});
 
 
@@ -107,5 +119,28 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
 	});
 
+
+// ============================================================================
+// ========== HELPER FUNCTIONS (can be commented out on production) ===========
+// ============================================================================
+
+
+	// display viewport in a paragraph element appended to main's section .content
+	function displayViewport() {
+		// update if viewport is hortizontal or vertical
+		bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+
+		// update img sizes to fit viewport orientation
+		strImgSize = ( bLandscape )? "width: 100vh; height: 100vh;" : "width: 100vw; height: 100vw;";
+		$("img").attr("style", strImgSize);
+		
+		// display window sizes for different viewports somewhere
+		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + bLandscape;
+		if ( $(".ui-page-active #displayviewport").length === 0 ) {
+			$(".ui-page-active .content").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
+		} else {
+			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
+		}
+	}
 
 })(jQuery);

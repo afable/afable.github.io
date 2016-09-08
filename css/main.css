@@ -25,6 +25,16 @@ body {
 	background-color: #fef;
 }
 
+/* make img elements unselectable/undraggable */
+.unselectable {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
 .nav-button {
 	height: 20vh;
 	margin: 0;
