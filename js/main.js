@@ -40,7 +40,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	var strNav = "";
 	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
 	for ( var i = 0; i < arrPages.length; ++i ) {
-		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button"><div class="nav-container"><img src="/img/snowballin_nav.png"></div></a>`
+		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button"><div class="nav-container"><img src="/img/snowballin_nav.png" class="unselectable"></div></a>`
 	}
 
 	// create each page's main section and base image sizes on whether viewport
