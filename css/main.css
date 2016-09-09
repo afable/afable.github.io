@@ -17,10 +17,6 @@ body {
 	background-color: #aaa;
 }
 
-.nav {
-	background-color: #aaa;
-}
-
 /* set image to fit landscape or portrait sizes (for orientation changes) */
 img.landscape { width: 80vh; height: 80vh; }
 img.portrait {	width: 80vw; height: 80vw; }
@@ -79,6 +75,20 @@ img.unselectable {
 	line-height: 100%;
 }
 
+
+.nav {
+	background-color: #aaa;
+}
+.nav-container {
+	overflow: hidden;
+}
+/* nav img */
+.nav-container img {
+	min-width: 100%;
+	height: 11vh;	
+	min-height: 55px;
+	opacity: 0.66;
+}
 /* nav button sizes fixed on top */
 .nav-button {
 	height: 11vh;
