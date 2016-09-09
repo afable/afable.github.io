@@ -25,8 +25,12 @@ body {
 	background-color: #fef;
 }
 
+/* set image to fit landscape or portrait sizes (for orientation changes) */
+img.landscape { width: 100vh; height: 100vh; }
+img.portrait {	width: 100vw; height: 100vw; }
+
 /* make img elements unselectable/undraggable */
-.unselectable {
+img.unselectable {
 	user-drag: none; 
 	user-select: none;
 	-moz-user-select: none;

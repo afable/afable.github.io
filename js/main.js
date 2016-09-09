@@ -1,5 +1,8 @@
 /* main.js: afable 2016 */
 
+// global variables
+var g_bLandscape = true;
+
 // document and window ready functions (test which loads first)
 window.onload = function() { console.log("LOADED window.onload..."); };
 (function() { console.log("LOADED IIFE.."); })();
@@ -11,7 +14,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 	
 	// get if this viewport is hortizontal or vertical
-	var bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+	g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
 
 
 	// initialize page data for all pages
@@ -37,7 +40,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 	// create main's section .content and base image sizes on whether viewport
 	// is landscape vs portrait
-	strImgSize = ( bLandscape )? "width: 50vh; height: 50vh;" : "width: 50vw; height: 50vw;";
+	var strOrientation = ( g_bLandscape )? "landscape" : "portrait";
 
 	// now create the pages by prepending to body (#afable comes last so that
 	// it is the first page element in body)
@@ -50,7 +53,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
 					<section class="content">
-						<a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable" style="` + strImgSize + `"></a>
+						<a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable ` + strOrientation + `"></a>
 					</section>
 				</div><!-- /main -->
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
@@ -128,19 +131,30 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// display viewport in a paragraph element appended to main's section .content
 	function displayViewport() {
 		// update if viewport is hortizontal or vertical
-		bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
 
 		// update img sizes to fit viewport orientation
-		strImgSize = ( bLandscape )? "width: 100vh; height: 100vh;" : "width: 100vw; height: 100vw;";
-		$("img").attr("style", strImgSize);
+		imgSize();
 		
 		// display window sizes for different viewports somewhere
-		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + bLandscape;
+		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
 		if ( $(".ui-page-active #displayviewport").length === 0 ) {
 			$(".ui-page-active .content").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
 		} else {
 			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
 		}
 	}
+
+
+	// fix img size to perfectly fit landscape and portrait orientations
+	function imgSize() {
+		// switch landscape and portrait classes if orientation changes
+		if ( g_bLandscape ) {
+			$("img.portrait").removeClass("portrait").addClass("landscape");
+		} else {
+			$("img.landscape").removeClass("landscape").addClass("portrait");
+		}
+	}
+
 
 })(jQuery);
