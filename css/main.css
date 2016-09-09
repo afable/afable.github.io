@@ -1,33 +1,29 @@
 /* main.css: afable 2016 */
 
-html {
-	height: 100%;
-}
-
 /* bkg color during transitions */
 body {
-	background-color: #fef !important;
+	background-color: #aaa !important;
 }
 
-/* center header nav buttons and footer content */
-.center-content {
+/* center header nav buttons and footer */
+.center {
 	text-align: center;
 	margin: 0 auto;
 }
 
-/* main content wrapper for each page should be full device height */
+/* main  wrapper for each page should be full device height */
 .main {
 	height: 100vh !important;
-	background-color: #fef;
+	background-color: #aaa;
 }
 
 .nav {
-	background-color: #fef;
+	background-color: #aaa;
 }
 
 /* set image to fit landscape or portrait sizes (for orientation changes) */
-img.landscape { width: 100vh; height: 100vh; }
-img.portrait {	width: 100vw; height: 100vw; }
+img.landscape { width: 80vh; height: 80vh; }
+img.portrait {	width: 80vw; height: 80vw; }
 
 /* make img elements unselectable/undraggable */
 img.unselectable {
@@ -39,12 +35,58 @@ img.unselectable {
 	-ms-user-select: none;
 }
 
+/* main polaroid section that has img inside */
+.polaroid {
+	position: relative;
+	background-color: #fafafa;
+	margin: 16vh auto 0;
+	min-width: 320px;
+	width: 50vw;
+	height: 66vh;
+	border-radius: 1%;
+	/* box-shadow */
+	-webkit-box-shadow: 3px 6px 11px 0px #000;
+	-moz-box-shadow: 3px 6px 11px 0px #000;
+	box-shadow: 3px 6px 11px 0px #000;
+}
+/* container for overflow: hidden on greyscale photo */
+.polaroid-container {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-top: 5%;
+	width: 90%;
+	height: 70%;
+}
+/* greyscale photo section of polaroid */
+.polaroid img {
+	position: relative;
+	width: 90%;
+	height: 70%;
+	min-width: 100%;
+	min-height: 100%;
+	border-radius: 2%;
+}
+/* polaroid caption underneath greyscale photo */
+.polaroid p {
+	margin: 0;
+	padding: 3%;
+	text-align: center;
+	font-family: "Reenie Beanie", "Nothing You Could Do";
+	font-size: 2em;
+	color: #888;
+	text-shadow: 0px 0px 1px #888;
+	line-height: 100%;
+}
+
+/* nav button sizes fixed on top */
 .nav-button {
-	height: 20vh;
+	height: 11vh;
+	min-height: 55px;
+	border-radius: 0 !important;
 	margin: 0;
 	padding: 0;
 }
-
 /* handle nav-button-widths to fit the screen perfectly on various viewports */
 @media all and (min-width: 360px) {	.nav-button { width: 10.5vw; } }
 @media all and (min-width: 640px) { .nav-button { width: 10.8vw; } }
