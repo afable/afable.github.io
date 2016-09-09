@@ -1,6 +1,8 @@
 /* main.js: afable 2016 */
 
-// global variables
+// ============================================================================
+// ============================= Global Variables =============================
+// ============================================================================
 var g_bLandscape = true;
 
 // document and window ready functions (test which loads first)
@@ -9,7 +11,10 @@ window.onload = function() { console.log("LOADED window.onload..."); };
 $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 
-// encapsulate js so there are no naming conflicts
+// ============================================================================
+// ========================== Main Javascript Routine =========================
+// ============ ( encapsulate js so there are no naming conflicts ) ===========
+// ============================================================================
 (function($) {
 
 	
@@ -124,10 +129,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 
 // ============================================================================
-// ========== HELPER FUNCTIONS (can be commented out on production) ===========
+// ============================= Helper Functions =============================
+// =================== ( can be commented out for release ) ===================
 // ============================================================================
-
-
 	// display viewport in a paragraph element appended to main's section .content
 	function displayViewport() {
 		// update if viewport is hortizontal or vertical
