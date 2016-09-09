@@ -59,7 +59,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 				<div role="main" class="main ui-content">
 					<section class="polaroid">
 						<div class="polaroid-container"><a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="snowballin" title="view on github"></a></div>
-						<p>Something Obtrustive about OrcaJam, 2016... Javascript.</p>
+						<div class="caption-container">
+							<p>Something Obtrustive about OrcaJam, 2016... Javascript.</p>
+						</div>
 					</section>
 				</div><!-- /main -->
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
