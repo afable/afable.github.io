@@ -95,8 +95,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// is to target all imgs with style attributes)
 		$(".content img").css("opacity", 0);
 		// perform animation to easein main img into view
-		$(".ui-page-active .content img").animate({ opacity: 1 }, "slow", "easeInOutCubic", function () {
-		});
+		$(".ui-page-active .content img").animate({ opacity: 1 }, "slow", "easeInOutCubic");
 
 		// update content and re-adjust viewport
 		updateView();
