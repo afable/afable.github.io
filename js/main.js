@@ -58,7 +58,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
 					<section class="content">
-						<a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable ` + strOrientation + `"></a>
+						<a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="snowballin" title="view on github"></a>
 					</section>
 				</div><!-- /main -->
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center-content" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
@@ -79,20 +79,27 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// in jquerymobile-1.4.5 with jquery-2.2.4
 	$(document).on("pagecontainerchange", function() {
 		// remove any .ui-btn-active that exists in current page
-		var currPage = "#" + $(".ui-page-active").prop("id");
-		$(currPage + " a.ui-btn-active").removeClass("ui-btn-active");
+		$(".ui-page-active a.ui-btn-active").removeClass("ui-btn-active");
 
 		// add .ui-btn-active to the current active page
-		$(currPage + " a[href='" + currPage + "']").addClass("ui-btn-active");
+		var currPage = "#" + $(".ui-page-active").prop("id");
+		$(".ui-page-active a[href='" + currPage + "']").addClass("ui-btn-active");
 
 		// show any hidden ui after page transition (sometimes header and footer
 		//  will be hidden after a transition)
     	if ( $(".ui-fixed-hidden").length ) {
 			$(".ui-fixed-hidden").toolbar('show');
 		}
-		
-		// display viewport information on page changes
-		displayViewport();
+
+		// remove any opacity of all imgs that have opacity (so far best selector
+		// is to target all imgs with style attributes)
+		$(".content img").css("opacity", 0);
+		// perform animation to easein main img into view
+		$(".ui-page-active .content img").animate({ opacity: 1 }, "slow", "easeInOutCubic", function () {
+		});
+
+		// update content and re-adjust viewport
+		updateView();
 	});
 
 
@@ -100,8 +107,8 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// secure/supported and worked better in this case
 	// http://davidwalsh.name/orientation-change)
 	$(window).on("resize", function() {
-		// display viewport information on page changes
-		displayViewport();
+		// update content and re-adjust viewport
+		updateView();
 	});
 
 
@@ -132,14 +139,21 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 // ============================= Helper Functions =============================
 // =================== ( can be commented out for release ) ===================
 // ============================================================================
+	// update content and re-adjust viewport for any orientation and
+	// pagecontainer changes
+	function updateView() {
+		// display viewport information on page changes
+		displayViewport();
+		
+		// update img sizes to fit viewport orientation
+		imgSize();
+	}
+
 	// display viewport in a paragraph element appended to main's section .content
 	function displayViewport() {
 		// update if viewport is hortizontal or vertical
 		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
 
-		// update img sizes to fit viewport orientation
-		imgSize();
-		
 		// display window sizes for different viewports somewhere
 		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
 		if ( $(".ui-page-active #displayviewport").length === 0 ) {
