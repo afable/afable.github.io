@@ -25,14 +25,14 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// initialize page data for all pages
 	var arrPages = [];
 	arrPages.push( {id: "afable", data: "<p>Paragraph element for #afable.</p>"} );
-	arrPages.push( {id: "hamtarro", data: "<p>Because he likes cheese.</p>"} );
-	arrPages.push( {id: "slamsorrow", data: "<p>Young HARLEM.</p>"} );
-	arrPages.push( {id: "contraBand", data: "<p>HARLEM.</p>"} );
-	arrPages.push( {id: "country", data: "<p>sizlzling turkey on a stikck.</p>"} );
-	arrPages.push( {id: "ROAD", data: "<p>mayheM makers.</p>"} );
-	arrPages.push( {id: "machi", data: "<p>it means town.</p>"} );
-	arrPages.push( {id: "sound", data: "<p>scent of your hair.</p>"} );
-	arrPages.push( {id: "realize", data: "<p>that you twirl in your fingers.</p>"} );
+	arrPages.push( {id: "fathom", data: "<p>Because he likes cheese.</p>"} );
+	arrPages.push( {id: "snowballin", data: "<p>Young HARLEM.</p>"} );
+	arrPages.push( {id: "prodCons", data: "<p>HARLEM.</p>"} );
+	arrPages.push( {id: "healthytweets", data: "<p>sizlzling turkey on a stikck.</p>"} );
+	arrPages.push( {id: "squid", data: "<p>mayheM makers.</p>"} );
+	arrPages.push( {id: "firstWorldCrawler", data: "<p>it means town.</p>"} );
+	arrPages.push( {id: "fracCalc", data: "<p>scent of your hair.</p>"} );
+	arrPages.push( {id: "effs", data: "<p>that you twirl in your fingers.</p>"} );
 
 
 	// create pages dynamically
@@ -58,7 +58,15 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
 					<section class="polaroid">
-						<div class="polaroid-container"><a href="https://github.com/afable" target="_blank"><img src="/img/snowballin.png" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="snowballin"></a></div>
+						<div data-role="popup" id="info-popup` + i + `" data-overlay-theme="b" data-theme="b" data-corners="false">
+							<p>This is a completely basic popup, no options set.</p>
+							<img src="/img/` + arrPages[i].id + `.png">
+						</div>
+						<div class="polaroid-container">
+							<a href="#info-popup` + i + `" data-rel="popup" data-transition="pop">
+								<img src="/img/snowballin.png" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="snowballin">
+							</a>
+						</div>
 						<div class="caption-container">
 							<p>Something Obtrustive about OrcaJam, 2016... Javascript.</p>
 						</div>
