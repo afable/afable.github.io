@@ -131,6 +131,13 @@ table.polaroid-container {
 	border-radius: 50%;
 }
 
+/* polaroid anchor tags do not have hover or link styles since the .polaroid
+   will tilt a little when hovering over it */
+.polaroid a, .polaroid a:hover {
+	color: #000;
+	text-decoration: none;
+}
+
 /* polaroid now starts off -1deg rotated.. hover fixes rotation */
 .rotate {
     -webkit-transform: rotate(0.6deg);
@@ -168,8 +175,7 @@ table.polaroid-container {
 .polaroid {
 	display: block;
 	background-color: #f3f3f3;
-	min-width: 250px;
-	width: 50vw;
+	width: 60vw;
 	height: auto;
 	padding-bottom: 7px;
 	border-radius: 1%;
@@ -217,6 +223,62 @@ table.polaroid-container {
 @media all and (min-width: 640px) { .polaroid p { font-size: 1.6em; } }
 @media all and (min-width: 800px) { .polaroid p { font-size: 2em; } }
 @media all and (min-width: 1200px) { .polaroid p { font-size: 2.4em; } }
+
+/* the img gesture hand pointer that tells user to click on photo,
+   start .img-gesture-popup hidden and only show when mouseover img-gesture
+   icon */
+.img-gesture-popup {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 30%;
+	margin: 0;
+	padding: 0;
+	opacity: 0;
+}
+.img-gesture-popup p {
+	color: #000;
+}
+.img-gesture {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 77%;
+	left: 99%;
+	opacity: 0.66;
+	color: #000;
+
+	/* start hand pointing at polaroid */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-transition: 1000ms ease all; 
+    -moz-transition: 1000ms ease all;
+    -o-transition: 1000ms ease all;
+    transition: 1000ms ease all;
+}
+.img-gesture:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
 
 
 /* ========================================================================= */

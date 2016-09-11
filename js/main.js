@@ -120,17 +120,22 @@ window.addEventListener('resize', function(event){
 				<div role="main" class="main ui-content">
 					<table class="polaroid-container">
 						<tr>
-							<td><i class="fa fa-arrow-left fa-3x"></i></td>
+							<td><i class="fa fa-arrow-left fa-3x"></i>
+							</td>
 							<td><section class="polaroid rotate">
-								<div class="polaroid-img-container">
-									<a href="` + arrPages[i].url + `" target="_blank">
-										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `"></a>
-								</div>
-								<div class="polaroid-p-container">
-									<p>` + arrPages[i].caption + `</p>
-								</div>
-							</section></td>
-							<td><i class="fa fa-arrow-right fa-3x"></i></td>
+								<a href="` + arrPages[i].url + `" target="_blank">
+									<div class="polaroid-img-container">
+										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `">
+									</div>
+									<div class="polaroid-p-container">
+										<p>` + arrPages[i].caption + `</p>
+									</div>
+								</a>
+								<i class="img-gesture fa fa-hand-o-up fa-5x"></i>
+								<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page</p></div></section>
+							</td>
+							<td><i class="fa fa-arrow-right fa-3x"></i>
+							</td>
 						</tr>
 					</table>
 				</div><!-- /main -->
@@ -226,6 +231,13 @@ window.addEventListener('resize', function(event){
 	// change cursor and right-arrow colour on mouseover
 	$(".fa-arrow-right").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
+	});
+
+	// show popup text on hand gesture hover
+	$(".img-gesture").on("mouseover", function () {
+		$(".img-gesture-popup").fadeTo("slow", 0.66);
+	}).on("mouseout", function () {
+		$(".img-gesture-popup").fadeTo("slow", 0);
 	});
 
 
