@@ -10,6 +10,11 @@ window.onload = function() { console.log("LOADED window.onload..."); };
 (function() { console.log("LOADED IIFE.."); })();
 $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
+// show viewport size on re-size (chrome no longer shows it by default)
+window.addEventListener('resize', function(event){
+  console.log("(vw, vh): (" + window.innerWidth + ", " + window.innerHeight + ")");
+});
+
 
 // ============================================================================
 // ========================== Main Javascript Routine =========================
