@@ -1,0 +1,246 @@
+/* main.css: afable 2016 */
+
+/* bkg color during transitions */
+body {
+	background: #f06;
+	background: linear-gradient(45deg, #f06, yellow);
+}
+
+
+/* ========================================================================= */
+/* ========================= Global Helper Styles ========================== */
+/* ========================================================================= */
+/* center elements such as header nav buttons and footer */
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* set image to fit landscape or portrait sizes (for orientation changes) */
+img.landscape { width: 80vh; height: 80vh; }
+img.portrait {	width: 80vw; height: 80vw; }
+
+/* make img elements unselectable/undraggable */
+img.unselectable {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+/* all anchor tag colours */
+a.ui-link {
+	color: #000 !important;
+}
+a.ui-link:hover {
+	color: #e00 !important;
+}
+
+
+/* ========================================================================= */
+/* ====================== Navigation Header & Buttons ====================== */
+/* ========================================================================= */
+/* header nav & buttons */
+.header {
+	opacity: 0.66;
+}
+.nav a:hover {
+	box-shadow: -1px 0px 11px rgba(0, 85, 153, 0.5);
+}
+.nav a:active {
+	box-shadow: -1px 0px 11px rgba(0, 85, 153, 0.5);
+	background-color: #e00 !important;
+	color: #ee0 !important;
+}
+.nav a {
+	background-color: #e9e9e9 !important;
+	border: 0 !important;
+	color: #000 !important;
+}
+/* leave a shadow on the currently active page's button */
+.nav-active {
+	box-shadow: -1px 0px 11px rgba(0, 85, 153, 0.5);
+}
+/* nav button sizes fixed on top */
+.nav-button {
+	height: 7vh;
+	line-height: 7vh;
+	min-height: 40px;
+	margin: 0;
+	padding: 15px 0 0 0;
+	border-radius: 0 !important;
+}
+/* handle nav-button-widths to fit the screen perfectly on various viewports */
+@media all and (min-width: 360px) {	.nav-button { width: 10.5vw; } }
+@media all and (min-width: 640px) { .nav-button { width: 10.8vw; } }
+@media all and (min-width: 943px) { .nav-button { width: 10.9vw; } }
+
+
+/* ========================================================================= */
+/* ========================= Main Content Section ========================== */
+/* ========================================================================= */
+/* main  wrapper for each page should be full device height */
+.main {
+	height: 100vh !important;
+	position: relative;
+	background: #f06;
+	background: linear-gradient(45deg, #f06, yellow);
+}
+
+/* the main polaroid table wrapper (has the arrows and polaroid inside ) */
+table.polaroid-container {
+    margin: auto;
+    position: absolute;
+	width: 100vw; 
+    height: 100vh;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/* each polaroid table data should be evenly split */
+.polaroid-container td {
+	width: 33vw;
+	text-align: center;
+}
+
+.fa-arrow-left, .fa-arrow-right {
+	color: #000;
+	opacity: 0.66;
+	transition: all 0.5s ease;
+}
+/* arrow transitions start slowly as defined above */
+.fa-arrow-left:hover, .fa-arrow-right:hover {
+	background: #000;
+	padding: 20px;	
+	border: 1px solid black;
+	border-radius: 50%;
+}
+/* returning transitions 'pop' faster for better UX */
+.fa-arrow-left:active, .fa-arrow-right:active {
+	transition-duration: 0.2s;
+	background: inherit;
+	padding: 0;	
+	border: none;
+	border-radius: 50%;
+}
+/* arrows change colour on hover (different colour for different arrow) */
+.right-arrow-hover {
+	color: #e00;	
+}
+.left-arrow-hover {
+	color:#ee0;
+}
+
+/* polaroid now starts off -1deg rotated.. hover fixes rotation */
+.rotate {
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    -o-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-transition: 300ms ease all;
+    -moz-transition: 300ms ease all;
+    -o-transition: 300ms ease all;
+    transition: 300ms ease all;
+}
+.rotate:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+/* main polaroid section that has img inside */
+.polaroid {
+	background-color: #f3f3f3;
+	min-width: 250px;
+	width: 50vw;
+	min-height: 290px;
+	height: 66vh;
+	border-radius: 1%;
+	/* box-shadow */
+	-webkit-box-shadow: 3px 6px 11px 0px #000;
+	-moz-box-shadow: 3px 6px 11px 0px #000;
+	box-shadow: 3px 6px 11px 0px #000;
+}
+/* container for overflow: hidden on greyscale photo */
+.polaroid-img-container {
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-top: 5%;
+	width: 90%;
+	height: 70%;
+}
+/* greyscale photo section of polaroid */
+.polaroid img {
+	position: relative;
+	width: 90%;
+	height: 70%;
+	min-width: 100%;
+	min-height: 100%;
+	border-radius: 2%;
+}
+/* div container to use display: table/table-cell to veritically center p */
+.polaroid-p-container {
+	display: table;
+	height: 25%;
+	margin: 0 auto;
+}
+/* polaroid caption underneath greyscale photo */
+.polaroid p {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0;
+	text-align: center;
+	font-family: "Reenie Beanie", "Nothing You Could Do";
+	font-size: 2em;
+	color: #666;
+	text-shadow: 0px 0px 1px #666;
+	line-height: 100%;
+}
+/* need a smaller font for small phone devices or else text won't fit screen */
+@media all and (max-width: 640px) { .polaroid p { font-size: 1.6em; } }
+
+
+/* ========================================================================= */
+/* ============================ Footer Section ============================= */
+/* ========================================================================= */
+div.footer {
+	display: table;
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	opacity: 0.66;
+}
+footer {
+	display: table-cell;
+	vertical-align: middle;
+}
+footer p {
+	font-family: monospace;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+
+
