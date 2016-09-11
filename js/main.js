@@ -120,9 +120,9 @@ window.addEventListener('resize', function(event){
 				<div role="main" class="main ui-content">
 					<table class="polaroid-container">
 						<tr>
-							<td><i class="fa fa-arrow-left fa-3x"></i>
+							<td class="td-arrow"><i class="fa fa-arrow-left fa-3x"></i>
 							</td>
-							<td><section class="polaroid rotate">
+							<td class="td-polaroid"><section class="polaroid rotate">
 								<a href="` + arrPages[i].url + `" target="_blank">
 									<div class="polaroid-img-container">
 										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `">
@@ -134,7 +134,7 @@ window.addEventListener('resize', function(event){
 								<i class="img-gesture fa fa-hand-o-up fa-5x"></i>
 								<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page</p></div></section>
 							</td>
-							<td><i class="fa fa-arrow-right fa-3x"></i>
+							<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>
 							</td>
 						</tr>
 					</table>

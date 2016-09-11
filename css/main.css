@@ -102,8 +102,12 @@ table.polaroid-container {
     right: 0;
 }
 /* each polaroid table data should be evenly split */
-.polaroid-container td {
-	width: 33vw;
+.polaroid-container .td-arrow {
+	width: 25vw;
+	text-align: center;
+}
+.polaroid-container .td-polaroid {
+	width: 50vw;
 	text-align: center;
 }
 
@@ -175,7 +179,7 @@ table.polaroid-container {
 .polaroid {
 	display: block;
 	background-color: #f3f3f3;
-	width: 60vw;
+	width: 100%;
 	height: auto;
 	padding-bottom: 7px;
 	border-radius: 1%;
@@ -303,6 +307,6 @@ footer p {
 	padding: 0;
 }
 /* responsive font for footer */
-@media all and (min-width: 1200px) { footer p { font-size: 1.2em; } }
+@media all and (min-width: 800px) { footer p { font-size: 1.2em; } }
 
 
