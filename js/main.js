@@ -40,7 +40,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	var strNav = "";
 	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
 	for ( var i = 0; i < arrPages.length; ++i ) {
-		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button"><div class="nav-container"><img src="/img/snowballin_nav.png" class="unselectable"></div></a>`
+		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button"><i class="fa fa-twitter fa-2x"></i></a>`
 	}
 
 	// create each page's main section and base image sizes on whether viewport
@@ -90,12 +90,11 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// change .ui-btn-active manually as it does not persist after transitions
 	// in jquerymobile-1.4.5 with jquery-2.2.4
 	$(document).on("pagecontainerchange", function() {
-		// remove any .ui-btn-active that exists in current page
-		$(".ui-page-active a.ui-btn-active").removeClass("ui-btn-active");
-
-		// add .ui-btn-active to the current active page
+		// remove any nav-active's that exist
+		$(".nav a.nav-active").removeClass("nav-active");
+		// make current page the nav-active page
 		var currPage = "#" + $(".ui-page-active").prop("id");
-		$(".ui-page-active a[href='" + currPage + "']").addClass("ui-btn-active");
+		$(".ui-page-active a[href='" + currPage + "']").addClass("nav-active");
 
 		// show any hidden ui after page transition (sometimes header and footer
 		//  will be hidden after a transition)
@@ -152,9 +151,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// change cursor and left-arrow colour on mouseover
 	$(".fa-arrow-left").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
-		$(".fa-arrow-left").css("color", "#444");
+		$(".fa-arrow-left").addClass("left-arrow-hover");
 	}).on("mouseout", function () {
-		$(".fa-arrow-left").css("color", "#333");
+		$(".fa-arrow-left").removeClass("left-arrow-hover");
 	});
 
 	// swipe left on right-arrow click
@@ -164,9 +163,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	// change cursor and right-arrow colour on mouseover
 	$(".fa-arrow-right").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
-		$(".fa-arrow-right").css("color", "#444");
+		$(".fa-arrow-right").addClass("right-arrow-hover");
 	}).on("mouseout", function () {
-		$(".fa-arrow-right").css("color", "#333");
+		$(".fa-arrow-right").removeClass("right-arrow-hover");
 	});
 
 
