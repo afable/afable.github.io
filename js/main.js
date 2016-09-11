@@ -132,7 +132,7 @@ window.addEventListener('resize', function(event){
 									</div>
 								</a>
 								<i class="img-gesture fa fa-hand-o-up fa-5x"></i>
-								<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page</p></div></section>
+								<div class="img-gesture-popup"><p>Try clicking the polaroid (or bkg) or swiping the page.</p></div></section>
 							</td>
 							<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>
 							</td>
