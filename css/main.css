@@ -137,11 +137,11 @@ table.polaroid-container {
 
 /* polaroid now starts off -1deg rotated.. hover fixes rotation */
 .rotate {
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
-    -ms-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-    transform: rotate(-1deg);
+    -webkit-transform: rotate(0.6deg);
+    -moz-transform: rotate(0.6deg);
+    -ms-transform: rotate(0.6deg);
+    -o-transform: rotate(0.6deg);
+    transform: rotate(0.6deg);
 
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
