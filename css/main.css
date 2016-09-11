@@ -166,11 +166,12 @@ table.polaroid-container {
 
 /* main polaroid section that has img inside */
 .polaroid {
+	display: block;
 	background-color: #f3f3f3;
 	min-width: 250px;
 	width: 50vw;
-	min-height: 290px;
-	height: 66vh;
+	height: auto;
+	padding-bottom: 7px;
 	border-radius: 1%;
 	/* box-shadow */
 	-webkit-box-shadow: 3px 6px 11px 0px #000;
@@ -204,6 +205,7 @@ table.polaroid-container {
 	display: table-cell;
 	vertical-align: middle;
 	margin: 0;
+	padding-top: 7px;
 	text-align: center;
 	font-family: "Reenie Beanie", "Nothing You Could Do";
 	font-size: 1.4em;
