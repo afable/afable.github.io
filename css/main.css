@@ -32,10 +32,10 @@ img.unselectable {
 
 /* all anchor tag colours */
 a.ui-link {
-	color: #000;
+	color: #000 !important;
 }
 a.ui-link:hover {
-	color: #e00;
+	color: #e00 !important;
 }
 
 
@@ -65,8 +65,8 @@ a.ui-link:hover {
 }
 /* nav button sizes fixed on top */
 .nav-button {
-	height: 11vh;
-	line-height: 11vh;
+	height: 7vh;
+	line-height: 7vh;
 	min-height: 40px;
 	margin: 0;
 	padding: 15px 0 0 0;
@@ -93,8 +93,8 @@ a.ui-link:hover {
 table.polaroid-container {
     margin: auto;
     position: absolute;
-	width: 90vw; 
-    height: 90vh;
+	width: 100vw; 
+    height: 100vh;
 
     top: 0;
     bottom: 0;

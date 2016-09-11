@@ -31,8 +31,6 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	arrPages.push( {id: "healthytweets", data: "<p>sizlzling turkey on a stikck.</p>"} );
 	arrPages.push( {id: "squid", data: "<p>mayheM makers.</p>"} );
 	arrPages.push( {id: "firstWorldCrawler", data: "<p>it means town.</p>"} );
-	arrPages.push( {id: "fracCalc", data: "<p>scent of your hair.</p>"} );
-	arrPages.push( {id: "effs", data: "<p>that you twirl in your fingers.</p>"} );
 
 
 	// create pages dynamically
