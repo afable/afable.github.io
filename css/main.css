@@ -189,10 +189,8 @@ table.polaroid-container {
 /* greyscale photo section of polaroid */
 .polaroid img {
 	position: relative;
-	width: 90%;
-	height: 70%;
-	min-width: 100%;
-	min-height: 100%;
+	width: 100%;
+	height: 100%;
 	border-radius: 2%;
 }
 /* div container to use display: table/table-cell to veritically center p */
@@ -208,13 +206,15 @@ table.polaroid-container {
 	margin: 0;
 	text-align: center;
 	font-family: "Reenie Beanie", "Nothing You Could Do";
-	font-size: 2em;
+	font-size: 1.4em;
 	color: #666;
 	text-shadow: 0px 0px 1px #666;
 	line-height: 100%;
 }
-/* need a smaller font for small phone devices or else text won't fit screen */
-@media all and (max-width: 640px) { .polaroid p { font-size: 1.6em; } }
+/* responsive font for different device viewports or caption won't fit screen */
+@media all and (min-width: 640px) { .polaroid p { font-size: 1.6em; } }
+@media all and (min-width: 800px) { .polaroid p { font-size: 2em; } }
+@media all and (min-width: 1200px) { .polaroid p { font-size: 2.4em; } }
 
 
 /* ========================================================================= */
@@ -224,7 +224,8 @@ div.footer {
 	display: table;
 	margin: 0;
 	padding: 0;
-	height: 40px;
+	min-height: 40px;
+	height: 7vh;
 	opacity: 0.66;
 }
 footer {
@@ -237,6 +238,7 @@ footer p {
 	margin: 0;
 	padding: 0;
 }
-
+/* responsive font for footer */
+@media all and (min-width: 1200px) { footer p { font-size: 1.2em; } }
 
 
