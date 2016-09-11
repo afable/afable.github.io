@@ -57,20 +57,21 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 					<nav class="nav">` + strNav + `</nav>
 				</div><!-- /header -->
 				<div role="main" class="main ui-content">
-					<section class="polaroid">
-						<div data-role="popup" id="info-popup` + i + `" data-overlay-theme="b" data-theme="b" data-corners="false">
-							<p>This is a completely basic popup, no options set.</p>
-							<img src="/img/` + arrPages[i].id + `.png">
-						</div>
-						<div class="polaroid-container">
-							<a href="#info-popup` + i + `" data-rel="popup" data-transition="pop">
+					<table class="polaroid-container"><tr>
+					<td><i class="fa fa-arrow-left fa-3x"></i></td>
+					<td><section class="polaroid">
+						<div class="polaroid-img-container">
+							<a href="http://www.google.com" target="_blank">
 								<img src="/img/snowballin.png" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="snowballin">
 							</a>
 						</div>
-						<div class="caption-container">
+						<div class="polaroid-p-container">
 							<p>Something Obtrustive about OrcaJam, 2016... Javascript.</p>
 						</div>
-					</section>
+					</section></td>
+					<td><i class="fa fa-arrow-right fa-3x"></i></td>
+					</tr>
+					</table>
 				</div><!-- /main -->
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
 					<footer> 
@@ -143,6 +144,31 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		var prevPage = ( arrPages[iPage-1] === undefined )? currPage : arrPages[iPage-1].id;
 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
 	});
+
+	// swipe right on left-arrow click
+	$(".fa-arrow-left").on("click", function () {
+		$(document).trigger("swiperight");
+	});
+	// change cursor and left-arrow colour on mouseover
+	$(".fa-arrow-left").on("mouseover", function () {
+		$(this).css("cursor", "pointer");
+		$(".fa-arrow-left").css("color", "#444");
+	}).on("mouseout", function () {
+		$(".fa-arrow-left").css("color", "#333");
+	});
+
+	// swipe left on right-arrow click
+	$(".fa-arrow-right").on("click", function () {
+		$(document).trigger("swipeleft");
+	});
+	// change cursor and right-arrow colour on mouseover
+	$(".fa-arrow-right").on("mouseover", function () {
+		$(this).css("cursor", "pointer");
+		$(".fa-arrow-right").css("color", "#444");
+	}).on("mouseout", function () {
+		$(".fa-arrow-right").css("color", "#333");
+	});
+
 
 
 // ============================================================================
