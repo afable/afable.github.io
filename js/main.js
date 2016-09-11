@@ -24,13 +24,60 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
 	// initialize page data for all pages
 	var arrPages = [];
-	arrPages.push( {id: "afable", data: "<p>Paragraph element for #afable.</p>"} );
-	arrPages.push( {id: "fathom", data: "<p>Because he likes cheese.</p>"} );
-	arrPages.push( {id: "snowballin", data: "<p>Young HARLEM.</p>"} );
-	arrPages.push( {id: "prodCons", data: "<p>HARLEM.</p>"} );
-	arrPages.push( {id: "healthytweets", data: "<p>sizlzling turkey on a stikck.</p>"} );
-	arrPages.push( {id: "squid", data: "<p>mayheM makers.</p>"} );
-	arrPages.push( {id: "firstWorldCrawler", data: "<p>it means town.</p>"} );
+	arrPages.push( {id: "afable",
+		icon: "fa-user",
+		img: "jpg", 
+		url: "#",
+		title: "#afable, @superafable",
+		caption: "<p>That's me. I like video games and the web.<br>Swipe for more.</p>"} );
+	arrPages.push( {id: "fathom",
+		icon: "fa-eye",
+		img: "jpg",
+		url: "http://fathomgame.github.io/",
+		title: "Play the game",
+		caption: "<p>A game I made with friends @OrcaJam2015 &mdash; a 48 hour game jam.</p>"} );
+	arrPages.push( {id: "snowballin",
+		icon: "fa-circle-o",
+		img: "jpg",
+		url: "http://snowballin.github.io/",
+		title: "Play the game",
+		caption: "<p>Helped some friends @OrcaJam2014.<br>You roll around. It's awesome.</p>"} );
+	arrPages.push( {id: "shoal",
+		icon: "fa-cloud",
+		img: "png",
+		url: "http://web.uvic.ca/~eafable/shoal/index.html",
+		title: "View the website",
+		caption: "<p>A school project to improve Shoal.<br>I made pamphlets.</p>"} );
+	arrPages.push( {id: "healthyTweets",
+		icon: "fa-heartbeat",
+		img: "jpg",
+		url: "http://afable.github.io/HealthyTweets/",
+		title: "View the website",
+		caption: "<p>Healthy tweets by state.<br>Texans tweet a lot about obesity.</p>"} );
+	arrPages.push( {id: "firstGameEngine",
+		icon: "fa-gamepad",
+		img: "jpg",
+		url: "https://www.youtube.com/watch?v=Wea4-eTkD1A",
+		title: "Watch demo (source in description)",
+		caption: "<p>My first game engine &mdash; a simple platformer.<br>Still took me a month.</p>"} );
+	arrPages.push( {id: "simpleParticleSystem",
+		icon: "fa-coffee",
+		img: "jpg",
+		url: "https://www.youtube.com/watch?v=DBiua8HTWSg",
+		title: "Watch demo (source in description)",
+		caption: "<p>A very simple particle system.<br>The teapot shoots bubbles.</p>"} );
+	arrPages.push( {id: "simpleRayTracer",
+		icon: "fa-arrows-alt",
+		img: "jpg",
+		url: "http://afable.github.io/images/projects/ray_trace.png",
+		title: "View on GitHub",
+		caption: "<p>A simple ray tracer.<br>You can't maths the tri-force.</p>"} );
+	arrPages.push( {id: "firstWorldCrawler",
+		icon: "fa-star-half-o",
+		img: "jpg",
+		url: "https://www.youtube.com/watch?v=Xcm5j0kkxO0",
+		title: "Watch demo (source in description)",
+		caption: "<p>A simple world crawler (+1 star hippie).</p>"} );
 
 
 	// create pages dynamically
@@ -38,7 +85,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	var strNav = "";
 	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
 	for ( var i = 0; i < arrPages.length; ++i ) {
-		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button"><i class="fa fa-twitter fa-2x"></i></a>`
+		strNav += `<a href="#` + arrPages[i].id + `" data-role="button" data-transition="` + arrStrTransitions[i % arrStrTransitions.length] + `" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button"><i class="fa ` + arrPages[i].icon + ` fa-2x"></i></a>`
 	}
 
 	// create each page's main section and base image sizes on whether viewport
@@ -51,31 +98,36 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// create header (from previously created strNav), main, and footer
 		var newPage = $(`
 			<div data-role=page id=` + arrPages[i].id + ` class=ui-page>
+			
 				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="true" role="banner"> 
 					<nav class="nav">` + strNav + `</nav>
 				</div><!-- /header -->
+				
 				<div role="main" class="main ui-content">
-					<table class="polaroid-container"><tr>
-					<td><i class="fa fa-arrow-left fa-3x"></i></td>
-					<td><section class="polaroid">
-						<div class="polaroid-img-container">
-							<a href="http://www.google.com" target="_blank">
-								<img src="/img/snowballin.png" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="snowballin">
-							</a>
-						</div>
-						<div class="polaroid-p-container">
-							<p>Something Obtrustive about OrcaJam, 2016... Javascript.</p>
-						</div>
-					</section></td>
-					<td><i class="fa fa-arrow-right fa-3x"></i></td>
-					</tr>
+					<table class="polaroid-container">
+						<tr>
+							<td><i class="fa fa-arrow-left fa-3x"></i></td>
+							<td><section class="polaroid">
+								<div class="polaroid-img-container">
+									<a href="` + arrPages[i].url + `" target="_blank">
+										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `"></a>
+								</div>
+								<div class="polaroid-p-container">
+									<p>` + arrPages[i].caption + `</p>
+								</div>
+							</section></td>
+							<td><i class="fa fa-arrow-right fa-3x"></i></td>
+						</tr>
 					</table>
 				</div><!-- /main -->
+
 				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
 					<footer> 
-						<p>Created by <a href="#afable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>
+					
+						<p>Created by <a href="#afable" title="#afable, @superafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>
 					</footer>
 				</div><!-- /footer -->
+
 			</div>
 		`);
 
@@ -126,8 +178,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// get current page and transition to next page
 		var currPage = $(".ui-page-active").prop("id");
 		var iPage = arrPages.findIndex(p => p.id === currPage);
-		// stay on current page if we are on the last page
-		var nextPage = ( arrPages[iPage+1] === undefined )? currPage : arrPages[iPage+1].id;
+		// if we are on the last page, go to first page
+		var FIRST_PAGE = 0;
+		var nextPage = ( arrPages[iPage+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iPage+1].id;
 		$.mobile.changePage("#" + nextPage, { transition: 'flow', reverse: false });
 	});
 
@@ -137,8 +190,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		// get current page and transition to previous page
 		var currPage = $(".ui-page-active").prop("id");
 		var iPage = arrPages.findIndex(p => p.id === currPage);
-		// stay on current page if we are on the first page
-		var prevPage = ( arrPages[iPage-1] === undefined )? currPage : arrPages[iPage-1].id;
+		// if we are on the first page, go to the last page
+		var LAST_PAGE = arrPages.length-1;
+		var prevPage = ( arrPages[iPage-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iPage-1].id;
 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
 	});
 

@@ -122,7 +122,7 @@ table.polaroid-container {
 	background-color: #f3f3f3;
 	min-width: 250px;
 	width: 50vw;
-	min-height: 280px;
+	min-height: 290px;
 	height: 66vh;
 	border-radius: 1%;
 	/* box-shadow */
@@ -151,8 +151,8 @@ table.polaroid-container {
 /* div container to use display: table/table-cell to veritically center p */
 .polaroid-p-container {
 	display: table;
-	/*background-color: #f00;*/
 	height: 25%;
+	margin: 0 auto;
 }
 /* polaroid caption underneath greyscale photo */
 .polaroid p {
@@ -166,6 +166,8 @@ table.polaroid-container {
 	text-shadow: 0px 0px 1px #666;
 	line-height: 100%;
 }
+/* need a smaller font for small phone devices or else text won't fit screen */
+@media all and (max-width: 640px) { .polaroid p { font-size: 1.6em; } }
 
 
 /* ========================================================================= */
