@@ -208,9 +208,6 @@ window.addEventListener('resize', function(event){
 	// change cursor and left-arrow colour on mouseover
 	$(".fa-arrow-left").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
-		$(".fa-arrow-left").addClass("left-arrow-hover");
-	}).on("mouseout", function () {
-		$(".fa-arrow-left").removeClass("left-arrow-hover");
 	});
 
 	// swipe left on right-arrow click
@@ -220,9 +217,6 @@ window.addEventListener('resize', function(event){
 	// change cursor and right-arrow colour on mouseover
 	$(".fa-arrow-right").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
-		$(".fa-arrow-right").addClass("right-arrow-hover");
-	}).on("mouseout", function () {
-		$(".fa-arrow-right").removeClass("right-arrow-hover");
 	});
 
 

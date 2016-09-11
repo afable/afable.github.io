@@ -119,6 +119,9 @@ table.polaroid-container {
 	border: 1px solid black;
 	border-radius: 50%;
 }
+/* arrows change colour on hover (different colour for different arrow) */
+.fa-arrow-left:hover { color: #e00; }
+.fa-arrow-right:hover { color: #ee0; }
 /* returning transitions 'pop' faster for better UX */
 .fa-arrow-left:active, .fa-arrow-right:active {
 	transition-duration: 0.2s;
@@ -126,13 +129,6 @@ table.polaroid-container {
 	padding: 0;	
 	border: none;
 	border-radius: 50%;
-}
-/* arrows change colour on hover (different colour for different arrow) */
-.right-arrow-hover {
-	color: #e00;	
-}
-.left-arrow-hover {
-	color:#ee0;
 }
 
 /* polaroid now starts off -1deg rotated.. hover fixes rotation */
