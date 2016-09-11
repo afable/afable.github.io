@@ -69,13 +69,20 @@ img.unselectable {
 .main {
 	height: 100vh !important;
 	background-color: #aaa;
+	position: relative;
+
 }
 
-.polaroid-container {
-	position: relative;
-	overflow: hidden;
-	margin: 13vh auto 0;
-	background-color: #f0f;
+table.polaroid-container {
+    margin: auto;
+    position: absolute;
+	width: 90vw; 
+    height: 90vh;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .polaroid-container td {
@@ -88,7 +95,7 @@ img.unselectable {
 	background-color: #fafafa;
 	min-width: 250px;
 	width: 50vw;
-	min-height: 250px;
+	min-height: 280px;
 	height: 66vh;
 	border-radius: 1%;
 	/* box-shadow */
