@@ -107,7 +107,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 					<table class="polaroid-container">
 						<tr>
 							<td><i class="fa fa-arrow-left fa-3x"></i></td>
-							<td><section class="polaroid">
+							<td><section class="polaroid rotate">
 								<div class="polaroid-img-container">
 									<a href="` + arrPages[i].url + `" target="_blank">
 										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `"></a>
@@ -219,7 +219,6 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	}).on("mouseout", function () {
 		$(".fa-arrow-right").removeClass("right-arrow-hover");
 	});
-
 
 
 // ============================================================================
