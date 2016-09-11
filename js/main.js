@@ -32,7 +32,7 @@ window.addEventListener('resize', function(event){
 	arrPages.push( {id: "afable",
 		icon: "fa-user",
 		img: "jpg", 
-		url: "#",
+		url: "https://www.linkedin.com/in/erik-afable-176a3231",
 		title: "#afable, @superafable",
 		caption: "<p>That's me. I like video games and the web.<br>Swipe for more.</p>"} );
 	arrPages.push( {id: "fathom",
