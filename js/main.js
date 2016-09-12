@@ -131,7 +131,7 @@ window.addEventListener('resize', function(event){
 										<p>` + arrPages[i].caption + `</p>
 									</div>
 								</a>
-								<i class="img-gesture fa fa-hand-o-up fa-5x"></i>
+								<i class="img-gesture fa fa-hand-o-up fa-5x"><p>click<br>me</p></i>
 								<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>
 							</td>
 							<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>
@@ -260,6 +260,19 @@ window.addEventListener('resize', function(event){
 	$(".img-gesture").on("mouseout", function () {
 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
 	});
+
+	// fade in the "click me" text 3 seconds after this js has loaded
+	window.setTimeout(function () {
+		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
+	}, 3000);
+	// when clicking on the gesture, make sure to fade out the "click me" helper
+	// text as user will already know what clicking on the hand pointer does
+	$(".img-gesture").on("click.clickme", function () {
+		if ( $(".ui-page-active .img-gesture p").css("opacity") !== "0" ) {
+			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
+		}
+	});
+
 
 
 // ============================================================================

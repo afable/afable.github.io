@@ -114,7 +114,10 @@ table.polaroid-container {
 .fa-arrow-left, .fa-arrow-right {
 	color: #000;
 	opacity: 0.66;
-	transition: all 0.5s ease;
+    -webkit-transition: 500ms ease all;
+    -moz-transition: 500ms ease all;
+    -o-transition: 500ms ease all;
+	transition: 500ms ease all;
 }
 /* arrow transitions start slowly as defined above */
 .fa-arrow-left:hover, .fa-arrow-right:hover {
@@ -126,9 +129,12 @@ table.polaroid-container {
 /* arrows change colour on hover (different colour for different arrow) */
 .fa-arrow-left:hover { color: #e00; }
 .fa-arrow-right:hover { color: #ee0; }
-/* returning transitions 'pop' faster for better UX */
+/* transitions on click 'pop' faster for better UX */
 .fa-arrow-left:active, .fa-arrow-right:active {
-	transition-duration: 0.2s;
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+	transition-duration: 200ms;
 	background: inherit;
 	padding: 0;	
 	border: none;
@@ -150,6 +156,7 @@ table.polaroid-container {
     -o-transform: rotate(0.6deg);
     transform: rotate(0.6deg);
 
+	/* set origin so that polaroid rotates in place */
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
@@ -168,6 +175,7 @@ table.polaroid-container {
     -o-transform: rotate(0deg);
     transform: rotate(0deg);
 
+	/* set origin so that polaroid rotates in place */
     -webkit-transform-origin: 50% 50%;
     -moz-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
@@ -228,9 +236,7 @@ table.polaroid-container {
 @media all and (min-width: 800px) { .polaroid p { font-size: 2em; } }
 @media all and (min-width: 1200px) { .polaroid p { font-size: 2.4em; } }
 
-/* the img gesture hand pointer that tells user to click on photo,
-   start .img-gesture-popup hidden and only show when mouseover img-gesture
-   icon */
+/* the pop that appears when user hovers/clicks on hand pointer */
 .img-gesture-popup {
 	position: absolute;
 	top: 0;
@@ -243,6 +249,20 @@ table.polaroid-container {
 .img-gesture-popup p {
 	color: #000;
 }
+/* the "click me" text under the img gesture pointer hand */
+.img-gesture p {
+	position: absolute;
+	top: 95%;
+	left: 35%;
+	font-family: monospace;
+	color: #000;
+	font-size: 0.2em;
+	font-weight: bold;
+	opacity: 0;
+}
+/* the img gesture hand pointer that tells user to click on photo,
+   start .img-gesture-popup hidden and only show when mouseover img-gesture
+   icon */
 .img-gesture {
 	position: absolute;
 	margin: 0;
