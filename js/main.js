@@ -177,6 +177,9 @@ window.addEventListener('resize', function(event){
 		// perform animation to easein main img into view
 		$(".ui-page-active section img").animate({ opacity: 1 }, "slow", "easeInOutCubic");
 
+		// start with all navs hidden
+		$(".ui-page-active [data-position='fixed']").toolbar("hide");
+
 		// update sections and re-adjust viewport
 		updateView();
 	});
@@ -222,6 +225,11 @@ window.addEventListener('resize', function(event){
 	// change cursor and left-arrow colour on mouseover
 	$(".fa-arrow-left").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
+		// disable data-tap-toggle of menus when mouseover arrow button
+		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: false });
+	}).on("mouseout", function () {
+		// re-enable tap toggle once mouseout of arrow button
+		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: true });
 	});
 
 	// swipe left on right-arrow click
@@ -231,6 +239,11 @@ window.addEventListener('resize', function(event){
 	// change cursor and right-arrow colour on mouseover
 	$(".fa-arrow-right").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
+		// disable data-tap-toggle of menus when mouseover arrow button
+		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: false });
+	}).on("mouseout", function () {
+		// re-enable tap toggle once mouseout of arrow button
+		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: true });
 	});
 
 	// show popup text on hand gesture hover
