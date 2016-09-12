@@ -132,7 +132,7 @@ window.addEventListener('resize', function(event){
 									</div>
 								</a>
 								<i class="img-gesture fa fa-hand-o-up fa-5x"></i>
-								<div class="img-gesture-popup"><p>Try clicking the polaroid (or bkg) or swiping the page.</p></div></section>
+								<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>
 							</td>
 							<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>
 							</td>
@@ -246,11 +246,19 @@ window.addEventListener('resize', function(event){
 		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: true });
 	});
 
-	// show popup text on hand gesture hover
+	// always show popup text on hand gesture click
+	$(".img-gesture").on("click", function () {
+		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+	});
+	// only show popup text on hand gesture hover if not animating
 	$(".img-gesture").on("mouseover", function () {
-		$(".img-gesture-popup").fadeTo("slow", 0.66);
-	}).on("mouseout", function () {
-		$(".img-gesture-popup").fadeTo("slow", 0);
+		// show popup only if it is not already visible
+		if ( $(".ui-page-active .img-gesture-popup").is(":animated") === false ) {
+			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+		}
+	})
+	$(".img-gesture").on("mouseout", function () {
+		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
 	});
 
 
