@@ -4,6 +4,7 @@
 // ============================= Global Variables =============================
 // ============================================================================
 var g_bLandscape = true;
+var g_bToolbarVisible = false;
 
 // document and window ready functions (test which loads first)
 window.onload = function() { console.log("LOADED window.onload..."); };
@@ -35,63 +36,63 @@ window.addEventListener('resize', function(event){
 		img: "jpg", 
 		url: "https://www.linkedin.com/in/erik-afable-176a3231",
 		title: "#afable, @superafable",
-		caption: "<p>That's me. I like video games and the web.<br>Swipe for more.</p>"} );
+		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
 	arrPages.push( {id: "fathom",
 		icon: "fa-eye",
 		iconTitle: "Look at my fathom game", 
 		img: "jpg",
 		url: "http://fathomgame.github.io/",
 		title: "Play the game",
-		caption: "<p>A game I made with friends @OrcaJam2015 &mdash; a 48 hour game jam.</p>"} );
+		caption: "A game I made with friends @OrcaJam2015 &mdash; a 48 hour game jam."} );
 	arrPages.push( {id: "snowballin",
 		icon: "fa-circle-o",
 		iconTitle: "Look at snowballin", 
 		img: "jpg",
 		url: "http://snowballin.github.io/",
 		title: "Play the game",
-		caption: "<p>Helped some friends @OrcaJam2014.<br>You roll around. It's awesome.</p>"} );
+		caption: "Helped some friends @OrcaJam2014.<br>You roll around. It's awesome."} );
 	arrPages.push( {id: "shoal",
 		icon: "fa-cloud",
 		iconTitle: "Look at my school project about squids", 
 		img: "png",
 		url: "http://web.uvic.ca/~eafable/shoal/index.html",
 		title: "View the website",
-		caption: "<p>A school project to improve Shoal.<br>I made pamphlets.</p>"} );
+		caption: "A school project to improve Shoal.<br>I made pamphlets."} );
 	arrPages.push( {id: "healthyTweets",
 		icon: "fa-heartbeat",
 		iconTitle: "Look at what each state tweets about health", 
 		img: "jpg",
 		url: "http://afable.github.io/HealthyTweets/",
 		title: "View the website",
-		caption: "<p>Healthy tweets by state.<br>Texans tweet a lot about obesity.</p>"} );
+		caption: "Healthy tweets by state.<br>Texans tweet a lot about obesity."} );
 	arrPages.push( {id: "firstGameEngine",
 		icon: "fa-gamepad",
 		iconTitle: "See my first game engine", 
 		img: "jpg",
 		url: "https://www.youtube.com/watch?v=Wea4-eTkD1A",
 		title: "Watch demo (source in description)",
-		caption: "<p>My first game engine &mdash; a simple platformer.<br>Still took me a month.</p>"} );
+		caption: "My first game engine &mdash; a simple platformer.<br>Still took me a month."} );
 	arrPages.push( {id: "simpleParticleSystem",
 		icon: "fa-coffee",
 		iconTitle: "See my first particle system", 
 		img: "jpg",
 		url: "https://www.youtube.com/watch?v=DBiua8HTWSg",
 		title: "Watch demo (source in description)",
-		caption: "<p>A very simple particle system.<br>The teapot shoots bubbles.</p>"} );
+		caption: "A very simple particle system.<br>The teapot shoots bubbles."} );
 	arrPages.push( {id: "simpleRayTracer",
 		icon: "fa-arrows-alt",
 		iconTitle: "Ray tracers can't maths tri-force", 
 		img: "jpg",
 		url: "http://afable.github.io/images/projects/ray_trace.png",
 		title: "View on GitHub",
-		caption: "<p>A simple ray tracer.<br>You can't maths the tri-force.</p>"} );
+		caption: "A simple ray tracer.<br>You can't maths the tri-force."} );
 	arrPages.push( {id: "firstWorldCrawler",
 		icon: "fa-star-half-o",
 		iconTitle: "Crawl the world of star king", 
 		img: "jpg",
 		url: "https://www.youtube.com/watch?v=Xcm5j0kkxO0",
 		title: "Watch demo (source in description)",
-		caption: "<p>A simple world crawler (+1 star hippie).</p>"} );
+		caption: "A simple world crawler (+1 star hippie)."} );
 
 
 	// create pages dynamically
@@ -113,7 +114,7 @@ window.addEventListener('resize', function(event){
 		var newPage = $(`
 			<div data-role=page id=` + arrPages[i].id + ` class=ui-page>
 			
-				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="true" role="banner"> 
+				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" role="banner"> 
 					<nav class="nav">` + strNav + `</nav>
 				</div><!-- /header -->
 				
@@ -123,12 +124,12 @@ window.addEventListener('resize', function(event){
 							<td class="td-arrow"><i class="fa fa-arrow-left fa-3x"></i>
 							</td>
 							<td class="td-polaroid"><section class="polaroid rotate">
-								<a href="` + arrPages[i].url + `" target="_blank">
+								<a href="` + arrPages[i].url + `" target="_blank" class="in-polaroid">
 									<div class="polaroid-img-container">
-										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + `" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `">
+										<img src="/img/` + arrPages[i].id + `.` + arrPages[i].img + `" class="unselectable ` + strOrientation + ` in-polaroid" style="opacity: 0" alt="` + arrPages[i].id + `" title="` + arrPages[i].title + `">
 									</div>
 									<div class="polaroid-p-container">
-										<p>` + arrPages[i].caption + `</p>
+										<p class="in-polaroid">` + arrPages[i].caption + `</p>
 									</div>
 								</a>
 								<i class="img-gesture fa fa-hand-o-up fa-5x"><p>click<br>me</p></i>
@@ -140,7 +141,7 @@ window.addEventListener('resize', function(event){
 					</table>
 				</div><!-- /main -->
 
-				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="true">
+				<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
 					<footer> 
 					
 						<p>Created by <a href="#afable" title="#afable, @superafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>
@@ -159,8 +160,13 @@ window.addEventListener('resize', function(event){
 	// links can fit on one line
 	var vwNavLink = Math.floor(100 / arrPages.length);
 	$(".nav-button").css("width", vwNavLink + "vw");	
-	console.log(vwNavLink);
 
+
+	// check if toolbar (header & footer) starts as hidden
+	if ( !g_bToolbarVisible ) {
+		showToolbar(g_bToolbarVisible);
+	}
+	
 
 	// change .ui-btn-active manually as it does not persist after transitions
 	// in jquerymobile-1.4.5 with jquery-2.2.4
@@ -183,11 +189,42 @@ window.addEventListener('resize', function(event){
 		// perform animation to easein main img into view
 		$(".ui-page-active section img").animate({ opacity: 1 }, "slow", "easeInOutCubic");
 
-		// start with all navs hidden
-		$(".ui-page-active [data-position='fixed']").toolbar("hide");
+		// if toolbars are hidden, make sure to manually hide them on pagecontainerchange
+		// since they always start shown by default
+		if ( !g_bToolbarVisible ) {
+			$(".ui-page-active [data-position='fixed']").toolbar("hide");
+		}
 
 		// update sections and re-adjust viewport
 		updateView();
+	});
+
+
+	// toolbar (header & footer) will remain transparent unless specifically 
+	// wanted, i.e. user clicks on img-gesture hand pointer or clicks
+	// somewhere on the background
+	$("tr").on("click", function (e) {
+		// $("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+
+		// get the element that was clicked, show toolbar as long as the arrows
+		// and polaroid weren't clicked
+		var senderElement = $(e.target);
+		if ( !senderElement.hasClass("fa-arrow-left") &&
+			!senderElement.hasClass("fa-arrow-right") &&
+			!senderElement.hasClass("in-polaroid") )
+		{
+			// show toolbars if they aren't already visible 
+			if ( !g_bToolbarVisible ) {
+				g_bToolbarVisible = true;
+				showToolbar(g_bToolbarVisible);
+				$(".ui-page-active [data-position='fixed']").toolbar("show");
+			// otherwise, hide toolbars if they are visible (with a slight delay)
+			} else {
+				g_bToolbarVisible = false;
+				showToolbar(g_bToolbarVisible);
+				$(".ui-page-active [data-position='fixed']").toolbar("hide");
+			}
+		}
 	});
 
 
@@ -231,11 +268,6 @@ window.addEventListener('resize', function(event){
 	// change cursor and left-arrow colour on mouseover
 	$(".fa-arrow-left").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
-		// disable data-tap-toggle of menus when mouseover arrow button
-		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: false });
-	}).on("mouseout", function () {
-		// re-enable tap toggle once mouseout of arrow button
-		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: true });
 	});
 
 	// swipe left on right-arrow click
@@ -245,11 +277,6 @@ window.addEventListener('resize', function(event){
 	// change cursor and right-arrow colour on mouseover
 	$(".fa-arrow-right").on("mouseover", function () {
 		$(this).css("cursor", "pointer");
-		// disable data-tap-toggle of menus when mouseover arrow button
-		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: false });
-	}).on("mouseout", function () {
-		// re-enable tap toggle once mouseout of arrow button
-		$(".ui-page-active [data-position='fixed']").toolbar({ tapToggle: true });
 	});
 
 	// always show popup text on hand gesture click
@@ -278,6 +305,9 @@ window.addEventListener('resize', function(event){
 			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
 		}
 	});
+
+
+	
 
 
 
@@ -318,6 +348,17 @@ window.addEventListener('resize', function(event){
 			$("img.portrait").removeClass("portrait").addClass("landscape");
 		} else {
 			$("img.landscape").removeClass("landscape").addClass("portrait");
+		}
+	}
+
+	// show or unshow the toolbars (header & footer)
+	function showToolbar(bShow) {
+		if ( bShow ) {
+			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+		} else {
+			window.setTimeout(function() {
+				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
+			}, 200);
 		}
 	}
 
