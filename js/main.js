@@ -155,6 +155,12 @@ window.addEventListener('resize', function(event){
 		newPage.prependTo( $("body") );
 	}
 
+	// update the nav link widths by (100vw / # buttons) and floor so all
+	// links can fit on one line
+	var vwNavLink = Math.floor(100 / arrPages.length);
+	$(".nav-button").css("width", vwNavLink + "vw");	
+	console.log(vwNavLink);
+
 
 	// change .ui-btn-active manually as it does not persist after transitions
 	// in jquerymobile-1.4.5 with jquery-2.2.4

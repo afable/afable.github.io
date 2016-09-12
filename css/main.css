@@ -65,17 +65,22 @@ a.ui-link:hover {
 }
 /* nav button sizes fixed on top */
 .nav-button {
+	margin: 0;
+	min-height: 40px;
+	/* 11vw covers 9 nav buttons (100vw / 9 buttons = 11 vw/button) but this
+	   will be changed dynamically depending on the number of buttons */
+	width: 11vw;
 	height: 7vh;
 	line-height: 7vh;
-	min-height: 40px;
-	margin: 0;
+	/* need paddig offset since line-height doesn't perfectly vertically center
+	   the nav icons (there's a bit of a top offset) */
 	padding: 15px 0 0 0;
 	border-radius: 0 !important;
 }
 /* handle nav-button-widths to fit the screen perfectly on various viewports */
-@media all and (min-width: 360px) {	.nav-button { width: 10.5vw; } }
+/*@media all and (min-width: 360px) {	.nav-button { width: 10.5vw; } }
 @media all and (min-width: 640px) { .nav-button { width: 10.8vw; } }
-@media all and (min-width: 943px) { .nav-button { width: 10.9vw; } }
+@media all and (min-width: 943px) { .nav-button { width: 10.9vw; } }*/
 
 
 /* ========================================================================= */
