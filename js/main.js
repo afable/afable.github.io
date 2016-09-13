@@ -350,11 +350,11 @@ window.addEventListener('resize', function(event){
 	// show or unshow the toolbars (header & footer)
 	function showToolbar(bShow) {
 		if ( bShow ) {
-			$(".ui-page-active [data-position='fixed']").attr("style", "display: table");
+			$(".ui-page-active [data-position='fixed']").attr("style", "display: table !important");
 			$(".ui-page-active [data-position='fixed']").toolbar("show");
 		} else {
 			window.setTimeout(function() {
-				$(".ui-page-active [data-position='fixed']").attr("style", "display:none");
+				$(".ui-page-active [data-position='fixed']").attr("style", "display:none !important");
 			}, 300);
 			$(".ui-page-active [data-position='fixed']").toolbar("hide");
 		}
