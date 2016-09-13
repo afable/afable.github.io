@@ -133,7 +133,7 @@ window.addEventListener('resize', function(event){
 			'							<p class="in-polaroid">' + arrPages[i].caption + '</p>',
 			'						</div>',
 			'					</a>',
-			'					<i class="img-gesture fa fa-hand-o-up fa-5x"><p>click<br>me</p></i>',
+			'					<i class="img-gesture fa fa-hand-o-up fa-5x"><p class="click-me">click<br>me</p></i>',
 			'					<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>',
 			'				</td>',
 			'				<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>',
@@ -196,12 +196,12 @@ window.addEventListener('resize', function(event){
 	// handle toolbar toggle, i.e. user clicks on img-gesture hand pointer
 	// or clicks somewhere on the background
 	$(document).on("click", function (e) {
-		// get the element that was clicked, show toolbar as long as the arrows
-		// and polaroid weren't clicked
+		// show toolbar only if td background, img-gesture or click-me clicked
 		var senderElement = $(e.target);
-		if ( !senderElement.hasClass("fa-arrow-left") &&
-			!senderElement.hasClass("fa-arrow-right") &&
-			!senderElement.hasClass("in-polaroid") )
+			console.log(senderElement);
+		if ( senderElement.is("td") ||
+			senderElement.hasClass("img-gesture") ||
+			senderElement.hasClass("click-me") )
 		{
 			// toggle toolbar show/hide only if not already animating
 			if ( !g_bToolbarAnimating ) {
