@@ -233,6 +233,49 @@ window.addEventListener('resize', function(event){
 	});
 
 
+	// on right-arrow click, move to next page
+	$(".fa-arrow-right").on("click", function () {
+		// get current page, find it's index in the array of pages by looking for
+		// arrPages[#page].id
+		var strCurrPage = $(".ui-page-active").prop("id");
+		var indexes = $.map(arrPages, function(obj, index) {
+			if(obj.id === strCurrPage ) { return index; }
+		});
+		var iCurrPageIndex = indexes[0];
+
+		// change to next page unless if we are on the last page, then change 
+		// to first page
+		var FIRST_PAGE = 0;
+		var strNextPage = ( arrPages[iCurrPageIndex+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iCurrPageIndex+1].id;
+		$.mobile.changePage("#" + strNextPage, { transition: 'flow', reverse: false });
+	});
+	// change cursor and right-arrow colour on mouseover
+	$(".fa-arrow-right").on("mouseover", function () {
+		$(this).css("cursor", "pointer");
+	});
+
+	// on left-arrow click, move to previous page
+	$(".fa-arrow-left").on("click", function () {
+		// get current page, find it's index in the array of pages by looking for
+		// arrPages[#page].id
+		var strCurrPage = $(".ui-page-active").prop("id");
+		var indexes = $.map(arrPages, function(obj, index) {
+			if(obj.id === strCurrPage ) { return index; }
+		});
+		var iCurrPageIndex = indexes[0];
+
+		// change to previous page unless if we are on the first page, then 
+		// change to last page
+		var LAST_PAGE = arrPages.length-1;
+		var strPrevPage = ( arrPages[iCurrPageIndex-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iCurrPageIndex-1].id;
+		$.mobile.changePage("#" + strPrevPage, { transition: 'flow', reverse: false });
+	});
+	// change cursor and right-arrow colour on mouseover
+	$(".fa-arrow-right").on("mouseover", function () {
+		$(this).css("cursor", "pointer");
+	});
+
+
 // 	// capture left swipes on header, main, and footer
 // 	// left swipes move to next page in sequience
 // 	$(document).on("swipeleft", function() {
@@ -255,24 +298,6 @@ window.addEventListener('resize', function(event){
 // 		var LAST_PAGE = arrPages.length-1;
 // 		var prevPage = ( arrPages[iPage-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iPage-1].id;
 // 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
-// 	});
-
-// 	// swipe right on left-arrow click
-// 	$(".fa-arrow-left").on("click", function () {
-// 		$(document).trigger("swiperight");
-// 	});
-// 	// change cursor and left-arrow colour on mouseover
-// 	$(".fa-arrow-left").on("mouseover", function () {
-// 		$(this).css("cursor", "pointer");
-// 	});
-
-// 	// swipe left on right-arrow click
-// 	$(".fa-arrow-right").on("click", function () {
-// 		$(document).trigger("swipeleft");
-// 	});
-// 	// change cursor and right-arrow colour on mouseover
-// 	$(".fa-arrow-right").on("mouseover", function () {
-// 		$(this).css("cursor", "pointer");
 // 	});
 
 	// always show popup text on hand gesture click
