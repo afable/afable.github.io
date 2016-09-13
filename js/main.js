@@ -191,10 +191,11 @@ window.addEventListener('resize', function(event){
 		g_bToolbarVisible = false;
 		showToolbar(g_bToolbarVisible);
 	}
+	
 
 	// handle toolbar toggle, i.e. user clicks on img-gesture hand pointer
 	// or clicks somewhere on the background
-	$("tr").on("click", function (e) {
+	$(document).on("click", function (e) {
 		// get the element that was clicked, show toolbar as long as the arrows
 		// and polaroid weren't clicked
 		var senderElement = $(e.target);
@@ -207,7 +208,9 @@ window.addEventListener('resize', function(event){
 				// since we are animating, set flag that animation will finish
 				// in 200ms
 				g_bToolbarAnimating = true;
-				window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
+				window.setTimeout(function() {
+					g_bToolbarAnimating = false;
+				}, 666);
 				
 				// show toolbars if they aren't already visible 
 				if ( !g_bToolbarVisible ) {
@@ -349,11 +352,11 @@ window.addEventListener('resize', function(event){
 	// show or unshow the toolbars (header & footer)
 	function showToolbar(bShow) {
 		if ( bShow ) {
-			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+			$(".ui-page-active [data-position='fixed']").attr("style", "display: table");
 			$(".ui-page-active [data-position='fixed']").toolbar("show");
 		} else {
 			window.setTimeout(function() {
-				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
+				$(".ui-page-active [data-position='fixed']").attr("style", "display:none");
 			}, 200);
 			$(".ui-page-active [data-position='fixed']").toolbar("hide");
 		}

@@ -89,7 +89,6 @@ a.ui-link:hover {
 /* main  wrapper for each page should be full device height */
 .main {
 	height: 100vh !important;
-	position: relative;
 	background: #f06;
 	background: linear-gradient(45deg, #f06, yellow);
 }
@@ -98,8 +97,6 @@ a.ui-link:hover {
 table.polaroid-container {
     margin: auto;
     position: absolute;
-	width: 100vw; 
-    height: 100vh;
 
     top: 0;
     bottom: 0;
@@ -192,7 +189,7 @@ table.polaroid-container {
 .polaroid {
 	display: block;
 	background-color: #f3f3f3;
-	width: 100%;
+	/*width: 100%;*/
 	height: auto;
 	padding-bottom: 7px;
 	border-radius: 1%;
@@ -208,13 +205,13 @@ table.polaroid-container {
 	margin: 0 auto;
 	padding-top: 5%;
 	width: 90%;
-	height: 70%;
+	/*height: 70%;*/
 }
 /* greyscale photo section of polaroid */
 .polaroid img {
 	position: relative;
-	width: 100%;
-	height: 100%;
+	/*width: 100%;*/
+	/*height: 100%;*/
 	border-radius: 2%;
 }
 /* div container to use display: table/table-cell to veritically center p */
@@ -341,7 +338,7 @@ footer p {
 /* toolbar needs to start with opacity: 0 because page loads with it initially
    in view and you can see a flicker of it before the js code hides it */
 [data-position="fixed"] {
-	opacity: 0 !important;
+	display: none;
 }
 
 
