@@ -306,58 +306,58 @@ window.addEventListener('resize', function(event){
 
 
 
-// // ============================================================================
-// // ============================= Helper Functions =============================
-// // =================== ( can be commented out for release ) ===================
-// // ============================================================================
-// 	// update sections and re-adjust viewport for any orientation and
-// 	// pagecontainer changes
-// 	function updateView() {
-// 		// display viewport information on page changes
-// 		displayViewport();
-// 		// update img sizes to fit viewport orientation
-// 		imgSize();
-// 	}
+// ============================================================================
+// ============================= Helper Functions =============================
+// =================== ( can be commented out for release ) ===================
+// ============================================================================
+	// update sections and re-adjust viewport for any orientation and
+	// pagecontainer changes
+	function updateView() {
+		// display viewport information on page changes
+		displayViewport();
+		// update img sizes to fit viewport orientation
+		imgSize();
+	}
 
-// 	// display viewport in a paragraph element appended to main's section
-// 	function displayViewport() {
-// 		// update if viewport is hortizontal or vertical
-// 		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
-// 		// display window sizes for different viewports somewhere
-// 		// printViewport();
-// 	}
+	// display viewport in a paragraph element appended to main's section
+	function displayViewport() {
+		// update if viewport is hortizontal or vertical
+		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+		// display window sizes for different viewports somewhere
+		// printViewport();
+	}
 
-// 	function printViewport() {
-// 		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
-// 		if ( $(".ui-page-active #displayviewport").length === 0 ) {
-// 			$(".ui-page-active section").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
-// 		} else {
-// 			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
-// 		}
-// 	}
+	function printViewport() {
+		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
+		if ( $(".ui-page-active #displayviewport").length === 0 ) {
+			$(".ui-page-active section").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
+		} else {
+			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
+		}
+	}
 
-// 	// fix img size to perfectly fit landscape and portrait orientations
-// 	function imgSize() {
-// 		// switch landscape and portrait classes if orientation changes
-// 		if ( g_bLandscape ) {
-// 			$("img.portrait").removeClass("portrait").addClass("landscape");
-// 		} else {
-// 			$("img.landscape").removeClass("landscape").addClass("portrait");
-// 		}
-// 	}
+	// fix img size to perfectly fit landscape and portrait orientations
+	function imgSize() {
+		// switch landscape and portrait classes if orientation changes
+		if ( g_bLandscape ) {
+			$("img.portrait").removeClass("portrait").addClass("landscape");
+		} else {
+			$("img.landscape").removeClass("landscape").addClass("portrait");
+		}
+	}
 
-// 	// show or unshow the toolbars (header & footer)
-// 	function showToolbar(bShow) {
-// 		if ( bShow ) {
-// 			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
-// 			$(".ui-page-active [data-position='fixed']").toolbar("show");
-// 		} else {
-// 			window.setTimeout(function() {
-// 				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
-// 			}, 200);
-// 			$(".ui-page-active [data-position='fixed']").toolbar("hide");
-// 		}
-// 	}
+	// show or unshow the toolbars (header & footer)
+	function showToolbar(bShow) {
+		if ( bShow ) {
+			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+			$(".ui-page-active [data-position='fixed']").toolbar("show");
+		} else {
+			window.setTimeout(function() {
+				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
+			}, 200);
+			$(".ui-page-active [data-position='fixed']").toolbar("hide");
+		}
+	}
 
 
 })(jQuery);
