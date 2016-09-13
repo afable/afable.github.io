@@ -1,2 +1,1 @@
-# afable.github.io `v3.1-jqm-manualHideToolbar
-
+# afable.github.io `v3.1-fixMobile

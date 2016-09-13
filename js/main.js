@@ -183,7 +183,7 @@ window.addEventListener('resize', function(event){
 	});
 
 
-	// handle initial toolbar visibility here
+	// initial toolbar visibility
 	if ( g_bToolbarVisible ) {
 		g_bToolbarVisible = true;
 		showToolbar(g_bToolbarVisible);
