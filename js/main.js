@@ -289,17 +289,17 @@ window.addEventListener('resize', function(event){
 // 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
 // 	});
 
-// 	// fade in the "click me" text a few seconds after this js has loaded
-// 	window.setTimeout(function () {
-// 		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
-// 	}, 1500);
-// 	// when clicking on the gesture, make sure to fade out the "click me" helper
-// 	// text as user will already know what clicking on the hand pointer does
-// 	$(".img-gesture").on("click.clickme", function () {
-// 		if ( $(".ui-page-active .img-gesture p").css("opacity") !== "0" ) {
-// 			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
-// 		}
-// 	});
+	// fade in the "click me" text a few seconds after this js has loaded
+	window.setTimeout(function () {
+		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
+	}, 1500);
+	// when clicking on the gesture, make sure to fade out the "click me" helper
+	// text as user will already know what clicking on the hand pointer does
+	$(".img-gesture").on("click.clickme", function () {
+		if ( $(".ui-page-active .img-gesture p").css("opacity") !== "0" ) {
+			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
+		}
+	});
 
 
 	
