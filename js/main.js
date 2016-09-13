@@ -112,9 +112,45 @@ window.addEventListener('resize', function(event){
 	// it is the first page element in body)
 	for ( var i = arrPages.length-1; i >= 0; --i ) {
 		// create header (from previously created strNav), main, and footer
-		var newPage = $(
-			"<p>I'm a p tag.</p>"
-		);
+	var newPage = $([
+			'<div data-role="page" id="' + arrPages[i].id + '" class="ui-page">',
+			
+			'	<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" role="banner">',
+			'		<nav class="nav">' + strNav + '</nav>',
+			'	</div><!-- /header -->',
+				
+			'	<div role="main" class="main ui-content">',
+			'		<table class="polaroid-container">',
+			'			<tr>',
+			'				<td class="td-arrow"><i class="fa fa-arrow-left fa-3x"></i>',
+			'				</td>',
+			'				<td class="td-polaroid"><section class="polaroid rotate">',
+			'					<a href="' + arrPages[i].url + '" target="_blank" class="in-polaroid">',
+			'						<div class="polaroid-img-container">',
+			'							<img src="/img/' + arrPages[i].id + '.' + arrPages[i].img + '" class="unselectable ' + strOrientation + ' in-polaroid" style="opacity: 0" alt="' + arrPages[i].id + '" title="' + arrPages[i].title + '">',
+			'						</div>',
+			'						<div class="polaroid-p-container">',
+			'							<p class="in-polaroid">' + arrPages[i].caption + '</p>',
+			'						</div>',
+			'					</a>',
+			'					<i class="img-gesture fa fa-hand-o-up fa-5x"><p>click<br>me</p></i>',
+			'					<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>',
+			'				</td>',
+			'				<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>',
+			'				</td>',
+			'			</tr>',
+			'		</table>',
+			'	</div><!-- /main -->',
+
+			'	<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">',
+			'		<footer>',
+					
+			'			<p>Created by <a href="#afable" title="#afable, @superafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>',
+			'		</footer>',
+			'	</div><!-- /footer -->',
+
+			'</div>',
+		].join("\n"));
 
 		// prepend new page to the page container (manually used body since
 		// page container isn't initialized yet at this point)
