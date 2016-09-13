@@ -95,24 +95,90 @@ a.ui-link:hover {
 
 /* the main polaroid table wrapper (has the arrows and polaroid inside ) */
 table.polaroid-container {
-    margin: auto;
+	margin: auto;
     position: absolute;
-
+	/* make it so polaroid is not larger than vh (good for landscape mobile
+	   browsers */
+	height: 100vh;
     top: 0;
-    bottom: 0;
+	bottom: 0;
+	right: 0;
     left: 0;
-    right: 0;
+
+	background: rgba(0, 0, 0, 0.5);
 }
 /* each polaroid table data should be evenly split */
 .polaroid-container .td-arrow {
+	/* the combination of polaroid 50% & 25vw arrows centers and resizes
+	   appropriately on most desktop & mobile browser */
 	width: 25vw;
 	text-align: center;
 }
 .polaroid-container .td-polaroid {
-	width: 50vw;
+	/* the combination of polaroid 50% & 25vw arrows centers and resizes
+	   appropriately on most desktop & mobile browser */
+	width: 50%;
 	text-align: center;
 }
 
+/* main polaroid section that has img inside */
+.polaroid {
+	/*display: block;*/
+	background-color: #f3f3f3;
+	/*width: 100%;*/
+	/*height: auto;*/
+	padding-bottom: 7px;
+	border-radius: 1%;
+	/* box-shadow */
+	-webkit-box-shadow: 3px 6px 11px 0px #000;
+	-moz-box-shadow: 3px 6px 11px 0px #000;
+	box-shadow: 3px 6px 11px 0px #000;
+}
+/* container for overflow: hidden on greyscale photo */
+.polaroid-img-container {
+	/*position: relative;*/
+	overflow: hidden;
+	margin: 0 auto;
+	padding-top: 5%;
+	width: 90%;
+}
+/* greyscale photo section of polaroid */
+.polaroid img {
+	width: 100%;
+	height: 100%;
+	border-radius: 2%;
+}
+/* div container to use display: table/table-cell to veritically center p */
+.polaroid-p-container {
+	display: table;
+	height: 25%;
+	margin: 0 auto;
+}
+/* polaroid caption underneath greyscale photo */
+.polaroid p {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0;
+	padding-top: 7px;
+	text-align: center;
+	font-family: "Reenie Beanie", "Nothing You Could Do";
+	font-size: 1em;
+	color: #666;
+	text-shadow: 0px 0px 1px #666;
+	line-height: 100%;
+}
+/* polaroid anchor tags do not have hover or link styles since the .polaroid
+   will tilt a little when hovering over it */
+.polaroid a, .polaroid a:hover {
+	color: #000;
+	text-decoration: none;
+}
+/* responsive font for different device viewports or caption won't fit screen */
+@media all and (min-width: 640px) { .polaroid p { font-size: 1.2em; } }
+@media all and (min-width: 800px) { .polaroid p { font-size: 1.6em; } }
+@media all and (min-width: 1200px) { .polaroid p { font-size: 2.4em; } }
+
+/* arrow transitions and animations */
 .fa-arrow-left, .fa-arrow-right {
 	color: #000;
 	opacity: 0.66;
@@ -143,13 +209,7 @@ table.polaroid-container {
 	border-radius: 50%;
 }
 
-/* polaroid anchor tags do not have hover or link styles since the .polaroid
-   will tilt a little when hovering over it */
-.polaroid a, .polaroid a:hover {
-	color: #000;
-	text-decoration: none;
-}
-
+/* polaroid transitions & animations */
 /* polaroid now starts off -1deg rotated.. hover fixes rotation */
 .rotate {
     -webkit-transform: rotate(0.6deg);
@@ -184,59 +244,6 @@ table.polaroid-container {
     -o-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
 }
-
-/* main polaroid section that has img inside */
-.polaroid {
-	display: block;
-	background-color: #f3f3f3;
-	/*width: 100%;*/
-	height: auto;
-	padding-bottom: 7px;
-	border-radius: 1%;
-	/* box-shadow */
-	-webkit-box-shadow: 3px 6px 11px 0px #000;
-	-moz-box-shadow: 3px 6px 11px 0px #000;
-	box-shadow: 3px 6px 11px 0px #000;
-}
-/* container for overflow: hidden on greyscale photo */
-.polaroid-img-container {
-	position: relative;
-	overflow: hidden;
-	margin: 0 auto;
-	padding-top: 5%;
-	width: 90%;
-	/*height: 70%;*/
-}
-/* greyscale photo section of polaroid */
-.polaroid img {
-	position: relative;
-	/*width: 100%;*/
-	/*height: 100%;*/
-	border-radius: 2%;
-}
-/* div container to use display: table/table-cell to veritically center p */
-.polaroid-p-container {
-	display: table;
-	height: 25%;
-	margin: 0 auto;
-}
-/* polaroid caption underneath greyscale photo */
-.polaroid p {
-	display: table-cell;
-	vertical-align: middle;
-	margin: 0;
-	padding-top: 7px;
-	text-align: center;
-	font-family: "Reenie Beanie", "Nothing You Could Do";
-	font-size: 1.4em;
-	color: #666;
-	text-shadow: 0px 0px 1px #666;
-	line-height: 100%;
-}
-/* responsive font for different device viewports or caption won't fit screen */
-@media all and (min-width: 640px) { .polaroid p { font-size: 1.6em; } }
-@media all and (min-width: 800px) { .polaroid p { font-size: 2em; } }
-@media all and (min-width: 1200px) { .polaroid p { font-size: 2.4em; } }
 
 /* the pop that appears when user hovers/clicks on hand pointer */
 .img-gesture-popup {
