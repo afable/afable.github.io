@@ -5,6 +5,7 @@
 // ============================================================================
 var g_bLandscape = true;
 var g_bToolbarVisible = false;
+var g_bToolbarAnimating = false;
 
 // document and window ready functions (test which loads first)
 window.onload = function() { console.log("LOADED window.onload..."); };
@@ -213,16 +214,24 @@ window.addEventListener('resize', function(event){
 			!senderElement.hasClass("fa-arrow-right") &&
 			!senderElement.hasClass("in-polaroid") )
 		{
-			// show toolbars if they aren't already visible 
-			if ( !g_bToolbarVisible ) {
-				g_bToolbarVisible = true;
-				showToolbar(g_bToolbarVisible);
-				$(".ui-page-active [data-position='fixed']").toolbar("show");
-			// otherwise, hide toolbars if they are visible (with a slight delay)
-			} else {
-				g_bToolbarVisible = false;
-				showToolbar(g_bToolbarVisible);
-				$(".ui-page-active [data-position='fixed']").toolbar("hide");
+			// toggle toolbar show/hide only if not already animating
+			if ( !g_bToolbarAnimating ) {
+				// since we are animating, set flag that animation will finish
+				// in 200ms
+				g_bToolbarAnimating = true;
+				window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
+				
+				// show toolbars if they aren't already visible 
+				if ( !g_bToolbarVisible ) {
+					g_bToolbarVisible = true;
+					showToolbar(g_bToolbarVisible);
+					$(".ui-page-active [data-position='fixed']").toolbar("show");
+				// otherwise, hide toolbars if they are visible (with a slight delay)
+				} else {
+					g_bToolbarVisible = false;
+					showToolbar(g_bToolbarVisible);
+					$(".ui-page-active [data-position='fixed']").toolbar("hide");
+				}
 			}
 		}
 	});
