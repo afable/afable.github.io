@@ -208,9 +208,7 @@ window.addEventListener('resize', function(event){
 				// since we are animating, set flag that animation will finish
 				// in 200ms
 				g_bToolbarAnimating = true;
-				window.setTimeout(function() {
-					g_bToolbarAnimating = false;
-				}, 300);
+				window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
 				
 				// show toolbars if they aren't already visible 
 				if ( !g_bToolbarVisible ) {
