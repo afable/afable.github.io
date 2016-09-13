@@ -121,10 +121,7 @@ table.polaroid-container {
 
 /* main polaroid section that has img inside */
 .polaroid {
-	/*display: block;*/
 	background-color: #f3f3f3;
-	/*width: 100%;*/
-	/*height: auto;*/
 	padding-bottom: 7px;
 	border-radius: 1%;
 	/* box-shadow */
@@ -134,7 +131,6 @@ table.polaroid-container {
 }
 /* container for overflow: hidden on greyscale photo */
 .polaroid-img-container {
-	/*position: relative;*/
 	overflow: hidden;
 	margin: 0 auto;
 	padding-top: 5%;
