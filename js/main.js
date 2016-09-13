@@ -161,12 +161,6 @@ window.addEventListener('resize', function(event){
 	// links can fit on one line
 	var vwNavLink = Math.floor(100 / arrPages.length);
 	$(".nav-button").css("width", vwNavLink + "vw");	
-
-
-	// check if toolbar (header & footer) starts as hidden
-	if ( !g_bToolbarVisible ) {
-		showToolbar(g_bToolbarVisible);
-	}
 	
 
 	// change .ui-btn-active manually as it does not persist after transitions
@@ -178,35 +172,29 @@ window.addEventListener('resize', function(event){
 		var currPage = "#" + $(".ui-page-active").prop("id");
 		$(".ui-page-active a[href='" + currPage + "']").addClass("nav-active");
 
-		// show any hidden ui after page transition (sometimes header and footer
-		//  will be hidden after a transition)
-    	if ( $(".ui-fixed-hidden").length ) {
-			$(".ui-fixed-hidden").toolbar('show');
-		}
-
 		// remove any opacity of all imgs that have opacity (so far best selector
 		// is to target all imgs with style attributes)
 		$("section img").css("opacity", 0);
 		// perform animation to easein main img into view
 		$(".ui-page-active section img").animate({ opacity: 1 }, "slow", "easeInOutCubic");
 
-		// if toolbars are hidden, make sure to manually hide them on pagecontainerchange
-		// since they always start shown by default
-		if ( !g_bToolbarVisible ) {
-			$(".ui-page-active [data-position='fixed']").toolbar("hide");
-		}
-
 		// update sections and re-adjust viewport
 		updateView();
 	});
 
 
-	// toolbar (header & footer) will remain transparent unless specifically 
-	// wanted, i.e. user clicks on img-gesture hand pointer or clicks
-	// somewhere on the background
-	$("tr").on("click", function (e) {
-		// $("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+	// handle initial toolbar visibility here
+	if ( g_bToolbarVisible ) {
+		g_bToolbarVisible = true;
+		showToolbar(g_bToolbarVisible);
+	} else {
+		g_bToolbarVisible = false;
+		showToolbar(g_bToolbarVisible);
+	}
 
+	// handle toolbar toggle, i.e. user clicks on img-gesture hand pointer
+	// or clicks somewhere on the background
+	$("tr").on("click", function (e) {
 		// get the element that was clicked, show toolbar as long as the arrows
 		// and polaroid weren't clicked
 		var senderElement = $(e.target);
@@ -225,17 +213,15 @@ window.addEventListener('resize', function(event){
 				if ( !g_bToolbarVisible ) {
 					g_bToolbarVisible = true;
 					showToolbar(g_bToolbarVisible);
-					$(".ui-page-active [data-position='fixed']").toolbar("show");
 				// otherwise, hide toolbars if they are visible (with a slight delay)
 				} else {
 					g_bToolbarVisible = false;
 					showToolbar(g_bToolbarVisible);
-					$(".ui-page-active [data-position='fixed']").toolbar("hide");
 				}
 			}
 		}
 	});
-
+	
 
 	// update viewport display on orientation changes (resize event is more
 	// secure/supported and worked better in this case
@@ -303,10 +289,10 @@ window.addEventListener('resize', function(event){
 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
 	});
 
-	// fade in the "click me" text 3 seconds after this js has loaded
+	// fade in the "click me" text a few seconds after this js has loaded
 	window.setTimeout(function () {
 		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
-	}, 3000);
+	}, 1500);
 	// when clicking on the gesture, make sure to fade out the "click me" helper
 	// text as user will already know what clicking on the hand pointer does
 	$(".img-gesture").on("click.clickme", function () {
@@ -364,10 +350,12 @@ window.addEventListener('resize', function(event){
 	function showToolbar(bShow) {
 		if ( bShow ) {
 			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+			$(".ui-page-active [data-position='fixed']").toolbar("show");
 		} else {
 			window.setTimeout(function() {
 				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
 			}, 200);
+			$(".ui-page-active [data-position='fixed']").toolbar("hide");
 		}
 	}
 

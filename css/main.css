@@ -338,6 +338,8 @@ footer p {
 /* ========================================================================= */
 /* ======================== Header & Footer Toolbar ======================== */
 /* ========================================================================= */
+/* toolbar needs to start with opacity: 0 because page loads with it initially
+   in view and you can see a flicker of it before the js code hides it */
 [data-position="fixed"] {
 	opacity: 0 !important;
 }
