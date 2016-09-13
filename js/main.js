@@ -112,45 +112,9 @@ window.addEventListener('resize', function(event){
 	// it is the first page element in body)
 	for ( var i = arrPages.length-1; i >= 0; --i ) {
 		// create header (from previously created strNav), main, and footer
-		var newPage = $([
-			'<div data-role="page" id="' + arrPages[i].id + '" class="ui-page">',
-			
-			'	<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" role="banner">',
-			'		<nav class="nav">' + strNav + '</nav>',
-			'	</div><!-- /header -->',
-				
-			'	<div role="main" class="main ui-content">',
-			'		<table class="polaroid-container">',
-			'			<tr>',
-			'				<td class="td-arrow"><i class="fa fa-arrow-left fa-3x"></i>',
-			'				</td>',
-			'				<td class="td-polaroid"><section class="polaroid rotate">',
-			'					<a href="' + arrPages[i].url + '" target="_blank" class="in-polaroid">',
-			'						<div class="polaroid-img-container">',
-			'							<img src="/img/' + arrPages[i].id + '.' + arrPages[i].img + '" class="unselectable ' + strOrientation + ' in-polaroid" style="opacity: 0" alt="' + arrPages[i].id + '" title="' + arrPages[i].title + '">',
-			'						</div>',
-			'						<div class="polaroid-p-container">',
-			'							<p class="in-polaroid">' + arrPages[i].caption + '</p>',
-			'						</div>',
-			'					</a>',
-			'					<i class="img-gesture fa fa-hand-o-up fa-5x"><p>click<br>me</p></i>',
-			'					<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>',
-			'				</td>',
-			'				<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>',
-			'				</td>',
-			'			</tr>',
-			'		</table>',
-			'	</div><!-- /main -->',
-
-			'	<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">',
-			'		<footer>',
-					
-			'			<p>Created by <a href="#afable" title="#afable, @superafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>',
-			'		</footer>',
-			'	</div><!-- /footer -->',
-
-			'</div>',
-		].join("\n"));
+		var newPage = $(
+			"<p>I'm a p tag.</p>"
+		);
 
 		// prepend new page to the page container (manually used body since
 		// page container isn't initialized yet at this point)
@@ -232,132 +196,132 @@ window.addEventListener('resize', function(event){
 	});
 
 
-	// capture left swipes on header, main, and footer
-	// left swipes move to next page in sequience
-	$(document).on("swipeleft", function() {
-		// get current page and transition to next page
-		var currPage = $(".ui-page-active").prop("id");
-		var iPage = arrPages.findIndex(p => p.id === currPage);
-		// if we are on the last page, go to first page
-		var FIRST_PAGE = 0;
-		var nextPage = ( arrPages[iPage+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iPage+1].id;
-		$.mobile.changePage("#" + nextPage, { transition: 'flow', reverse: false });
-	});
+// 	// capture left swipes on header, main, and footer
+// 	// left swipes move to next page in sequience
+// 	$(document).on("swipeleft", function() {
+// 		// get current page and transition to next page
+// 		var currPage = $(".ui-page-active").prop("id");
+// 		var iPage = arrPages.findIndex(p => p.id === currPage);
+// 		// if we are on the last page, go to first page
+// 		var FIRST_PAGE = 0;
+// 		var nextPage = ( arrPages[iPage+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iPage+1].id;
+// 		$.mobile.changePage("#" + nextPage, { transition: 'flow', reverse: false });
+// 	});
 
-	// capture right swipes on header, main, and footer
-	// right swipes move to previous page in sequence
-	$(document).on("swiperight", function() {
-		// get current page and transition to previous page
-		var currPage = $(".ui-page-active").prop("id");
-		var iPage = arrPages.findIndex(p => p.id === currPage);
-		// if we are on the first page, go to the last page
-		var LAST_PAGE = arrPages.length-1;
-		var prevPage = ( arrPages[iPage-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iPage-1].id;
-		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
-	});
+// 	// capture right swipes on header, main, and footer
+// 	// right swipes move to previous page in sequence
+// 	$(document).on("swiperight", function() {
+// 		// get current page and transition to previous page
+// 		var currPage = $(".ui-page-active").prop("id");
+// 		var iPage = arrPages.findIndex(p => p.id === currPage);
+// 		// if we are on the first page, go to the last page
+// 		var LAST_PAGE = arrPages.length-1;
+// 		var prevPage = ( arrPages[iPage-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iPage-1].id;
+// 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
+// 	});
 
-	// swipe right on left-arrow click
-	$(".fa-arrow-left").on("click", function () {
-		$(document).trigger("swiperight");
-	});
-	// change cursor and left-arrow colour on mouseover
-	$(".fa-arrow-left").on("mouseover", function () {
-		$(this).css("cursor", "pointer");
-	});
+// 	// swipe right on left-arrow click
+// 	$(".fa-arrow-left").on("click", function () {
+// 		$(document).trigger("swiperight");
+// 	});
+// 	// change cursor and left-arrow colour on mouseover
+// 	$(".fa-arrow-left").on("mouseover", function () {
+// 		$(this).css("cursor", "pointer");
+// 	});
 
-	// swipe left on right-arrow click
-	$(".fa-arrow-right").on("click", function () {
-		$(document).trigger("swipeleft");
-	});
-	// change cursor and right-arrow colour on mouseover
-	$(".fa-arrow-right").on("mouseover", function () {
-		$(this).css("cursor", "pointer");
-	});
+// 	// swipe left on right-arrow click
+// 	$(".fa-arrow-right").on("click", function () {
+// 		$(document).trigger("swipeleft");
+// 	});
+// 	// change cursor and right-arrow colour on mouseover
+// 	$(".fa-arrow-right").on("mouseover", function () {
+// 		$(this).css("cursor", "pointer");
+// 	});
 
-	// always show popup text on hand gesture click
-	$(".img-gesture").on("click", function () {
-		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
-	});
-	// only show popup text on hand gesture hover if not animating
-	$(".img-gesture").on("mouseover", function () {
-		// show popup only if it is not already visible
-		if ( $(".ui-page-active .img-gesture-popup").is(":animated") === false ) {
-			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
-		}
-	})
-	$(".img-gesture").on("mouseout", function () {
-		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
-	});
+// 	// always show popup text on hand gesture click
+// 	$(".img-gesture").on("click", function () {
+// 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+// 	});
+// 	// only show popup text on hand gesture hover if not animating
+// 	$(".img-gesture").on("mouseover", function () {
+// 		// show popup only if it is not already visible
+// 		if ( $(".ui-page-active .img-gesture-popup").is(":animated") === false ) {
+// 			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+// 		}
+// 	})
+// 	$(".img-gesture").on("mouseout", function () {
+// 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
+// 	});
 
-	// fade in the "click me" text a few seconds after this js has loaded
-	window.setTimeout(function () {
-		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
-	}, 1500);
-	// when clicking on the gesture, make sure to fade out the "click me" helper
-	// text as user will already know what clicking on the hand pointer does
-	$(".img-gesture").on("click.clickme", function () {
-		if ( $(".ui-page-active .img-gesture p").css("opacity") !== "0" ) {
-			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
-		}
-	});
+// 	// fade in the "click me" text a few seconds after this js has loaded
+// 	window.setTimeout(function () {
+// 		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
+// 	}, 1500);
+// 	// when clicking on the gesture, make sure to fade out the "click me" helper
+// 	// text as user will already know what clicking on the hand pointer does
+// 	$(".img-gesture").on("click.clickme", function () {
+// 		if ( $(".ui-page-active .img-gesture p").css("opacity") !== "0" ) {
+// 			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
+// 		}
+// 	});
 
 
 	
 
 
 
-// ============================================================================
-// ============================= Helper Functions =============================
-// =================== ( can be commented out for release ) ===================
-// ============================================================================
-	// update sections and re-adjust viewport for any orientation and
-	// pagecontainer changes
-	function updateView() {
-		// display viewport information on page changes
-		displayViewport();
-		// update img sizes to fit viewport orientation
-		imgSize();
-	}
+// // ============================================================================
+// // ============================= Helper Functions =============================
+// // =================== ( can be commented out for release ) ===================
+// // ============================================================================
+// 	// update sections and re-adjust viewport for any orientation and
+// 	// pagecontainer changes
+// 	function updateView() {
+// 		// display viewport information on page changes
+// 		displayViewport();
+// 		// update img sizes to fit viewport orientation
+// 		imgSize();
+// 	}
 
-	// display viewport in a paragraph element appended to main's section
-	function displayViewport() {
-		// update if viewport is hortizontal or vertical
-		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
-		// display window sizes for different viewports somewhere
-		// printViewport();
-	}
+// 	// display viewport in a paragraph element appended to main's section
+// 	function displayViewport() {
+// 		// update if viewport is hortizontal or vertical
+// 		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+// 		// display window sizes for different viewports somewhere
+// 		// printViewport();
+// 	}
 
-	function printViewport() {
-		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
-		if ( $(".ui-page-active #displayviewport").length === 0 ) {
-			$(".ui-page-active section").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
-		} else {
-			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
-		}
-	}
+// 	function printViewport() {
+// 		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
+// 		if ( $(".ui-page-active #displayviewport").length === 0 ) {
+// 			$(".ui-page-active section").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
+// 		} else {
+// 			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
+// 		}
+// 	}
 
-	// fix img size to perfectly fit landscape and portrait orientations
-	function imgSize() {
-		// switch landscape and portrait classes if orientation changes
-		if ( g_bLandscape ) {
-			$("img.portrait").removeClass("portrait").addClass("landscape");
-		} else {
-			$("img.landscape").removeClass("landscape").addClass("portrait");
-		}
-	}
+// 	// fix img size to perfectly fit landscape and portrait orientations
+// 	function imgSize() {
+// 		// switch landscape and portrait classes if orientation changes
+// 		if ( g_bLandscape ) {
+// 			$("img.portrait").removeClass("portrait").addClass("landscape");
+// 		} else {
+// 			$("img.landscape").removeClass("landscape").addClass("portrait");
+// 		}
+// 	}
 
-	// show or unshow the toolbars (header & footer)
-	function showToolbar(bShow) {
-		if ( bShow ) {
-			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
-			$(".ui-page-active [data-position='fixed']").toolbar("show");
-		} else {
-			window.setTimeout(function() {
-				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
-			}, 200);
-			$(".ui-page-active [data-position='fixed']").toolbar("hide");
-		}
-	}
+// 	// show or unshow the toolbars (header & footer)
+// 	function showToolbar(bShow) {
+// 		if ( bShow ) {
+// 			$("[data-position='fixed']").attr("style", "opacity: 0.66 !important");
+// 			$(".ui-page-active [data-position='fixed']").toolbar("show");
+// 		} else {
+// 			window.setTimeout(function() {
+// 				$("[data-position='fixed']").attr("style", "opacity: 0 !important");
+// 			}, 200);
+// 			$(".ui-page-active [data-position='fixed']").toolbar("hide");
+// 		}
+// 	}
 
 
 })(jQuery);
