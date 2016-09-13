@@ -1,1 +1,2 @@
-# afable.github.io `v3.0`
+# afable.github.io `v3.1-jqm-manualHideToolbar
+

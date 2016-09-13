@@ -113,7 +113,7 @@ window.addEventListener('resize', function(event){
 	for ( var i = arrPages.length-1; i >= 0; --i ) {
 		// create header (from previously created strNav), main, and footer
 		var newPage = $(`
-			<div data-role=page id=` + arrPages[i].id + ` class=ui-page>
+			<div data-role="page" id="` + arrPages[i].id + `" class="ui-page">
 			
 				<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" role="banner"> 
 					<nav class="nav">` + strNav + `</nav>
