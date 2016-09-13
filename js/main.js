@@ -274,20 +274,20 @@ window.addEventListener('resize', function(event){
 // 		$(this).css("cursor", "pointer");
 // 	});
 
-// 	// always show popup text on hand gesture click
-// 	$(".img-gesture").on("click", function () {
-// 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
-// 	});
-// 	// only show popup text on hand gesture hover if not animating
-// 	$(".img-gesture").on("mouseover", function () {
-// 		// show popup only if it is not already visible
-// 		if ( $(".ui-page-active .img-gesture-popup").is(":animated") === false ) {
-// 			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
-// 		}
-// 	})
-// 	$(".img-gesture").on("mouseout", function () {
-// 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
-// 	});
+	// always show popup text on hand gesture click
+	$(".img-gesture").on("click", function () {
+		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+	});
+	// only show popup text on hand gesture hover if not animating
+	$(".img-gesture").on("mouseover", function () {
+		// show popup only if it is not already visible
+		if ( $(".ui-page-active .img-gesture-popup").is(":animated") === false ) {
+			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+		}
+	})
+	$(".img-gesture").on("mouseout", function () {
+		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
+	});
 
 	// fade in the "click me" text a few seconds after this js has loaded
 	window.setTimeout(function () {
