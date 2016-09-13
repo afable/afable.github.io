@@ -210,7 +210,7 @@ window.addEventListener('resize', function(event){
 				g_bToolbarAnimating = true;
 				window.setTimeout(function() {
 					g_bToolbarAnimating = false;
-				}, 666);
+				}, 300);
 				
 				// show toolbars if they aren't already visible 
 				if ( !g_bToolbarVisible ) {
@@ -357,7 +357,7 @@ window.addEventListener('resize', function(event){
 		} else {
 			window.setTimeout(function() {
 				$(".ui-page-active [data-position='fixed']").attr("style", "display:none");
-			}, 200);
+			}, 300);
 			$(".ui-page-active [data-position='fixed']").toolbar("hide");
 		}
 	}
