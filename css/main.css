@@ -247,7 +247,9 @@ table.polaroid-container {
 	width: 50%;
 	margin: 0;
 	padding: 0;
+	
 	opacity: 0;
+	display: none;
 }
 .img-gesture-popup p {
 	color: #000;

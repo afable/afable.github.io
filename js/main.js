@@ -195,7 +195,7 @@ window.addEventListener('resize', function(event){
 
 	// handle toolbar toggle, i.e. user clicks on img-gesture hand pointer
 	// or clicks somewhere on the background
-	$(document).on("click", function (e) {
+	$(document).on("click.toggleToolbar", function (e) {
 		// show toolbar only if td background, img-gesture or click-me clicked
 		var senderElement = $(e.target);
 			console.log(senderElement);
@@ -233,9 +233,28 @@ window.addEventListener('resize', function(event){
 	});
 
 
-	// on right-arrow click, move to next page
-	$(".fa-arrow-right").on("click", function () {
-		// get current page, find it's index in the array of pages by looking for
+	// swipe right on left-arrow click
+	$(".fa-arrow-left").on("click.left-arrow", function () {
+		$(document).trigger("swiperight");
+	});
+	// change cursor and left-arrow colour on mouseover
+	$(".fa-arrow-left").on("mouseover.left-arrow", function () {
+		$(this).css("cursor", "pointer");
+	});
+
+	// swipe left on right-arrow click
+	$(".fa-arrow-right").on("click.right-arrow", function () {
+		$(document).trigger("swipeleft");
+	});
+	// change cursor and right-arrow colour on mouseover
+	$(".fa-arrow-right").on("mouseover.right-arrow", function () {
+		$(this).css("cursor", "pointer");
+	});
+
+	// capture left swipes on header, main, and footer
+	// left swipes move to next page in sequence
+	$(document).on("swipeleft", function() {
+		// get current page, find its index in the array of pages by looking for
 		// arrPages[#page].id
 		var strCurrPage = $(".ui-page-active").prop("id");
 		var indexes = $.map(arrPages, function(obj, index) {
@@ -243,20 +262,17 @@ window.addEventListener('resize', function(event){
 		});
 		var iCurrPageIndex = indexes[0];
 
-		// change to next page unless if we are on the last page, then change 
-		// to first page
+		// change to next page unless if we are on the last page, then 
+		// change to first page
 		var FIRST_PAGE = 0;
 		var strNextPage = ( arrPages[iCurrPageIndex+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iCurrPageIndex+1].id;
 		$.mobile.changePage("#" + strNextPage, { transition: 'flow', reverse: false });
 	});
-	// change cursor and right-arrow colour on mouseover
-	$(".fa-arrow-right").on("mouseover", function () {
-		$(this).css("cursor", "pointer");
-	});
 
-	// on left-arrow click, move to previous page
-	$(".fa-arrow-left").on("click", function () {
-		// get current page, find it's index in the array of pages by looking for
+	// capture right swipes on header, main, and footer
+	// right swipes move to previous page in sequence
+	$(document).on("swiperight", function() {
+		// get current page, find its index in the array of pages by looking for
 		// arrPages[#page].id
 		var strCurrPage = $(".ui-page-active").prop("id");
 		var indexes = $.map(arrPages, function(obj, index) {
@@ -268,53 +284,52 @@ window.addEventListener('resize', function(event){
 		// change to last page
 		var LAST_PAGE = arrPages.length-1;
 		var strPrevPage = ( arrPages[iCurrPageIndex-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iCurrPageIndex-1].id;
-		$.mobile.changePage("#" + strPrevPage, { transition: 'flow', reverse: false });
-	});
-	// change cursor and right-arrow colour on mouseover
-	$(".fa-arrow-right").on("mouseover", function () {
-		$(this).css("cursor", "pointer");
+		$.mobile.changePage("#" + strPrevPage, { transition: 'flow', reverse: true });
 	});
 
-
-// 	// capture left swipes on header, main, and footer
-// 	// left swipes move to next page in sequience
-// 	$(document).on("swipeleft", function() {
-// 		// get current page and transition to next page
-// 		var currPage = $(".ui-page-active").prop("id");
-// 		var iPage = arrPages.findIndex(p => p.id === currPage);
-// 		// if we are on the last page, go to first page
-// 		var FIRST_PAGE = 0;
-// 		var nextPage = ( arrPages[iPage+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iPage+1].id;
-// 		$.mobile.changePage("#" + nextPage, { transition: 'flow', reverse: false });
-// 	});
-
-// 	// capture right swipes on header, main, and footer
-// 	// right swipes move to previous page in sequence
-// 	$(document).on("swiperight", function() {
-// 		// get current page and transition to previous page
-// 		var currPage = $(".ui-page-active").prop("id");
-// 		var iPage = arrPages.findIndex(p => p.id === currPage);
-// 		// if we are on the first page, go to the last page
-// 		var LAST_PAGE = arrPages.length-1;
-// 		var prevPage = ( arrPages[iPage-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iPage-1].id;
-// 		$.mobile.changePage("#" + prevPage, { transition: 'flow', reverse: true });
-// 	});
 
 	// always show popup text on hand gesture click
-	$(".img-gesture").on("click", function () {
+	$(".img-gesture").on("click.showPopup", function () {
+		$(".ui-page-active .img-gesture-popup").attr("style", "display: table");
 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
 	});
 	// only show popup text on hand gesture hover if not animating
-	$(".img-gesture").on("mouseover", function () {
+	$(".img-gesture").on("mouseover.showPopup", function () {
 		// show popup only if it is not already visible
-		if ( $(".ui-page-active .img-gesture-popup").is(":animated") === false ) {
+		if ( $(".ui-page-active .img-gesture-popup").css("display") === "none" ) {
+			$(".ui-page-active .img-gesture-popup").attr("style", "display: table");
 			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
 		}
 	})
-	$(".img-gesture").on("mouseout", function () {
+	$(".img-gesture").on("mouseout.hidePopup", function () {
+		// only fadeout popup gesture if not animating. it's okay for popup
+		// gesture to always show up on mouseover or click but it should only
+		// disappear on mouseout (this fixes disappearing even on mouseover)
 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
-	});
 
+		// // display: none on img-gesture-popup of all pages when mouseout
+		// // to prevent toolbar toggle when mouse click on popup text
+		// // (after a slight delay for better UI/UX)
+		recurseCheck();
+	});
+	
+
+	// recursively call to display: none until mouse not over img-gesture-popup
+	// not really recursion but I just want to loop a check to make sure that
+	// the img-gesture-pop doesn't get display: none abruptly (better UI/UX)
+	var recurseCheck = function () {
+		window.setTimeout( function () {
+			// base case
+			if ( $(".ui-page-active .img-gesture-popup").css("opacity") === "0" ) {
+				$(".img-gesture-popup").attr("style", "display: none");
+				return;
+			}
+			// recursive case
+			return recurseCheck();
+		}, 1000)
+	};
+
+	
 	// fade in the "click me" text a few seconds after this js has loaded
 	window.setTimeout(function () {
 		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
