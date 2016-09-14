@@ -247,7 +247,7 @@ table.polaroid-container {
 	width: 50%;
 	margin: 0;
 	padding: 0;
-	
+
 	opacity: 0;
 	display: none;
 }
@@ -338,8 +338,9 @@ footer p {
 /* ========================================================================= */
 /* ======================== Header & Footer Toolbar ======================== */
 /* ========================================================================= */
-/* toolbar needs to start with opacity: 0 because page loads with it initially
-   in view and you can see a flicker of it before the js code hides it */
+/* toolbar needs to start with display:none because page loads with it initially
+   in view and you can see a flicker of it before the js code hides it (note
+   that !important is needed to get rid of flicker */
 [data-position="fixed"] {
 	display: none !important;
 }

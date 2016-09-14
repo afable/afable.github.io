@@ -12,10 +12,11 @@ window.onload = function() { console.log("LOADED window.onload..."); };
 (function() { console.log("LOADED IIFE.."); })();
 $(document).ready(function() { console.log("LOADED $(document).ready...") });
 
+
 // show viewport size on re-size (chrome no longer shows it by default)
-window.addEventListener('resize', function(event){
-  console.log("(vw, vh): (" + window.innerWidth + ", " + window.innerHeight + ")");
-});
+// window.addEventListener('resize', function(event){
+//   console.log("(vw, vh): (" + window.innerWidth + ", " + window.innerHeight + ")");
+// });
 
 
 // ============================================================================
@@ -182,8 +183,7 @@ window.addEventListener('resize', function(event){
 		updateView();
 	});
 
-
-	// initial toolbar visibility
+	// setup initial toolbar visibility
 	if ( g_bToolbarVisible ) {
 		g_bToolbarVisible = true;
 		showToolbar(g_bToolbarVisible);
@@ -191,14 +191,12 @@ window.addEventListener('resize', function(event){
 		g_bToolbarVisible = false;
 		showToolbar(g_bToolbarVisible);
 	}
-	
 
 	// handle toolbar toggle, i.e. user clicks on img-gesture hand pointer
 	// or clicks somewhere on the background
 	$(document).on("click.toggleToolbar", function (e) {
 		// show toolbar only if td background, img-gesture or click-me clicked
 		var senderElement = $(e.target);
-			console.log(senderElement);
 		if ( senderElement.is("td") ||
 			senderElement.hasClass("img-gesture") ||
 			senderElement.hasClass("click-me") )
@@ -206,7 +204,7 @@ window.addEventListener('resize', function(event){
 			// toggle toolbar show/hide only if not already animating
 			if ( !g_bToolbarAnimating ) {
 				// since we are animating, set flag that animation will finish
-				// in 200ms
+				// in a little bit
 				g_bToolbarAnimating = true;
 				window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
 				
@@ -290,14 +288,14 @@ window.addEventListener('resize', function(event){
 
 	// always show popup text on hand gesture click
 	$(".img-gesture").on("click.showPopup", function () {
-		$(".ui-page-active .img-gesture-popup").attr("style", "display: table");
+		$(".ui-page-active .img-gesture-popup").attr("style", "display: table;");
 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
 	});
 	// only show popup text on hand gesture hover if not animating
 	$(".img-gesture").on("mouseover.showPopup", function () {
 		// show popup only if it is not already visible
 		if ( $(".ui-page-active .img-gesture-popup").css("display") === "none" ) {
-			$(".ui-page-active .img-gesture-popup").attr("style", "display: table");
+			$(".ui-page-active .img-gesture-popup").attr("style", "display: table;");
 			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
 		}
 	})
@@ -307,9 +305,9 @@ window.addEventListener('resize', function(event){
 		// disappear on mouseout (this fixes disappearing even on mouseover)
 		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
 
-		// // display: none on img-gesture-popup of all pages when mouseout
-		// // to prevent toolbar toggle when mouse click on popup text
-		// // (after a slight delay for better UI/UX)
+		// display: none on img-gesture-popup of all pages when mouseout
+		// to prevent toolbar toggle when mouse click on popup text
+		// (after a slight delay for better UI/UX)
 		recurseCheck();
 	});
 	
@@ -321,7 +319,7 @@ window.addEventListener('resize', function(event){
 		window.setTimeout( function () {
 			// base case
 			if ( $(".ui-page-active .img-gesture-popup").css("opacity") === "0" ) {
-				$(".img-gesture-popup").attr("style", "display: none");
+				$(".img-gesture-popup").attr("style", "display: none;");
 				return;
 			}
 			// recursive case
@@ -390,11 +388,20 @@ window.addEventListener('resize', function(event){
 	// show or unshow the toolbars (header & footer)
 	function showToolbar(bShow) {
 		if ( bShow ) {
-			$(".ui-page-active [data-position='fixed']").attr("style", "display: table !important");
+			// display:table all toolbars since toolbars are actually shown on
+			// page container change regardless of show/hide setting but when
+			// we want to the user to see the toolbar come into view, only show
+			// it for the active page
+			$("[data-position='fixed']").attr("style", "display: table !important;");
 			$(".ui-page-active [data-position='fixed']").toolbar("show");
 		} else {
+			// display:none all toolbars since toolbars are actually shown on
+			// page container change regardless of show/hide setting but when
+			// we want to the user to see the toolbar leave from view, only show
+			// it for the active page... the 300ms delay assures that the toolbar
+			// has completely left view before we set display:none (UI/UX)
 			window.setTimeout(function() {
-				$(".ui-page-active [data-position='fixed']").attr("style", "display:none !important");
+				$("[data-position='fixed']").attr("style", "display:none !important;");
 			}, 300);
 			$(".ui-page-active [data-position='fixed']").toolbar("hide");
 		}
