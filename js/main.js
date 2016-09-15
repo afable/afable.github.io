@@ -85,7 +85,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 		icon: "fa-arrows-alt",
 		iconTitle: "Ray tracers can't maths tri-force", 
 		img: "jpg",
-		url: "http://afable.github.io/images/projects/ray_trace.png",
+		url: "https://github.com/afable/ray_tracer",
 		title: "View on GitHub",
 		caption: "A simple ray tracer.<br>You can't maths the tri-force."} );
 	arrPages.push( {id: "firstWorldCrawler",
