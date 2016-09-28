@@ -203,6 +203,9 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 			senderElement.hasClass("img-gesture") ||
 			senderElement.hasClass("click-me") )
 		{
+			// release senderElement as not using it anymore
+			senderElement = undefined;
+
 			// toggle toolbar show/hide only if not already animating
 			if ( !g_bToolbarAnimating ) {
 				// since we are animating, set flag that animation will finish
