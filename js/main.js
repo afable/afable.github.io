@@ -27,9 +27,6 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 // ============================================================================
 (function($) {
 
-	// hide nojs warning
-	$(".nojs").css("display", "none");
-
 	
 	// get if this viewport is hortizontal or vertical
 	g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
