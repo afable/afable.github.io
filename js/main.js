@@ -204,7 +204,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 			senderElement.hasClass("click-me") )
 		{
 			// release senderElement as not using it anymore
-			senderElement = undefined;
+			senderElement = null;
 
 			// toggle toolbar show/hide only if not already animating
 			if ( !g_bToolbarAnimating ) {
