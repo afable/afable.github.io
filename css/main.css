@@ -6,6 +6,21 @@ body {
 	background: linear-gradient(45deg, #f06, yellow);
 }
 
+/* nojs style when user doesn't have javascript enabled */
+div.nojs {
+	margin: 0;
+	position: fixed;
+	top: 33vh;
+	right: 20vw;
+	left: 20vw;
+}
+p.nojs {
+	text-align: center;
+	font-family: "Reenie Beanie", "Nothing You Could Do", monospace;
+	font-size: 1em;
+	color: #000;
+	text-shadow: 0px 0px 1px #666;
+}
 
 /* ========================================================================= */
 /* ========================= Global Helper Styles ========================== */
