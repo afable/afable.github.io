@@ -1,1 +1,347 @@
-body{background:#f06;background:linear-gradient(45deg, #f06, yellow)}.center{text-align:center;margin:0 auto}img.landscape{width:80vh;height:80vh}img.portrait{width:80vw;height:80vw}img.unselectable{user-drag:none;user-select:none;-moz-user-select:none;-webkit-user-drag:none;-webkit-user-select:none;-ms-user-select:none}a.ui-link{color:#000 !important}a.ui-link:hover{color:#e00 !important}.header{opacity:0.66}.nav a:hover{box-shadow:-1px 0px 11px rgba(0, 85, 153, 0.5)}.nav a:active{box-shadow:-1px 0px 11px rgba(0, 85, 153, 0.5);background-color:#e00 !important;color:#ee0 !important}.nav a{background-color:#e9e9e9 !important;border:0 !important;color:#000 !important}.nav-active{box-shadow:-1px 0px 11px rgba(0, 85, 153, 0.5)}.nav-button{margin:0;min-height:40px;width:11vw;height:7vh;line-height:7vh;padding:15px 0 0 0;border-radius:0 !important}.main{height:100vh !important;background:#f06;background:linear-gradient(45deg, #f06, yellow)}table.polaroid-container{margin:auto;position:absolute;height:100vh;top:0;bottom:0;right:0;left:0}.polaroid-container .td-arrow{width:25vw;text-align:center}.polaroid-container .td-polaroid{width:50%;text-align:center}.polaroid{background-color:#f3f3f3;padding-bottom:7px;border-radius:1%;-webkit-box-shadow:3px 6px 11px 0px #000;-moz-box-shadow:3px 6px 11px 0px #000;box-shadow:3px 6px 11px 0px #000}.polaroid-img-container{overflow:hidden;margin:0 auto;padding-top:5%;width:90%}.polaroid img{width:100%;height:100%;border-radius:2%}.polaroid-p-container{display:table;height:25%;margin:0 auto}.polaroid p{display:table-cell;vertical-align:middle;margin:0;padding-top:7px;text-align:center;font-family:"Reenie Beanie", "Nothing You Could Do";font-size:1em;color:#666;text-shadow:0px 0px 1px #666;line-height:100%}.polaroid a,.polaroid a:hover{color:#000;text-decoration:none}@media all and (min-width: 640px){.polaroid p{font-size:1.2em}}@media all and (min-width: 800px){.polaroid p{font-size:1.6em}}@media all and (min-width: 1200px){.polaroid p{font-size:2.4em}}.fa-arrow-left,.fa-arrow-right{color:#000;opacity:0.66;-webkit-transition:500ms ease all;-moz-transition:500ms ease all;-o-transition:500ms ease all;transition:500ms ease all}.fa-arrow-left:hover,.fa-arrow-right:hover{background:#000;padding:20px;border:1px solid black;border-radius:50%}.fa-arrow-left:hover{color:#e00}.fa-arrow-right:hover{color:#ee0}.fa-arrow-left:active,.fa-arrow-right:active{-webkit-transition-duration:200ms;-moz-transition-duration:200ms;-o-transition-duration:200ms;transition-duration:200ms;background:inherit;padding:0;border:none;border-radius:50%}.rotate{-webkit-transform:rotate(0.6deg);-moz-transform:rotate(0.6deg);-ms-transform:rotate(0.6deg);-o-transform:rotate(0.6deg);transform:rotate(0.6deg);-webkit-transform-origin:50% 50%;-moz-transform-origin:50% 50%;-ms-transform-origin:50% 50%;-o-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-transition:300ms ease all;-moz-transition:300ms ease all;-o-transition:300ms ease all;transition:300ms ease all}.rotate:hover{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transform-origin:50% 50%;-moz-transform-origin:50% 50%;-ms-transform-origin:50% 50%;-o-transform-origin:50% 50%;transform-origin:50% 50%}.img-gesture-popup{position:absolute;top:0;left:100%;width:50%;margin:0;padding:0;opacity:0;display:none}.img-gesture-popup p{color:#000}.img-gesture p{position:absolute;top:95%;left:35%;font-family:monospace;color:#000;font-size:0.2em;font-weight:bold;opacity:0}.img-gesture{position:absolute;margin:0;padding:0;top:77%;left:99%;opacity:0.66;color:#000;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);-webkit-transform-origin:50% 50%;-moz-transform-origin:50% 50%;-ms-transform-origin:50% 50%;-o-transform-origin:50% 50%;transform-origin:50% 50%;-webkit-transition:1000ms ease all;-moz-transition:1000ms ease all;-o-transition:1000ms ease all;transition:1000ms ease all}.img-gesture:hover{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-ms-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transform-origin:50% 50%;-moz-transform-origin:50% 50%;-ms-transform-origin:50% 50%;-o-transform-origin:50% 50%;transform-origin:50% 50%}div.footer{display:table;margin:0;padding:0;min-height:40px;height:7vh;opacity:0.66}footer{display:table-cell;vertical-align:middle}footer p{font-family:monospace;font-size:1em;margin:0;padding:0}@media all and (min-width: 800px){footer p{font-size:1.2em}}[data-position="fixed"]{display:none !important}
+/* main.css: afable 2016 */
+
+/* bkg color during transitions */
+body {
+	background: #f06;
+	background: linear-gradient(45deg, #f06, yellow);
+}
+
+/* ========================================================================= */
+/* ========================= Global Helper Styles ========================== */
+/* ========================================================================= */
+/* center elements such as header nav buttons and footer */
+.center {
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* set image to fit landscape or portrait sizes (for orientation changes) */
+img.landscape { width: 80vh; height: 80vh; }
+img.portrait {	width: 80vw; height: 80vw; }
+
+/* make img elements unselectable/undraggable */
+img.unselectable {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+/* all anchor tag colours */
+a.ui-link {
+	color: #000 !important;
+}
+a.ui-link:hover {
+	color: #e00 !important;
+}
+
+
+/* ========================================================================= */
+/* ====================== Navigation Header & Buttons ====================== */
+/* ========================================================================= */
+/* header nav & buttons */
+.header {
+	opacity: 0.66;
+}
+.nav a:hover {
+	box-shadow: -1px 0px 11px rgba(0, 85, 153, 0.5);
+}
+.nav a:active {
+	box-shadow: -1px 0px 11px rgba(0, 85, 153, 0.5);
+	background-color: #e00 !important;
+	color: #ee0 !important;
+}
+.nav a {
+	background-color: #e9e9e9 !important;
+	border: 0 !important;
+	color: #000 !important;
+}
+/* leave a shadow on the currently active page's button */
+.nav-active {
+	box-shadow: -1px 0px 11px rgba(0, 85, 153, 0.5);
+}
+/* nav button sizes fixed on top */
+.nav-button {
+	margin: 0;
+	min-height: 40px;
+	/* 11vw covers 9 nav buttons (100vw / 9 buttons = 11 vw/button) but this
+	   will be changed dynamically depending on the number of buttons */
+	width: 11vw;
+	height: 7vh;
+	line-height: 7vh;
+	/* need paddig offset since line-height doesn't perfectly vertically center
+	   the nav icons (there's a bit of a top offset) */
+	padding: 15px 0 0 0;
+	border-radius: 0 !important;
+}
+/* handle nav-button-widths to fit the screen perfectly on various viewports */
+/*@media all and (min-width: 360px) {	.nav-button { width: 10.5vw; } }
+@media all and (min-width: 640px) { .nav-button { width: 10.8vw; } }
+@media all and (min-width: 943px) { .nav-button { width: 10.9vw; } }*/
+
+
+/* ========================================================================= */
+/* ========================= Main Content Section ========================== */
+/* ========================================================================= */
+/* main  wrapper for each page should be full device height */
+.main {
+	height: 100vh !important;
+	background: #f06;
+	background: linear-gradient(45deg, #f06, yellow);
+}
+
+/* the main polaroid table wrapper (has the arrows and polaroid inside ) */
+table.polaroid-container {
+	margin: auto;
+    position: absolute;
+	/* make it so polaroid is not larger than vh (good for landscape mobile
+	   browsers */
+	height: 100vh;
+    top: 0;
+	bottom: 0;
+	right: 0;
+    left: 0;
+}
+/* each polaroid table data should be evenly split */
+.polaroid-container .td-arrow {
+	/* the combination of polaroid 50% & 25vw arrows centers and resizes
+	   appropriately on most desktop & mobile browser */
+	width: 25vw;
+	text-align: center;
+}
+.polaroid-container .td-polaroid {
+	/* the combination of polaroid 50% & 25vw arrows centers and resizes
+	   appropriately on most desktop & mobile browser */
+	width: 50%;
+	text-align: center;
+}
+
+/* main polaroid section that has img inside */
+.polaroid {
+	background-color: #f3f3f3;
+	padding-bottom: 7px;
+	border-radius: 1%;
+	/* box-shadow */
+	-webkit-box-shadow: 3px 6px 11px 0px #000;
+	-moz-box-shadow: 3px 6px 11px 0px #000;
+	box-shadow: 3px 6px 11px 0px #000;
+}
+/* container for overflow: hidden on greyscale photo */
+.polaroid-img-container {
+	overflow: hidden;
+	margin: 0 auto;
+	padding-top: 5%;
+	width: 90%;
+}
+/* greyscale photo section of polaroid */
+.polaroid img {
+	width: 100%;
+	height: 100%;
+	border-radius: 2%;
+}
+/* div container to use display: table/table-cell to veritically center p */
+.polaroid-p-container {
+	display: table;
+	height: 25%;
+	margin: 0 auto;
+}
+/* polaroid caption underneath greyscale photo */
+.polaroid p {
+	display: table-cell;
+	vertical-align: middle;
+	margin: 0;
+	padding-top: 7px;
+	text-align: center;
+	font-family: "Reenie Beanie", "Nothing You Could Do";
+	font-size: 1em;
+	color: #666;
+	text-shadow: 0px 0px 1px #666;
+	line-height: 100%;
+}
+/* polaroid anchor tags do not have hover or link styles since the .polaroid
+   will tilt a little when hovering over it */
+.polaroid a, .polaroid a:hover {
+	color: #000;
+	text-decoration: none;
+}
+/* responsive font for different device viewports or caption won't fit screen */
+@media all and (min-width: 640px) { .polaroid p { font-size: 1.2em; } }
+@media all and (min-width: 800px) { .polaroid p { font-size: 1.6em; } }
+@media all and (min-width: 1200px) { .polaroid p { font-size: 2.4em; } }
+
+/* arrow transitions and animations */
+.fa-arrow-left, .fa-arrow-right {
+	color: #000;
+	opacity: 0.66;
+    -webkit-transition: 500ms ease all;
+    -moz-transition: 500ms ease all;
+    -o-transition: 500ms ease all;
+	transition: 500ms ease all;
+}
+/* arrow transitions start slowly as defined above */
+.fa-arrow-left:hover, .fa-arrow-right:hover {
+	background: #000;
+	padding: 20px;	
+	border: 1px solid black;
+	border-radius: 50%;
+}
+/* arrows change colour on hover (different colour for different arrow) */
+.fa-arrow-left:hover { color: #e00; }
+.fa-arrow-right:hover { color: #ee0; }
+/* transitions on click 'pop' faster for better UX */
+.fa-arrow-left:active, .fa-arrow-right:active {
+    -webkit-transition-duration: 200ms;
+    -moz-transition-duration: 200ms;
+    -o-transition-duration: 200ms;
+	transition-duration: 200ms;
+	background: inherit;
+	padding: 0;	
+	border: none;
+	border-radius: 50%;
+}
+
+/* polaroid transitions & animations */
+/* polaroid now starts off -1deg rotated.. hover fixes rotation */
+.rotate {
+    -webkit-transform: rotate(0.6deg);
+    -moz-transform: rotate(0.6deg);
+    -ms-transform: rotate(0.6deg);
+    -o-transform: rotate(0.6deg);
+    transform: rotate(0.6deg);
+
+	/* set origin so that polaroid rotates in place */
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-transition: 300ms ease all;
+    -moz-transition: 300ms ease all;
+    -o-transition: 300ms ease all;
+    transition: 300ms ease all;
+}
+.rotate:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+	/* set origin so that polaroid rotates in place */
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+/* the pop that appears when user hovers/clicks on hand pointer */
+.img-gesture-popup {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 50%;
+	margin: 0;
+	padding: 0;
+
+	opacity: 0;
+	display: none;
+}
+.img-gesture-popup p {
+	color: #000;
+}
+/* the "click me" text under the img gesture pointer hand */
+.img-gesture p {
+	position: absolute;
+	top: 95%;
+	left: 35%;
+	font-family: monospace;
+	color: #000;
+	font-size: 0.2em;
+	font-weight: bold;
+	opacity: 0;
+}
+/* the img gesture hand pointer that tells user to click on photo,
+   start .img-gesture-popup hidden and only show when mouseover img-gesture
+   icon */
+.img-gesture {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	top: 77%;
+	left: 99%;
+	opacity: 0.66;
+	color: #000;
+
+	/* start hand pointing at polaroid */
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+
+    -webkit-transition: 1000ms ease all; 
+    -moz-transition: 1000ms ease all;
+    -o-transition: 1000ms ease all;
+    transition: 1000ms ease all;
+}
+.img-gesture:hover {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+
+/* ========================================================================= */
+/* ============================ Footer Section ============================= */
+/* ========================================================================= */
+div.footer {
+	display: table;
+	margin: 0;
+	padding: 0;
+	min-height: 40px;
+	height: 7vh;
+	opacity: 0.66;
+}
+footer {
+	display: table-cell;
+	vertical-align: middle;
+}
+footer p {
+	font-family: monospace;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+/* responsive font for footer */
+@media all and (min-width: 800px) { footer p { font-size: 1.2em; } }
+
+
+/* ========================================================================= */
+/* ======================== Header & Footer Toolbar ======================== */
+/* ========================================================================= */
+/* toolbar needs to start with display:none because page loads with it initially
+   in view and you can see a flicker of it before the js code hides it (note
+   that !important is needed to get rid of flicker */
+[data-position="fixed"] {
+	display: none !important;
+}
+
+

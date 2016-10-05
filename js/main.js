@@ -1,15 +1,416 @@
-var g_bLandscape=!0,g_bToolbarVisible=!1,g_bToolbarAnimating=!1;window.onload=function(){console.log("LOADED window.onload...")};(function(){console.log("LOADED IIFE..")})();$(document).ready(function(){console.log("LOADED $(document).ready...")});
-(function(a){function g(){g_bLandscape?a("img.portrait").removeClass("portrait").addClass("landscape"):a("img.landscape").removeClass("landscape").addClass("portrait")}function h(b){b?(a("[data-position='fixed']").attr("style","display: table !important;"),a(".ui-page-active [data-position='fixed']").toolbar("show")):(window.setTimeout(function(){a("[data-position='fixed']").attr("style","display:none !important;")},300),a(".ui-page-active [data-position='fixed']").toolbar("hide"))}g_bLandscape=window.innerWidth>
-window.innerHeight?!0:!1;var b=[];b.push({id:"afable",icon:"fa-user",iconTitle:"Look at me",img:"jpg",url:"https://www.linkedin.com/in/erik-afable-176a3231",title:"#afable, @superafable",caption:"That's me. I like video games and the web.<br>Swipe for more."});b.push({id:"fathom",icon:"fa-eye",iconTitle:"Look at my fathom game",img:"jpg",url:"http://fathomgame.github.io/",title:"Play the game",caption:"A game I made with friends @OrcaJam2015 &mdash; a 48 hour game jam."});b.push({id:"snowballin",
-icon:"fa-circle-o",iconTitle:"Look at snowballin",img:"jpg",url:"http://snowballin.github.io/",title:"Play the game",caption:"Helped some friends @OrcaJam2014.<br>You roll around. It's awesome."});b.push({id:"shoal",icon:"fa-cloud",iconTitle:"Look at my school project about squids",img:"png",url:"http://web.uvic.ca/~eafable/shoal/index.html",title:"View the website",caption:"A school project to improve Shoal.<br>I made pamphlets."});b.push({id:"healthyTweets",icon:"fa-heartbeat",iconTitle:"Look at what each state tweets about health",
-img:"jpg",url:"http://afable.github.io/HealthyTweets/",title:"View the website",caption:"Healthy tweets by state.<br>Texans tweet a lot about obesity."});b.push({id:"firstGameEngine",icon:"fa-gamepad",iconTitle:"See my first game engine",img:"jpg",url:"https://www.youtube.com/watch?v=Wea4-eTkD1A",title:"Watch demo (source in description)",caption:"My first game engine &mdash; a simple platformer.<br>Still took me a month."});b.push({id:"simpleParticleSystem",icon:"fa-coffee",iconTitle:"See my first particle system",
-img:"jpg",url:"https://www.youtube.com/watch?v=DBiua8HTWSg",title:"Watch demo (source in description)",caption:"A very simple particle system.<br>The teapot shoots bubbles."});b.push({id:"simpleRayTracer",icon:"fa-arrows-alt",iconTitle:"Ray tracers can't maths tri-force",img:"jpg",url:"https://github.com/afable/ray_tracer",title:"View on GitHub",caption:"A simple ray tracer.<br>You can't maths the tri-force."});b.push({id:"firstWorldCrawler",icon:"fa-star-half-o",iconTitle:"Crawl the world of star king",
-img:"jpg",url:"https://www.youtube.com/watch?v=Xcm5j0kkxO0",title:"Watch demo (source in description)",caption:"A simple world crawler (+1 star hippie)."});for(var d="",f="fade flip pop flow slidefade slideup slidedown".split(" "),c=0;c<b.length;++c)d+='<a href="#'+b[c].id+'" data-role="button" data-transition="'+f[c%f.length]+'" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button" title="'+b[c].iconTitle+'"><i class="fa '+b[c].icon+' fa-2x"></i></a>';f=g_bLandscape?"landscape":
-"portrait";for(c=b.length-1;0<=c;--c)a(['<div data-role="page" id="'+b[c].id+'" class="ui-page">','\t<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" role="banner">','\t\t<nav class="nav">'+d+"</nav>",'\t</div>\x3c!-- /header --\x3e\n\t<div role="main" class="main ui-content">\n\t\t<table class="polaroid-container">\n\t\t\t<tr>\n\t\t\t\t<td class="td-arrow"><i class="fa fa-arrow-left fa-3x"></i>\n\t\t\t\t</td>\n\t\t\t\t<td class="td-polaroid"><section class="polaroid rotate">',
-'\t\t\t\t\t<a href="'+b[c].url+'" target="_blank" class="in-polaroid">','\t\t\t\t\t\t<div class="polaroid-img-container">','\t\t\t\t\t\t\t<img src="/img/'+b[c].id+"."+b[c].img+'" class="unselectable '+f+' in-polaroid" style="opacity: 0" alt="'+b[c].id+'" title="'+b[c].title+'">','\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class="polaroid-p-container">','\t\t\t\t\t\t\t<p class="in-polaroid">'+b[c].caption+"</p>",'\t\t\t\t\t\t</div>\n\t\t\t\t\t</a>\n\t\t\t\t\t<i class="img-gesture fa fa-hand-o-up fa-5x"><p class="click-me">click<br>me</p></i>\n\t\t\t\t\t<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>\n\t\t\t\t</td>\n\t\t\t\t<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>\n\t\t\t\t</td>\n\t\t\t</tr>\n\t\t</table>\n\t</div>\x3c!-- /main --\x3e\n\t<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">\n\t\t<footer>\n\t\t\t<p>Created by <a href="#afable" title="#afable, @superafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>\n\t\t</footer>\n\t</div>\x3c!-- /footer --\x3e\n</div>'].join("\n")).prependTo(a("body"));
-d=Math.floor(100/b.length);a(".nav-button").css("width",d+"vw");a(document).on("pagecontainerchange",function(){a(".nav a.nav-active").removeClass("nav-active");var b="#"+a(".ui-page-active").prop("id");a(".ui-page-active a[href='"+b+"']").addClass("nav-active");a("section img").css("opacity",0);a(".ui-page-active section img").animate({opacity:1},"slow","easeInOutCubic");g_bLandscape=window.innerWidth>window.innerHeight?!0:!1;g()});g_bToolbarVisible=g_bToolbarVisible?!0:!1;h(g_bToolbarVisible);a(document).on("click.toggleToolbar",
-function(b){b=a(b.target);if(b.is("td")||b.hasClass("img-gesture")||b.hasClass("click-me"))b=null,g_bToolbarAnimating||(g_bToolbarAnimating=!0,window.setTimeout(function(){g_bToolbarAnimating=!1},300),g_bToolbarVisible=g_bToolbarVisible?!1:!0,h(g_bToolbarVisible))});a(window).on("resize",function(){g_bLandscape=window.innerWidth>window.innerHeight?!0:!1;g()});a(".fa-arrow-left").on("click.left-arrow",function(){a(document).trigger("swiperight")});a(".fa-arrow-left").on("mouseover.left-arrow",function(){a(this).css("cursor",
-"pointer")});a(".fa-arrow-right").on("click.right-arrow",function(){a(document).trigger("swipeleft")});a(".fa-arrow-right").on("mouseover.right-arrow",function(){a(this).css("cursor","pointer")});a(document).on("swipeleft",function(){var c=a(".ui-page-active").prop("id"),e=a.map(b,function(a,b){if(a.id===c)return b})[0];a.mobile.changePage("#"+(void 0===b[e+1]?b[0].id:b[e+1].id),{transition:"flow",reverse:!1})});a(document).on("swiperight",function(){var c=a(".ui-page-active").prop("id"),e=a.map(b,
-function(a,b){if(a.id===c)return b})[0],d=b.length-1;a.mobile.changePage("#"+(void 0===b[e-1]?b[d].id:b[e-1].id),{transition:"flow",reverse:!0})});a(".img-gesture").on("click.showPopup",function(){a(".ui-page-active .img-gesture-popup").attr("style","display: table;");a(".ui-page-active .img-gesture-popup").animate({opacity:.66},"slow","easeInOutCubic")});a(".img-gesture").on("mouseover.showPopup",function(){"none"===a(".ui-page-active .img-gesture-popup").css("display")&&(a(".ui-page-active .img-gesture-popup").attr("style",
-"display: table;"),a(".ui-page-active .img-gesture-popup").animate({opacity:.66},"slow","easeInOutCubic"))});a(".img-gesture").on("mouseout.hidePopup",function(){a(".ui-page-active .img-gesture-popup").animate({opacity:0},"slow","easeInOutCubic");k()});var k=function(){window.setTimeout(function(){if("0"===a(".ui-page-active .img-gesture-popup").css("opacity"))a(".img-gesture-popup").attr("style","display: none;");else return k()},1E3)};window.setTimeout(function(){a(".ui-page-active .img-gesture p").transition({opacity:.66},
-"slow","easeInOutCubic")},1500);a(".img-gesture").on("click.clickme",function(){"0"!==a(".ui-page-active .img-gesture p").css("opacity")&&a(".ui-page-active .img-gesture p").transition({opacity:0},"slow","easeInOutCubic")})})(jQuery);
+/* main.js: afable 2016 */
+
+"use strict";
+
+// ============================================================================
+// ============================= Global Variables =============================
+// ============================================================================
+var g_bLandscape = true;
+var g_bToolbarVisible = false;
+var g_bToolbarAnimating = false;
+
+// document and window ready functions (test which loads first)
+window.onload = function() { console.log("LOADED window.onload..."); };
+(function() { console.log("LOADED IIFE.."); })();
+$(document).ready(function() { console.log("LOADED $(document).ready..."); });
+
+
+// show viewport size on re-size (chrome no longer shows it by default)
+// window.addEventListener('resize', function(event){
+//   console.log("(vw, vh): (" + window.innerWidth + ", " + window.innerHeight + ")");
+// });
+
+
+// ============================================================================
+// ========================== Main Javascript Routine =========================
+// ============ ( encapsulate js so there are no naming conflicts ) ===========
+// ============================================================================
+(function($) {
+
+	
+	// get if this viewport is hortizontal or vertical
+	g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+
+
+	// initialize page data for all pages
+	var arrPages = [];
+	arrPages.push( {id: "afable",
+		icon: "fa-user",
+		iconTitle: "Look at me", 
+		img: "jpg", 
+		url: "https://www.linkedin.com/in/erik-afable-176a3231",
+		title: "#afable, @superafable",
+		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
+	arrPages.push( {id: "fathom",
+		icon: "fa-eye",
+		iconTitle: "Look at my fathom game", 
+		img: "jpg",
+		url: "http://fathomgame.github.io/",
+		title: "Play the game",
+		caption: "A game I made with friends @OrcaJam2015 &mdash; a 48 hour game jam."} );
+	arrPages.push( {id: "snowballin",
+		icon: "fa-circle-o",
+		iconTitle: "Look at snowballin", 
+		img: "jpg",
+		url: "http://snowballin.github.io/",
+		title: "Play the game",
+		caption: "Helped some friends @OrcaJam2014.<br>You roll around. It's awesome."} );
+	arrPages.push( {id: "shoal",
+		icon: "fa-cloud",
+		iconTitle: "Look at my school project about squids", 
+		img: "png",
+		url: "http://web.uvic.ca/~eafable/shoal/index.html",
+		title: "View the website",
+		caption: "A school project to improve Shoal.<br>I made pamphlets."} );
+	arrPages.push( {id: "healthyTweets",
+		icon: "fa-heartbeat",
+		iconTitle: "Look at what each state tweets about health", 
+		img: "jpg",
+		url: "http://afable.github.io/HealthyTweets/",
+		title: "View the website",
+		caption: "Healthy tweets by state.<br>Texans tweet a lot about obesity."} );
+	arrPages.push( {id: "firstGameEngine",
+		icon: "fa-gamepad",
+		iconTitle: "See my first game engine", 
+		img: "jpg",
+		url: "https://www.youtube.com/watch?v=Wea4-eTkD1A",
+		title: "Watch demo (source in description)",
+		caption: "My first game engine &mdash; a simple platformer.<br>Still took me a month."} );
+	arrPages.push( {id: "simpleParticleSystem",
+		icon: "fa-coffee",
+		iconTitle: "See my first particle system", 
+		img: "jpg",
+		url: "https://www.youtube.com/watch?v=DBiua8HTWSg",
+		title: "Watch demo (source in description)",
+		caption: "A very simple particle system.<br>The teapot shoots bubbles."} );
+	arrPages.push( {id: "simpleRayTracer",
+		icon: "fa-arrows-alt",
+		iconTitle: "Ray tracers can't maths tri-force", 
+		img: "jpg",
+		url: "https://github.com/afable/ray_tracer",
+		title: "View on GitHub",
+		caption: "A simple ray tracer.<br>You can't maths the tri-force."} );
+	arrPages.push( {id: "firstWorldCrawler",
+		icon: "fa-star-half-o",
+		iconTitle: "Crawl the world of star king", 
+		img: "jpg",
+		url: "https://www.youtube.com/watch?v=Xcm5j0kkxO0",
+		title: "Watch demo (source in description)",
+		caption: "A simple world crawler (+1 star hippie)."} );
+
+
+	// create pages dynamically
+	// create nav links first so they can be inserted into each page
+	var strNav = "";
+	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
+	for ( var i = 0; i < arrPages.length; ++i ) {
+		strNav += '<a href="#' + arrPages[i].id + '" data-role="button" data-transition="' + arrStrTransitions[i % arrStrTransitions.length] + '" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button" title="' + arrPages[i].iconTitle + '"><i class="fa ' + arrPages[i].icon + ' fa-2x"></i></a>';
+	}
+
+	// create each page's main section and base image sizes on whether viewport
+	// is landscape vs portrait
+	var strOrientation = ( g_bLandscape )? "landscape" : "portrait";
+
+	// now create the pages by prepending to body (#afable comes last so that
+	// it is the first page element in body)
+	for ( var i = arrPages.length-1; i >= 0; --i ) {
+		// create header (from previously created strNav), main, and footer
+	var newPage = $([
+			'<div data-role="page" id="' + arrPages[i].id + '" class="ui-page">',
+			
+			'	<div data-role="header" class="header ui-header ui-header-fullscreen ui-header-fixed slidedown ui-bar-inherit center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false" role="banner">',
+			'		<nav class="nav">' + strNav + '</nav>',
+			'	</div><!-- /header -->',
+				
+			'	<div role="main" class="main ui-content">',
+			'		<table class="polaroid-container">',
+			'			<tr>',
+			'				<td class="td-arrow"><i class="fa fa-arrow-left fa-3x"></i>',
+			'				</td>',
+			'				<td class="td-polaroid"><section class="polaroid rotate">',
+			'					<a href="' + arrPages[i].url + '" target="_blank" class="in-polaroid">',
+			'						<div class="polaroid-img-container">',
+			'							<img src="/img/' + arrPages[i].id + '.' + arrPages[i].img + '" class="unselectable ' + strOrientation + ' in-polaroid" style="opacity: 0" alt="' + arrPages[i].id + '" title="' + arrPages[i].title + '">',
+			'						</div>',
+			'						<div class="polaroid-p-container">',
+			'							<p class="in-polaroid">' + arrPages[i].caption + '</p>',
+			'						</div>',
+			'					</a>',
+			'					<i class="img-gesture fa fa-hand-o-up fa-5x"><p class="click-me">click<br>me</p></i>',
+			'					<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>',
+			'				</td>',
+			'				<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>',
+			'				</td>',
+			'			</tr>',
+			'		</table>',
+			'	</div><!-- /main -->',
+
+			'	<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">',
+			'		<footer>',
+					
+			'			<p>Created by <a href="#afable" title="#afable, @superafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/superafable" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://www.linkedin.com/in/erik-afable-176a3231" target="_blank" title="LinkedIn"><i class="fa fa-linkedin fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.freecodecamp.com/afable" target="_blank" title="Free Code Camp"><i class="fa fa-leaf fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>',
+			'		</footer>',
+			'	</div><!-- /footer -->',
+
+			'</div>',
+		].join("\n"));
+
+		// prepend new page to the page container (manually used body since
+		// page container isn't initialized yet at this point)
+		newPage.prependTo( $("body") );
+	}
+
+	// update the nav link widths by (100vw / # buttons) and floor so all
+	// links can fit on one line
+	var vwNavLink = Math.floor(100 / arrPages.length);
+	$(".nav-button").css("width", vwNavLink + "vw");	
+	
+
+	// change .ui-btn-active manually as it does not persist after transitions
+	// in jquerymobile-1.4.5 with jquery-2.2.4
+	$(document).on("pagecontainerchange", function() {
+		// remove any nav-active's that exist
+		$(".nav a.nav-active").removeClass("nav-active");
+		// make current page the nav-active page
+		var currPage = "#" + $(".ui-page-active").prop("id");
+		$(".ui-page-active a[href='" + currPage + "']").addClass("nav-active");
+
+		// remove any opacity of all imgs that have opacity (so far best selector
+		// is to target all imgs with style attributes)
+		$("section img").css("opacity", 0);
+		// perform animation to easein main img into view
+		$(".ui-page-active section img").animate({ opacity: 1 }, "slow", "easeInOutCubic");
+
+		// update sections and re-adjust viewport
+		updateView();
+	});
+
+	// setup initial toolbar visibility
+	if ( g_bToolbarVisible ) {
+		g_bToolbarVisible = true;
+		showToolbar(g_bToolbarVisible);
+	} else {
+		g_bToolbarVisible = false;
+		showToolbar(g_bToolbarVisible);
+	}
+
+	// handle toolbar toggle, i.e. user clicks on img-gesture hand pointer
+	// or clicks somewhere on the background
+	$(document).on("click.toggleToolbar", function (e) {
+		// show toolbar only if td background, img-gesture or click-me clicked
+		var senderElement = $(e.target);
+		if ( senderElement.is("td") ||
+			senderElement.hasClass("img-gesture") ||
+			senderElement.hasClass("click-me") )
+		{
+			// release senderElement as not using it anymore
+			senderElement = null;
+
+			// toggle toolbar show/hide only if not already animating
+			if ( !g_bToolbarAnimating ) {
+				// since we are animating, set flag that animation will finish
+				// in a little bit
+				g_bToolbarAnimating = true;
+				window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
+				
+				// show toolbars if they aren't already visible 
+				if ( !g_bToolbarVisible ) {
+					g_bToolbarVisible = true;
+					showToolbar(g_bToolbarVisible);
+				// otherwise, hide toolbars if they are visible (with a slight delay)
+				} else {
+					g_bToolbarVisible = false;
+					showToolbar(g_bToolbarVisible);
+				}
+			}
+		}
+	});
+	
+
+	// update viewport display on orientation changes (resize event is more
+	// secure/supported and worked better in this case
+	// http://davidwalsh.name/orientation-change)
+	$(window).on("resize", function() {
+		// update sections and re-adjust viewport
+		updateView();
+	});
+
+
+	// swipe right on left-arrow click
+	$(".fa-arrow-left").on("click.left-arrow", function () {
+		$(document).trigger("swiperight");
+	});
+	// change cursor and left-arrow colour on mouseover
+	$(".fa-arrow-left").on("mouseover.left-arrow", function () {
+		$(this).css("cursor", "pointer");
+	});
+
+	// swipe left on right-arrow click
+	$(".fa-arrow-right").on("click.right-arrow", function () {
+		$(document).trigger("swipeleft");
+	});
+	// change cursor and right-arrow colour on mouseover
+	$(".fa-arrow-right").on("mouseover.right-arrow", function () {
+		$(this).css("cursor", "pointer");
+	});
+
+	// capture left swipes on header, main, and footer
+	// left swipes move to next page in sequence
+	$(document).on("swipeleft", function() {
+		// get current page, find its index in the array of pages by looking for
+		// arrPages[#page].id
+		var strCurrPage = $(".ui-page-active").prop("id");
+		var indexes = $.map(arrPages, function(obj, index) {
+			if(obj.id === strCurrPage ) { return index; }
+		});
+		var iCurrPageIndex = indexes[0];
+
+		// change to next page unless if we are on the last page, then 
+		// change to first page
+		var FIRST_PAGE = 0;
+		var strNextPage = ( arrPages[iCurrPageIndex+1] === undefined )? arrPages[FIRST_PAGE].id : arrPages[iCurrPageIndex+1].id;
+		$.mobile.changePage("#" + strNextPage, { transition: 'flow', reverse: false });
+	});
+
+	// capture right swipes on header, main, and footer
+	// right swipes move to previous page in sequence
+	$(document).on("swiperight", function() {
+		// get current page, find its index in the array of pages by looking for
+		// arrPages[#page].id
+		var strCurrPage = $(".ui-page-active").prop("id");
+		var indexes = $.map(arrPages, function(obj, index) {
+			if(obj.id === strCurrPage ) { return index; }
+		});
+		var iCurrPageIndex = indexes[0];
+
+		// change to previous page unless if we are on the first page, then 
+		// change to last page
+		var LAST_PAGE = arrPages.length-1;
+		var strPrevPage = ( arrPages[iCurrPageIndex-1] === undefined )? arrPages[LAST_PAGE].id : arrPages[iCurrPageIndex-1].id;
+		$.mobile.changePage("#" + strPrevPage, { transition: 'flow', reverse: true });
+	});
+
+
+	// always show popup text on hand gesture click
+	$(".img-gesture").on("click.showPopup", function () {
+		$(".ui-page-active .img-gesture-popup").attr("style", "display: table;");
+		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+	});
+	// only show popup text on hand gesture hover if not animating
+	$(".img-gesture").on("mouseover.showPopup", function () {
+		// show popup only if it is not already visible
+		if ( $(".ui-page-active .img-gesture-popup").css("display") === "none" ) {
+			$(".ui-page-active .img-gesture-popup").attr("style", "display: table;");
+			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
+		}
+	});
+	$(".img-gesture").on("mouseout.hidePopup", function () {
+		// only fadeout popup gesture if not animating. it's okay for popup
+		// gesture to always show up on mouseover or click but it should only
+		// disappear on mouseout (this fixes disappearing even on mouseover)
+		$(".ui-page-active .img-gesture-popup").animate({ opacity: 0 }, "slow", "easeInOutCubic");
+
+		// display: none on img-gesture-popup of all pages when mouseout
+		// to prevent toolbar toggle when mouse click on popup text
+		// (after a slight delay for better UI/UX)
+		recurseCheck();
+	});
+	
+
+	// recursively call to display: none until mouse not over img-gesture-popup
+	// not really recursion but I just want to loop a check to make sure that
+	// the img-gesture-pop doesn't get display: none abruptly (better UI/UX)
+	var recurseCheck = function () {
+		window.setTimeout( function () {
+			// base case
+			if ( $(".ui-page-active .img-gesture-popup").css("opacity") === "0" ) {
+				$(".img-gesture-popup").attr("style", "display: none;");
+				return;
+			}
+			// recursive case
+			return recurseCheck();
+		}, 1000);
+	};
+
+	
+	// fade in the "click me" text a few seconds after this js has loaded
+	window.setTimeout(function () {
+		$(".ui-page-active .img-gesture p").transition({ opacity: 0.66, }, "slow", "easeInOutCubic");
+	}, 1500);
+	// when clicking on the gesture, make sure to fade out the "click me" helper
+	// text as user will already know what clicking on the hand pointer does
+	$(".img-gesture").on("click.clickme", function () {
+		if ( $(".ui-page-active .img-gesture p").css("opacity") !== "0" ) {
+			$(".ui-page-active .img-gesture p").transition({ opacity: 0, }, "slow", "easeInOutCubic");
+		}
+	});
+
+
+	
+
+
+
+// ============================================================================
+// ============================= Helper Functions =============================
+// =================== ( can be commented out for release ) ===================
+// ============================================================================
+	// update sections and re-adjust viewport for any orientation and
+	// pagecontainer changes
+	function updateView() {
+		// display viewport information on page changes
+		displayViewport();
+		// update img sizes to fit viewport orientation
+		imgSize();
+	}
+
+	// display viewport in a paragraph element appended to main's section
+	function displayViewport() {
+		// update if viewport is hortizontal or vertical
+		g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
+		// display window sizes for different viewports somewhere
+		// printViewport();
+	}
+
+	function printViewport() {
+		var strViewport = "viewport (w, h): (" + window.innerWidth + "," + window.innerHeight + ") & horizontal: " + g_bLandscape;
+		if ( $(".ui-page-active #displayviewport").length === 0 ) {
+			$(".ui-page-active section").append("<p id='displayviewport' style='font-size: xx-large; padding: 10%;'>" + strViewport + "</p>");
+		} else {
+			$(".ui-page-active #displayviewport")[0].innerHTML = strViewport;
+		}
+	}
+
+	// fix img size to perfectly fit landscape and portrait orientations
+	function imgSize() {
+		// switch landscape and portrait classes if orientation changes
+		if ( g_bLandscape ) {
+			$("img.portrait").removeClass("portrait").addClass("landscape");
+		} else {
+			$("img.landscape").removeClass("landscape").addClass("portrait");
+		}
+	}
+
+	// show or unshow the toolbars (header & footer)
+	function showToolbar(bShow) {
+		if ( bShow ) {
+			// display:table all toolbars since toolbars are actually shown on
+			// page container change regardless of show/hide setting but when
+			// we want to the user to see the toolbar come into view, only show
+			// it for the active page
+			$("[data-position='fixed']").attr("style", "display: table !important;");
+			$(".ui-page-active [data-position='fixed']").toolbar("show");
+		} else {
+			// display:none all toolbars since toolbars are actually shown on
+			// page container change regardless of show/hide setting but when
+			// we want to the user to see the toolbar leave from view, only show
+			// it for the active page... the 300ms delay assures that the toolbar
+			// has completely left view before we set display:none (UI/UX)
+			window.setTimeout(function() {
+				$("[data-position='fixed']").attr("style", "display:none !important;");
+			}, 300);
+			$(".ui-page-active [data-position='fixed']").toolbar("hide");
+		}
+	}
+
+
+})(jQuery);
