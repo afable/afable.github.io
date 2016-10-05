@@ -12,7 +12,7 @@ var g_bToolbarAnimating = false;
 // document and window ready functions (test which loads first)
 window.onload = function() { console.log("LOADED window.onload..."); };
 (function() { console.log("LOADED IIFE.."); })();
-$(document).ready(function() { console.log("LOADED $(document).ready...") });
+$(document).ready(function() { console.log("LOADED $(document).ready..."); });
 
 
 // show viewport size on re-size (chrome no longer shows it by default)
@@ -104,7 +104,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 	var strNav = "";
 	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
 	for ( var i = 0; i < arrPages.length; ++i ) {
-		strNav += '<a href="#' + arrPages[i].id + '" data-role="button" data-transition="' + arrStrTransitions[i % arrStrTransitions.length] + '" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button" title="' + arrPages[i].iconTitle + '"><i class="fa ' + arrPages[i].icon + ' fa-2x"></i></a>'
+		strNav += '<a href="#' + arrPages[i].id + '" data-role="button" data-transition="' + arrStrTransitions[i % arrStrTransitions.length] + '" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button" title="' + arrPages[i].iconTitle + '"><i class="fa ' + arrPages[i].icon + ' fa-2x"></i></a>';
 	}
 
 	// create each page's main section and base image sizes on whether viewport
@@ -303,7 +303,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 			$(".ui-page-active .img-gesture-popup").attr("style", "display: table;");
 			$(".ui-page-active .img-gesture-popup").animate({ opacity: 0.66 }, "slow", "easeInOutCubic");
 		}
-	})
+	});
 	$(".img-gesture").on("mouseout.hidePopup", function () {
 		// only fadeout popup gesture if not animating. it's okay for popup
 		// gesture to always show up on mouseover or click but it should only
@@ -329,7 +329,7 @@ $(document).ready(function() { console.log("LOADED $(document).ready...") });
 			}
 			// recursive case
 			return recurseCheck();
-		}, 1000)
+		}, 1000);
 	};
 
 	
