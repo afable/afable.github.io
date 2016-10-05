@@ -10,9 +10,9 @@ var g_bToolbarVisible = false;
 var g_bToolbarAnimating = false;
 
 // document and window ready functions (test which loads first)
-window.onload = function() { console.log("LOADED window.onload..."); };
-(function() { console.log("LOADED IIFE.."); })();
-$(document).ready(function() { console.log("LOADED $(document).ready..."); });
+//window.onload = function() { console.log("LOADED window.onload..."); };
+//(function() { console.log("LOADED IIFE.."); })();
+//$(document).ready(function() { console.log("LOADED $(document).ready..."); });
 
 
 // show viewport size on re-size (chrome no longer shows it by default)
