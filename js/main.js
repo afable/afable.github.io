@@ -445,7 +445,6 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 			}
 			// swipe left / right on keyboard left arrow / right arrow presses
 			// to accommodate for users with accessibility needs
-			console.log(e);
 			if ( e.keyCode === LEFT_ARROW ) {
 				$(document).trigger("swiperight");
 			}
