@@ -11,6 +11,7 @@
 var g_bLandscape = true;
 var g_bToolbarVisible = false;
 var g_bToolbarAnimating = false;
+var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 
 // document and window ready functions (test which loads first)
 //window.onload = function() { console.log("LOADED window.onload..."); };
@@ -224,21 +225,10 @@ var g_bToolbarAnimating = false;
 	});
 
 	// handle keyboard presses to support more web accessibility needs
-	var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
-	$(document).on("keydown.swipeLeft", function(e) {
-		// swipe up / down toggles toolbar
-		if ( e.keyCode === UP_ARROW || e.keyCode === DOWN_ARROW ) {
-			toggleToolbar();
-		}
-		// swipe left / right on keyboard left arrow / right arrow presses
-		// to accommodate for users with accessibility needs
-		if ( e.keyCode === LEFT_ARROW ) {
-			$(document).trigger("swiperight");
-		}
-		if ( e.keyCode === RIGHT_ARROW ) {
-			$(document).trigger("swipeleft");
-		}
-	});
+	bindKeydownOnce();
+	$(document).on("keyup.arrows", function() {
+		bindKeydownOnce();
+	})
 
 	// swipe right on left-arrow click
 	$(".fa-arrow-left").on("click.left-arrow", function () {
@@ -436,6 +426,33 @@ var g_bToolbarAnimating = false;
 				showToolbar(g_bToolbarVisible);
 			}
 		}
+	}
+
+	// bind keydown event handler once to document so users cannot queue
+	// multiple keydown events by holding down or pressing a key multiple
+	// times very quickly (undesirable behaviour on page transitions)
+	function bindKeydownOnce() {
+		$(document).one("keydown.arrows", function(e) {
+			// only allow keydown events if not page transitioning
+			// (fixes queued up keydown events)
+			if ( $("body.ui-mobile-viewport-transitioning").length ) {
+				return;
+			}
+
+			// swipe up / down toggles toolbar
+			if ( e.keyCode === UP_ARROW || e.keyCode === DOWN_ARROW ) {
+				toggleToolbar();
+			}
+			// swipe left / right on keyboard left arrow / right arrow presses
+			// to accommodate for users with accessibility needs
+			console.log(e);
+			if ( e.keyCode === LEFT_ARROW ) {
+				$(document).trigger("swiperight");
+			}
+			if ( e.keyCode === RIGHT_ARROW ) {
+				$(document).trigger("swipeleft");
+			}
+		});
 	}
 
 })(jQuery);
