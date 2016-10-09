@@ -257,6 +257,18 @@ var g_bToolbarAnimating = false;
 		$(this).css("cursor", "pointer");
 	});
 
+	// swipe left / right on keyboard left arrow / right arrow presses
+	// to accommodate for users with accessibility needs
+	var LEFT_ARROW = 37, RIGHT_ARROW = 39;
+	$(document).on("keydown.swipeLeft", function(e) {
+		if ( e.keyCode === LEFT_ARROW ) {
+			$(document).trigger("swiperight");
+		}
+		if ( e.keyCode === RIGHT_ARROW ) {
+			$(document).trigger("swipeleft");
+		}
+	});
+
 	// capture left swipes on header, main, and footer
 	// left swipes move to next page in sequence
 	$(document).on("swipeleft", function() {
