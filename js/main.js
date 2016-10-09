@@ -210,22 +210,7 @@ var g_bToolbarAnimating = false;
 			senderElement = null;
 
 			// toggle toolbar show/hide only if not already animating
-			if ( !g_bToolbarAnimating ) {
-				// since we are animating, set flag that animation will finish
-				// in a little bit
-				g_bToolbarAnimating = true;
-				window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
-				
-				// show toolbars if they aren't already visible 
-				if ( !g_bToolbarVisible ) {
-					g_bToolbarVisible = true;
-					showToolbar(g_bToolbarVisible);
-				// otherwise, hide toolbars if they are visible (with a slight delay)
-				} else {
-					g_bToolbarVisible = false;
-					showToolbar(g_bToolbarVisible);
-				}
-			}
+			toggleToolbar();
 		}
 	});
 	
@@ -238,6 +223,22 @@ var g_bToolbarAnimating = false;
 		updateView();
 	});
 
+	// handle keyboard presses to support more web accessibility needs
+	var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
+	$(document).on("keydown.swipeLeft", function(e) {
+		// swipe up / down toggles toolbar
+		if ( e.keyCode === UP_ARROW || e.keyCode === DOWN_ARROW ) {
+			toggleToolbar();
+		}
+		// swipe left / right on keyboard left arrow / right arrow presses
+		// to accommodate for users with accessibility needs
+		if ( e.keyCode === LEFT_ARROW ) {
+			$(document).trigger("swiperight");
+		}
+		if ( e.keyCode === RIGHT_ARROW ) {
+			$(document).trigger("swipeleft");
+		}
+	});
 
 	// swipe right on left-arrow click
 	$(".fa-arrow-left").on("click.left-arrow", function () {
@@ -255,18 +256,6 @@ var g_bToolbarAnimating = false;
 	// change cursor and right-arrow colour on mouseover
 	$(".fa-arrow-right").on("mouseover.right-arrow", function () {
 		$(this).css("cursor", "pointer");
-	});
-
-	// swipe left / right on keyboard left arrow / right arrow presses
-	// to accommodate for users with accessibility needs
-	var LEFT_ARROW = 37, RIGHT_ARROW = 39;
-	$(document).on("keydown.swipeLeft", function(e) {
-		if ( e.keyCode === LEFT_ARROW ) {
-			$(document).trigger("swiperight");
-		}
-		if ( e.keyCode === RIGHT_ARROW ) {
-			$(document).trigger("swipeleft");
-		}
 	});
 
 	// capture left swipes on header, main, and footer
@@ -427,5 +416,26 @@ var g_bToolbarAnimating = false;
 		}
 	}
 
+	// handle toolbar toggle animation so users can only toggle toolbar if
+	// not already animating
+	function toggleToolbar() {
+		// toggle toolbar show/hide only if not already animating
+		if ( !g_bToolbarAnimating ) {
+			// since we are animating, set flag that animation will finish
+			// in a little bit
+			g_bToolbarAnimating = true;
+			window.setTimeout(function() { g_bToolbarAnimating = false; }, 300);
+			
+			// show toolbars if they aren't already visible 
+			if ( !g_bToolbarVisible ) {
+				g_bToolbarVisible = true;
+				showToolbar(g_bToolbarVisible);
+			// otherwise, hide toolbars if they are visible (with a slight delay)
+			} else {
+				g_bToolbarVisible = false;
+				showToolbar(g_bToolbarVisible);
+			}
+		}
+	}
 
 })(jQuery);
