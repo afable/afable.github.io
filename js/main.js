@@ -230,6 +230,11 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 		bindKeydownOnce();
 	})
 
+	// scrolling up/down & left/right swipe left/right event, respectively
+	$(window).on("wheel.scroll", function(e) {
+		bindScrollOnce();
+	});
+
 	// swipe right on left-arrow click
 	$(".fa-arrow-left").on("click.left-arrow", function () {
 		$(document).trigger("swiperight");
@@ -432,18 +437,18 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 	// multiple keydown events by holding down or pressing a key multiple
 	// times very quickly (undesirable behaviour on page transitions)
 	function bindKeydownOnce() {
-		$(document).one("keydown.arrows", function(e) {
-			// only allow keydown events if not page transitioning
-			// (fixes queued up keydown events)
-			if ( $("body.ui-mobile-viewport-transitioning").length ) {
-				return;
-			}
+		// only allow keydown events if not page transitioning
+		// (fixes queued up keydown events)
+		if ( $("body.ui-mobile-viewport-transitioning").length ) {
+			return;
+		}
 
-			// swipe up / down toggles toolbar
+		$(document).one("keydown.arrows", function(e) {
+			// keyboard arrows up/down toggles toolbar
 			if ( e.keyCode === UP_ARROW || e.keyCode === DOWN_ARROW ) {
 				toggleToolbar();
 			}
-			// swipe left / right on keyboard left arrow / right arrow presses
+			// keyboard arrows left/right swipes right/left respectively
 			// to accommodate for users with accessibility needs
 			if ( e.keyCode === LEFT_ARROW ) {
 				$(document).trigger("swiperight");
@@ -453,5 +458,27 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 			}
 		});
 	}
+
+	// bind scroll event handler once to document so users cannot queue
+	// multiple events (undesirable behaviour on page transitions)
+	function bindScrollOnce() {
+		// only allow scroll events if not page transitioning
+		// (fixes queued up keydown events)
+		if ( $("body.ui-mobile-viewport-transitioning").length ) {
+			return;
+		}
+
+		$(document).one("wheel.scroll", function(e) {
+			// scroll up/left & down/right toggles swiperight & swiperight
+			// respectively
+			if ( e.originalEvent.deltaY < 0 || e.originalEvent.deltaX < 0 ) {
+				$(document).trigger("swiperight");
+			}
+			if ( e.originalEvent.deltaY > 0 || e.originalEvent.deltaX > 0 ) {
+				$(document).trigger("swipeleft");
+			}
+		});
+	}
+	
 
 })(jQuery);
