@@ -225,14 +225,49 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 	});
 
 	// handle keyboard presses to support more web accessibility needs
-	bindKeydownOnce();
-	$(document).on("keyup.arrows", function() {
-		bindKeydownOnce();
-	})
+	// keydown event handler set so that users cannot queue
+	// multiple keydown events by holding down or pressing a key multiple
+	// times very quickly (undesirable behaviour on page transitions)
+	$(document).on("keydown.arrowNav", function(e) {
+		// only allow keydown events if not page transitioning
+		// (fixes queued up keydown events)
+		if ( $("body.ui-mobile-viewport-transitioning").length ) {
+			return;
+		}
+		
+		// keyboard arrows up/down toggles toolbar
+		if ( e.keyCode === UP_ARROW || e.keyCode === DOWN_ARROW ) {
+			toggleToolbar();
+		}
+		// keyboard arrows left/right swipes right/left respectively
+		// to accommodate for users with accessibility needs
+		if ( e.keyCode === LEFT_ARROW ) {
+			$(document).trigger("swiperight");
+		}
+		if ( e.keyCode === RIGHT_ARROW ) {
+			$(document).trigger("swipeleft");
+		}
+	});
 
 	// scrolling up/down & left/right swipe left/right event, respectively
-	$(window).on("wheel.scroll", function(e) {
-		bindScrollOnce();
+	// scroll event handler set so that users cannot queue
+	// multiple events (undesirable behaviour on page transitions)
+	$(window).on("wheel.scrollNav", function(e) {
+		// only allow scroll events if not page transitioning
+		// (fixes queued up keydown events)
+		if ( $("body.ui-mobile-viewport-transitioning").length ) {
+			return;
+		}
+		console.log('asdfad');
+
+		// scroll up/left & down/right toggles swiperight & swiperight
+		// respectively
+		if ( e.originalEvent.deltaY < 0 || e.originalEvent.deltaX < 0 ) {
+			$(document).trigger("swiperight");
+		}
+		if ( e.originalEvent.deltaY > 0 || e.originalEvent.deltaX > 0 ) {
+			$(document).trigger("swipeleft");
+		}
 	});
 
 	// swipe right on left-arrow click
@@ -432,53 +467,5 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 			}
 		}
 	}
-
-	// bind keydown event handler once to document so users cannot queue
-	// multiple keydown events by holding down or pressing a key multiple
-	// times very quickly (undesirable behaviour on page transitions)
-	function bindKeydownOnce() {
-		// only allow keydown events if not page transitioning
-		// (fixes queued up keydown events)
-		if ( $("body.ui-mobile-viewport-transitioning").length ) {
-			return;
-		}
-
-		$(document).one("keydown.arrows", function(e) {
-			// keyboard arrows up/down toggles toolbar
-			if ( e.keyCode === UP_ARROW || e.keyCode === DOWN_ARROW ) {
-				toggleToolbar();
-			}
-			// keyboard arrows left/right swipes right/left respectively
-			// to accommodate for users with accessibility needs
-			if ( e.keyCode === LEFT_ARROW ) {
-				$(document).trigger("swiperight");
-			}
-			if ( e.keyCode === RIGHT_ARROW ) {
-				$(document).trigger("swipeleft");
-			}
-		});
-	}
-
-	// bind scroll event handler once to document so users cannot queue
-	// multiple events (undesirable behaviour on page transitions)
-	function bindScrollOnce() {
-		// only allow scroll events if not page transitioning
-		// (fixes queued up keydown events)
-		if ( $("body.ui-mobile-viewport-transitioning").length ) {
-			return;
-		}
-
-		$(document).one("wheel.scroll", function(e) {
-			// scroll up/left & down/right toggles swiperight & swiperight
-			// respectively
-			if ( e.originalEvent.deltaY < 0 || e.originalEvent.deltaX < 0 ) {
-				$(document).trigger("swiperight");
-			}
-			if ( e.originalEvent.deltaY > 0 || e.originalEvent.deltaX > 0 ) {
-				$(document).trigger("swipeleft");
-			}
-		});
-	}
-	
 
 })(jQuery);
