@@ -5,19 +5,10 @@
 
 "use strict";
 
-// ============================================================================
-// ============================= Global Variables =============================
-// ============================================================================
-var g_bLandscape = true;
-var g_bToolbarVisible = false;
-var g_bToolbarAnimating = false;
-var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
-
 // document and window ready functions (test which loads first)
 //window.onload = function() { console.log("LOADED window.onload..."); };
 //(function() { console.log("LOADED IIFE.."); })();
 //$(document).ready(function() { console.log("LOADED $(document).ready..."); });
-
 
 // show viewport size on re-size (chrome no longer shows it by default)
 // window.addEventListener('resize', function(event){
@@ -29,8 +20,15 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 // ========================== Main Javascript Routine =========================
 // ============ ( encapsulate js so there are no naming conflicts ) ===========
 // ============================================================================
-(function($) {
+( function( afable, $, undefined ) {
 
+// ============================================================================
+// ============================= Global Variables =============================
+// ============================================================================
+	var g_bLandscape = true;
+	var g_bToolbarVisible = false;
+	var g_bToolbarAnimating = false;
+	var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 	
 	// get if this viewport is hortizontal or vertical
 	g_bLandscape = ( window.innerWidth > window.innerHeight )? true : false;
@@ -468,4 +466,4 @@ var LEFT_ARROW = 37, UP_ARROW = 38, RIGHT_ARROW = 39, DOWN_ARROW = 40;
 		}
 	}
 
-})(jQuery);
+}( window.afable = window.afable || {}, jQuery ));
