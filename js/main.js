@@ -256,7 +256,6 @@
 		if ( $("body.ui-mobile-viewport-transitioning").length ) {
 			return;
 		}
-		console.log('asdfad');
 
 		// scroll up/left & down/right toggles swiperight & swiperight
 		// respectively
