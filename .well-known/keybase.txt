@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/afable
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://afable.github.io
+  * I am afable (https://keybase.io/afable) on keybase.
+  * I have a public key with fingerprint 00E1 9122 EDE7 8ACF 95BC  71F5 0EBD D526 02EC AA0E
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101d8abf0e6737fbcae9b4abee28ee67fa43e4c9178a4de188ea4128c1c15de60840a",
+            "fingerprint": "00e19122ede78acf95bc71f50ebdd52602ecaa0e",
+            "host": "keybase.io",
+            "key_id": "0ebdd52602ecaa0e",
+            "kid": "0101d8abf0e6737fbcae9b4abee28ee67fa43e4c9178a4de188ea4128c1c15de60840a",
+            "uid": "c160d2231451a813404f909b7565b219",
+            "username": "afable"
+        },
+        "service": {
+            "hostname": "afable.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1489918240,
+    "expire_in": 157680000,
+    "prev": "e5e18baa6454679afcb68a540ebf559eeae0cfb0b6f46e5083778ad104d0b0d7",
+    "seqno": 9,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.66
+Comment: https://keybase.io/crypto
+
+yMIiAnicrVJZSFRRGB7LrAascCEEKzmVJJicc+euQxaBLURQ0GYLTOfc+9/xos2d
+mXvHyi2fwsII2qCHwizD6CUKU5PApCJaUaOwkKRMsYVoo02sc1seotfOy+H8//d9
+5/t+/qup433+pP3tRbE7viNzk25dOZrwFd/dmFOJmG3sRMFKVAo/LygzwHFDpZaB
+gggTTAyVMhODrAQUk+kUNCZSBiCowGsmFQMg6hpRVCoaQFQVqEgEVSc6kQyQsSpi
+ivKRaUXCEI/GrYjryWIgGhEEMIDzdFOTmK4QU8LADEMSZCyATikGTiyxHY/BzTHq
+QIFl8xp/hH7Z+xf/n30nfsrpRMaGIASIKBGqkoCIRVPDGlMkWWIC0TygA/EI3QYc
+TU3KygBV5yNeK7d08Mbq5firXxC23JIE+5UoGrddW7fLeLfEdaNO0GO7O6MefDuw
+0G+hELMiBp8kZ5RD3LHsCAoSjtRdy1MmoqppRBVEnI9gR9SKQ8jyEJIiq5gf7x8o
+55Ig8cSMUlmURFnRqKkzWaWSyOdpSpIGQAHrJsNMNkUZJKwGFD4ng2DRwAwbCvKi
+xSI2CmrcJg1zSccKR6ibiPPcXZ1bkn1Jfl/KhHHehvn8k6f92bs3KZN8x9I+HN/Q
+CyOlHYmbVc/eL2hp6iwc6ApnFz7+/qJl9sSe6z2XHqaijJbXnTezv67uHiYzDpx5
+Mj9v1Wd7aN7TyljamubYo+b0jBtoH5kpfayta6wbdbJ3HyoraVpePThY5++2ZhWf
+HPpUvvLp597n+/tXLKxN1DrT6pOHv6E1Ga2nK+Y37xq+VX+/6NS7s+2j/tHGdF+m
+e6ImUzpfejB3ztb2Cw3NWweWNRZGd6zLun0+bWz9vrMNefeuWKkjlQ2vUODj3cUX
+x5awPVVhNtY1d3FBOMla9Kw39qDv8tTG4eSlU77kXmvKGqtvzeto2/tmRlvFuLWH
+X1qbNk/Peburr6HDqek/9wN9nkq4
+=4uaH
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/afable
+
+==================================================================
