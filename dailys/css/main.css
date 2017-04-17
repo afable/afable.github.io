@@ -1,0 +1,555 @@
+
+/**
+ * atomic styles.
+ */
+* {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+body {
+  min-width: 640px;
+
+  background: #fff;
+  font-family: sans-serif;
+}
+
+p {
+  font-size: 25px;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: normal;
+}
+h2 {
+  font-size: 33px;
+  font-weight: normal;
+}
+h3 {
+  font-size: 50px;
+  font-weight: 100;
+}
+
+hr {
+  width: 66%;
+
+  height: 1px;
+  background-image: linear-gradient( to right, rgba( 0, 0, 0, 0 ), rgba( 160, 160, 160, 0.75 ), rgba( 0, 0, 0, 0 ));
+}
+
+.h-padding-top {
+  padding-top: 50px;
+}
+
+.fa-huge::before {
+  font-size: 166px;
+}
+
+.fa-hero::before {
+  font-size: 350px;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+/**
+ * header.
+ */
+body > header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 200px;
+  display: inline-flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: center;
+
+  margin: 10px;
+  border-radius: 100%;
+  background: #eee;
+  color: #047;
+}
+@media ( max-width: 800px ) {
+  body > header { display: none; }
+}
+
+
+
+/**
+ * upper navigation for large screens.
+ */
+@media ( min-width: 800px ) {
+  #nav-upper > ul {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  #nav-upper a {
+    padding: 15px;
+    color: #047;
+    font-size: large;
+    transition: all 1s;
+  }
+  #nav-upper a:last-of-type {
+    margin-right: 10px;
+  }
+  #nav-upper a:hover {
+    background: #eee;
+  }
+}
+/**
+ * upper navigation for small screens.
+ */
+@media ( max-width: 800px ) {
+  #nav-upper { display: none; }
+}
+
+
+
+/**
+ * lower navigation (just below upper navigation).
+ */
+#nav-lower,
+#nav-lower > ul {
+  background: #047;
+}
+#nav-lower a {
+  color: #fff;
+  font-size: medium;
+  transition: all .33s;
+}
+#nav-lower a:hover {
+  background: #e62;
+}
+#nav-lower a:last-of-type {
+  background: #e62;
+}
+#nav-lower a:last-of-type:hover {
+  background: #b41;
+}
+#nav-lower > input {
+  display: none;
+}
+/**
+ * lower nav layout for large screens.
+ */
+@media ( min-width: 800px ) {
+  #nav-lower  > label {
+    display: none;
+  }
+  #nav-lower > ul {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #nav-lower a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    padding: 0 10px;
+  }
+  #nav-lower a:first-of-type {
+    margin-left: 10px;
+  }
+  #nav-lower a:last-of-type {
+    position: absolute;
+    right: 10px;
+    margin-top: -3px;
+    padding: 0 50px 3px;
+  }
+}
+/**
+ * lower nav layout for small screens.
+ */
+@media ( max-width: 800px ) {
+  #nav-lower > label {
+    align-items: center;
+    box-shadow: 0 0px 7px #fff;
+    color: #fff;
+    display: inline-flex;
+    font: normal large sans-serif;
+    height: 30px;
+    justify-content: center;
+    transition: all .33s;
+    width: 100%;
+  }
+  #nav-lower > label:hover {
+    background: #e62;
+  }
+  #nav-lower > ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  #nav-lower-label {
+    width: 100%;
+    text-align: center;
+  }
+  #nav-lower a {
+    box-shadow: 0 1px 7px -3px #fff;
+    font: lighter medium sans-serif;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+  }
+  #nav-lower-checkbox ~ ul {
+    max-height: 100%;
+    transition: all .33s;
+  }
+  #nav-lower-checkbox:checked ~ ul {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  #nav-lower a:last-of-type {
+    margin-top: 30px;
+  }
+}
+
+
+
+/**
+ * main content.
+ */
+main {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  margin-top: 300px;
+}
+@media ( max-width: 800px ) {
+  main { margin-top: 0; }
+}
+
+main > article {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+main > article:first-child {
+  background: url( '/img/homepage-bg.jpg' );
+}
+@media ( max-width: 800px ) {
+  main > article { flex-wrap: wrap !important; }
+}
+
+#main-hero-left {
+  width: 50%;
+
+  padding: 100px;
+  padding-right: 0;
+  color: #333;
+}
+#main-hero-right {
+  width: 50%;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+@media ( max-width: 800px ) {
+  #main-hero-left, #main-hero-right { width: 100%; }
+  #main-hero-left { order: 2; padding: 30px; text-align: center; }
+  #main-hero-right { order: 1; padding-top: 30px; }
+}
+
+article > header {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px 50px;
+  color: #057;
+  text-align: center;
+}
+
+/**
+ * y-flippable cards.
+ */
+.flip-board {
+  width: 30%;
+  height: 400px;
+
+  perspective: 666px;
+}
+@media ( max-width: 800px ) {
+  .flip-board { width: 66%; margin: 30px; }
+}
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  background: #ebebeb;
+  color: #333;
+  text-align: center;
+
+  transition: transform  0.33s linear;
+}
+.flip-board:hover > .card {
+  transform: rotateY( 180deg );
+}
+
+figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  transition: opacity 0s linear 0.16s;
+}
+figure.front {
+  opacity: 1;
+}
+.flip-board:hover .front {
+  opacity: 0;
+}
+figure.back {
+  height: 80%;
+  padding: 10% 0;
+  transform: rotateY( -180deg );
+  opacity: 0;
+}
+.flip-board:hover .back {
+  opacity: 1;
+}
+
+figure > p {
+  padding: 0 30px;
+}
+figure > p:last-child {
+  color: #e62;
+}
+figure > i[class~="fa-repeat"] {
+  border-radius: 100%;
+  padding: 10px 20px;
+  background: #fff;
+}
+
+article > footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px;
+}
+.article-btn {
+  background: #059;
+  color: #fff;
+  padding: 20px 40px;
+  transition: all .33s;
+}
+.article-btn:hover {
+  background: #034;
+}
+
+
+
+/**
+ * footer (carousel).
+ */
+body > aside {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: 50px 0;
+  background: #046;
+  color: #fff;
+}
+
+/**
+ * format how checkboxes are displayed
+ */
+input[id*="quote"] {
+  display: none;
+}
+input[id*="quote"] + label {
+  width: 30px;
+  height: 30px;
+
+  margin: 0 3px;
+  margin-bottom: -80px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+
+  transition: all 1s;
+}
+input[id*="quote"]:checked + label {
+  background: #fff;
+}
+
+#carousel {
+  width: 100%;
+  height: 200px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * toggle arrows width/height so they fit in absolutely stacked in relative
+ * position.
+ */
+#carousel > li:nth-child( odd ) {
+  position: relative;
+  width: 48px;
+  height: 80px;
+}
+#carousel label {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+.carousel-toggle {
+  display: inline-block;
+  padding: 0 10px;
+  transition: visibility 0s, opacity .66s;
+}
+.carousel-toggle:hover {
+  text-shadow: 0px 0px 33px #fff;
+}
+
+/**
+ * position paragraphs absolutely ontop of each other.
+ */
+#carousel-slider {
+  position: relative;
+  width: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#carousel-slider > p {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  height: 150px;
+  display: inline-flex;
+  align-items: center;
+
+  padding: 0 50px;
+  background: #046;
+  text-align: center;
+
+  opacity: 1;
+  transition: all .66s;
+  visibility: visible;
+}
+
+/**
+ * css only carousel!
+ */
+#quote-1:not( :checked ) ~ ul > li#carousel-slider > p:nth-child( 1 ),
+#quote-1 ~ ul > li#toggle-left > label:nth-child( 1 ),
+#quote-1:checked ~ ul > li#toggle-right > label:nth-child( 5 ) {
+  opacity: 0;
+  visibility: hidden;
+}
+#quote-2:not( :checked ) ~ ul > li#carousel-slider > p:nth-child( 2 ),
+#quote-2:not( :checked ) ~ ul > li#toggle-left > label:nth-child( 2 ),
+#quote-2:checked ~ ul > li#toggle-right > label:nth-child( 4 ) {
+  opacity: 0;
+  visibility: hidden;
+}
+#quote-3:not( :checked ) ~ ul > li#carousel-slider > p:nth-child( 3 ),
+#quote-3:not( :checked ) ~ ul > li#toggle-left > label:nth-child( 3 ),
+#quote-3:checked ~ ul > li#toggle-right > label:nth-child( 3 ) {
+  opacity: 0;
+  visibility: hidden;
+}
+#quote-4:not( :checked ) ~ ul > li#carousel-slider > p:nth-child( 4 ),
+#quote-4:not( :checked ) ~ ul > li#toggle-left > label:nth-child( 4 ),
+#quote-4:checked ~ ul > li#toggle-right > label:nth-child( 2 ) {
+  opacity: 0;
+  visibility: hidden;
+}
+#quote-5:not( :checked ) ~ ul > li#carousel-slider > p:nth-child( 5 ),
+#quote-5:not( :checked ) ~ ul > li#toggle-left > label:nth-child( 5 ),
+#quote-5:checked ~ ul > li#toggle-right > label:nth-child( 1 ) {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+
+/**
+ * footer.
+ */
+body > footer > p {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 0 7px 33px #000;
+  padding: 3px;
+  background: #eee;
+  color: #111;
+  text-align: center;
+  font-family: Consolas;
+  font-size: small;
+  font-weight: lighter;
+}
+body > footer > p > a,
+body > footer > p > i {
+  color: #faf;
+  text-shadow: 1px 1px 1px #000;
+}
+
+
