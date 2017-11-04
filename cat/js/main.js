@@ -41,19 +41,11 @@
     convos = { curr: '', count: 0, dialogCount: 0, dialog: [
       { text: '( Press SPACEBAR )',
         img: './img/face.png' },
-      { text: 'Hello. I am CAT. I come from the Neowineteen-Eighties.',
+      { text: 'Hello. I am CAT.',
         img: './img/face.png' },
-      { text: 'Cat wants goes home...',
+      { text: 'I come from the Neowineteen-Eighties.',
         img: './img/face.png' },
       { text: 'Will hooomans helps Cat back to the "Eighties"?',
-        img: './img/face.png' },
-      { text: "You are done. I have nothing meo're to say...",
-        img: './img/face.png' },
-      { text: "Seriously",
-        img: './img/face.png' },
-      { text: "The hooomans couldn't find cats an ending :(",
-        img: './img/face.png' },
-      { text: "Want to see me jump around...?",
         img: './img/face.png' },
       { text: undefined, img: './img/face.png' }
     ], wait: false, audio: new Audio( './audio/typewriter.mp3') };
