@@ -30,8 +30,9 @@
         img: './img/mid air.gif' },
       { text: 'So whaddya say ..? Want to help me get to the top..?',
         img: './img/idle.gif' },
-      { text: undefined, img: '../img/idle.gif' },
+      { text: undefined, img: './img/idle.gif' },
     ], wait: false, audio: new Audio( './audio/typewriter.mp3') };
+
     convos.isDone = function() {
       if ( convos.dialog[ convos.dialogCount ].text === undefined ) {
         return true;
@@ -108,7 +109,7 @@
     draw( game.state, t, frameTime );
 
     // swap between TALK and WALK states
-    game.state = ( convos.isDone() )? STATES.WALK : STATES.TALK;
+    game.state = ( convos.isDone() )? STATES.INTRO : STATES.TALK;
     console.log( game.state );
 
   }
