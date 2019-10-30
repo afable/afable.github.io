@@ -40,7 +40,7 @@
 		icon: "fa-user",
 		iconTitle: "Look at me", 
 		img: "jpg", 
-		url: "https://afable.github.io",
+		url: "https://github.com/afable",
 		title: "#afable, @superafable",
 		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
 	arrPages.push( {id: "fall",
@@ -129,7 +129,7 @@
 			'	<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">',
 			'		<footer>',
 					
-			'			<p>Created by <a href="#afable" title="#afable, @girafable">afable</a> <a href="https://github.com/afable" target="_blank" title="GitHub"><i class="fa fa-github fa-lg"></i></a> <a href="https://twitter.com/afab1e" target="_blank" title="Twitter"><i class="fa fa-twitter fa-lg"></i></a> <a href="https://codepen.io/afable/" target="_blank" title="CodePen"><i class="fa fa-codepen fa-lg"></i></a> <a href="https://www.hackerrank.com/afable" target="_blank"><i class="fa fa-hashtag fa-lg" title="HackerRank"></i></a></p>',
+			'			<p><a href="https://twitter.com/afab1e" target="_blank" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a> </p>',
 			'		</footer>',
 			'	</div><!-- /footer -->',
 
