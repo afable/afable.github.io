@@ -40,7 +40,7 @@
 		icon: "fa-user",
 		iconTitle: "Look at me", 
 		img: "jpg", 
-		url: "afable.github.io",
+		url: "https://afable.github.io",
 		title: "#afable, @superafable",
 		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
 	arrPages.push( {id: "quotr",
