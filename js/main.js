@@ -40,7 +40,7 @@
 		icon: "fa-user",
 		iconTitle: "Look at me", 
 		img: "jpg", 
-		url: "https://www.linkedin.com/in/erik-afable-176a3231",
+		url: "afable.github.io",
 		title: "#afable, @superafable",
 		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
 	arrPages.push( {id: "quotr",
@@ -71,48 +71,6 @@
 		url: "https://snowballin.github.io/",
 		title: "Play the game",
 		caption: "Helped some friends @OrcaJam2014.<br>You roll around. It's awesome."} );
-	arrPages.push( {id: "shoal",
-		icon: "fa-cloud",
-		iconTitle: "Look at my school project about squids", 
-		img: "png",
-		url: "https://web.uvic.ca/~eafable/shoal/index.html",
-		title: "View the website",
-		caption: "A school project to improve Shoal.<br>I made pamphlets."} );
-	arrPages.push( {id: "healthyTweets",
-		icon: "fa-heartbeat",
-		iconTitle: "Look at what each state tweets about health", 
-		img: "jpg",
-		url: "https://afable.github.io/HealthyTweets/",
-		title: "View the website",
-		caption: "Healthy tweets by state.<br>Texans tweet a lot about obesity."} );
-	arrPages.push( {id: "firstGameEngine",
-		icon: "fa-gamepad",
-		iconTitle: "See my first game engine", 
-		img: "jpg",
-		url: "https://www.youtube.com/watch?v=Wea4-eTkD1A",
-		title: "Watch demo (source in description)",
-		caption: "My first game engine &mdash; a simple platformer.<br>Still took me a month."} );
-	arrPages.push( {id: "simpleParticleSystem",
-		icon: "fa-coffee",
-		iconTitle: "See my first particle system", 
-		img: "jpg",
-		url: "https://www.youtube.com/watch?v=DBiua8HTWSg",
-		title: "Watch demo (source in description)",
-		caption: "A very simple particle system.<br>The teapot shoots bubbles."} );
-	arrPages.push( {id: "simpleRayTracer",
-		icon: "fa-arrows-alt",
-		iconTitle: "Ray tracers can't maths tri-force", 
-		img: "jpg",
-		url: "https://github.com/afable/ray_tracer",
-		title: "View on GitHub",
-		caption: "A simple ray tracer.<br>You can't maths the tri-force."} );
-	arrPages.push( {id: "firstWorldCrawler",
-		icon: "fa-star-half-o",
-		iconTitle: "Crawl the world of star king", 
-		img: "jpg",
-		url: "https://www.youtube.com/watch?v=Xcm5j0kkxO0",
-		title: "Watch demo (source in description)",
-		caption: "A simple world crawler (+1 star hippie)."} );
 
 
 	// create pages dynamically
