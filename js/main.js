@@ -43,6 +43,13 @@
 		url: "https://afable.github.io",
 		title: "#afable, @superafable",
 		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
+	arrPages.push( {id: "fall",
+		icon: "fa-umbrella",
+		iconTitle: "Look at my fall game", 
+		img: "png",
+		url: "https://afable.github.io/fall",
+		title: "fall",
+		caption: "A game I made @OrcaJam2019 for our 48 hour game jam themed 'fall'."} );
 	arrPages.push( {id: "quotr",
 		icon: "fa-quote-left",
 		iconTitle: "Get random quotes from the game Undertale", 
