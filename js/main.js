@@ -37,28 +37,28 @@
 	// initialize page data for all pages
 	var arrPages = [];
 	arrPages.push( {id: "afable",
-		icon: "fa-user",
+		icon: "fa fa-user",
 		iconTitle: "Look at me", 
 		img: "jpg", 
 		url: "https://github.com/afable",
 		title: "#afable, @superafable",
 		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
 	arrPages.push( {id: "fall",
-		icon: "fa-umbrella",
+		icon: "fa fa-umbrella",
 		iconTitle: "Look at my fall game", 
 		img: "png",
 		url: "https://afable.github.io/fall",
 		title: "fall",
 		caption: "A game I made for our 48 hour game jam themed 'fall'. @orcajam2019"} );
 	arrPages.push( {id: "quotr",
-		icon: "fa-quote-left",
+		icon: "fa fa-quote-left",
 		iconTitle: "Get random quotes from the game Undertale", 
 		img: "png",
 		url: "https://quotr.github.io/",
 		title: "Get some quotes",
 		caption: "Get random quotes from the indie game Undertale <br>(everyone needs a little Lv)."} );
 	arrPages.push( {id: "cat",
-		icon: "fa-paw",
+		icon: "fa fa-paw",
 		iconTitle: "A psychedelic cat-tastic experience", 
 		img: "png",
 		url: "https://afable.github.io/cat",
@@ -72,7 +72,7 @@
 		title: "Play the game",
 		caption: "A game made with friends &mdash; find souls & avoid fishes. @orcajam2015"} );
 	arrPages.push( {id: "snowballin",
-		icon: "fa-circle-o",
+		icon: "fa fa-circle-o",
 		iconTitle: "Look at snowballin", 
 		img: "jpg",
 		url: "https://snowballin.github.io/",
@@ -85,7 +85,7 @@
 	var strNav = "";
 	var arrStrTransitions = ["fade", "flip", "pop", "flow", "slidefade", "slideup", "slidedown"];
 	for ( var i = 0; i < arrPages.length; ++i ) {
-		strNav += '<a href="#' + arrPages[i].id + '" data-role="button" data-transition="' + arrStrTransitions[i % arrStrTransitions.length] + '" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button" title="' + arrPages[i].iconTitle + '"><i class="fa ' + arrPages[i].icon + ' fa-2x"></i></a>';
+		strNav += '<a href="#' + arrPages[i].id + '" data-role="button" data-transition="' + arrStrTransitions[i % arrStrTransitions.length] + '" class="nav-button ui-link ui-btn ui-shadow ui-corner-all" role="button" title="' + arrPages[i].iconTitle + '"><i class="' + arrPages[i].icon + ' fa-2x"></i></a>';
 	}
 
 	// create each page's main section and base image sizes on whether viewport
