@@ -49,7 +49,7 @@
 		img: "png",
 		url: "https://afable.github.io/fall",
 		title: "fall",
-		caption: "A game I made @OrcaJam2019 for our 48 hour game jam themed 'fall'."} );
+		caption: "A game I made for our 48 hour game jam themed 'fall'. @orcajam2019"} );
 	arrPages.push( {id: "quotr",
 		icon: "fa-quote-left",
 		iconTitle: "Get random quotes from the game Undertale", 
@@ -57,20 +57,20 @@
 		url: "https://quotr.github.io/",
 		title: "Get some quotes",
 		caption: "Get random quotes from the indie game Undertale <br>(everyone needs a little Lv)."} );
-	arrPages.push( {id: "pixelart",
-		icon: "fa-star",
-		iconTitle: "See my tribute to pixel art", 
-		img: "jpg",
-		url: "https://codepen.io/afable/full/vXBoYB/",
-		title: "See the tribute",
-		caption: "I created a tribute to pixel art because <br>pixel art deserves it."} );
+	arrPages.push( {id: "cat",
+		icon: "fa-paw",
+		iconTitle: "A psychedelic cat-tastic experience", 
+		img: "png",
+		url: "https://afable.github.io/cat",
+		title: "Experience 80's cat",
+		caption: "A psychedelic cat-tastic experience. @orcajam2017."} );
 	arrPages.push( {id: "fathom",
-		icon: "fa-eye",
+		icon: "fa-fish",
 		iconTitle: "Look at my fathom game", 
 		img: "jpg",
 		url: "https://fathomgame.github.io/",
 		title: "Play the game",
-		caption: "A game I made with friends @OrcaJam2015 &mdash; a 48 hour game jam."} );
+		caption: "A game made with friends &mdash; find souls & avoid fishes. @orcajam2015"} );
 	arrPages.push( {id: "snowballin",
 		icon: "fa-circle-o",
 		iconTitle: "Look at snowballin", 
