@@ -1,6 +1,5 @@
 /**
- * @fileOverview Main js implementation of afable.github.io, 2016
- * @author afablee@gmail.com, @superafable
+ * @author afablee@gmail.com, 2020
  */
 
 "use strict";
