@@ -38,46 +38,53 @@
 	var arrPages = [];
 	arrPages.push( {id: "afable",
 		icon: "fad fa-user-alt fa-2x",
-		iconTitle: "Look at me", 
+		iconTitle: "me me me", 
 		img: "jpg", 
 		url: "https://github.com/afable",
-		title: "#afable, @superafable",
-		caption: "That's me. I like video games and the web.<br>Swipe for more."} );
+		title: "afable",
+		caption: "That's me. I ♥ video games and the web.<br>←Swipe for more→"} );
 	arrPages.push( {id: "fall",
 		icon: "fas fa-umbrella fa-2x",
-		iconTitle: "Look at my fall game", 
+		iconTitle: "don't fall", 
 		img: "png",
 		url: "https://afable.github.io/fall",
 		title: "fall",
-		caption: "A game I made for our 48 hour game jam themed 'fall'. @orcajam2019"} );
+		caption: "48 hour game jam themed 'fall'. @orcajam2019"} );
 	arrPages.push( {id: "quotr",
 		icon: "fad fa-quote-left fa-2x",
-		iconTitle: "Get random quotes from the game Undertale", 
+		iconTitle: "everyone needs a lil Lv", 
 		img: "png",
 		url: "https://quotr.github.io/",
-		title: "Get some quotes",
-		caption: "Get random quotes from the indie game Undertale <br>(everyone needs a little Lv)."} );
+		title: "quotes",
+		caption: "Get random quotes from the indie game Undertale (everyone needs a lil Lv.)."} );
 	arrPages.push( {id: "cat",
 		icon: "fad fa-cat-space fa-2x",
-		iconTitle: "A psychedelic cat-tastic experience", 
+		iconTitle: "psychedelic & cat-tastic", 
 		img: "png",
 		url: "https://afable.github.io/cat",
-		title: "Experience 80's cat",
+		title: "80's cat",
 		caption: "A psychedelic cat-tastic experience. @orcajam2017."} );
-	arrPages.push( {id: "fathom",
-		icon: "fad fa-fish fa-2x",
-		iconTitle: "Look at my fathom game", 
+	arrPages.push( {id: "witchr",
+		icon: "fad fa-door-closed fa-2x",
+		iconTitle: "a door", 
 		img: "jpg",
 		url: "https://fathomgame.github.io/",
-		title: "Play the game",
+		title: "a door",
+		caption: "A game made with friends &mdash; find souls & avoid fishes. @orcajam2015"} );
+	arrPages.push( {id: "fathom",
+		icon: "fad fa-fish fa-2x",
+		iconTitle: "find souls, avoid fishes", 
+		img: "jpg",
+		url: "https://fathomgame.github.io/",
+		title: "go fish",
 		caption: "A game made with friends &mdash; find souls & avoid fishes. @orcajam2015"} );
 	arrPages.push( {id: "snowballin",
 		icon: "fad fa-frosty-head fa-2x",
-		iconTitle: "Look at snowballin", 
+		iconTitle: "go snowballin", 
 		img: "jpg",
 		url: "https://snowballin.github.io/",
-		title: "Play the game",
-		caption: "Helped some friends @OrcaJam2014.<br>You roll around. It's awesome."} );
+		title: "roll and poll",
+		caption: "Helped friends make a game. You roll around. It's awesome. @orcajam2014"} );
 
 
 	// create pages dynamically
