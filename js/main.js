@@ -51,7 +51,7 @@
 		title: "fall",
 		caption: "A game I made for our 48 hour game jam themed 'fall'. @orcajam2019"} );
 	arrPages.push( {id: "quotr",
-		icon: "fas fa-quote-left fa-2x",
+		icon: "fad fa-quote-left fa-2x",
 		iconTitle: "Get random quotes from the game Undertale", 
 		img: "png",
 		url: "https://quotr.github.io/",
