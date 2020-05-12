@@ -65,7 +65,7 @@
 		title: "Experience 80's cat",
 		caption: "A psychedelic cat-tastic experience. @orcajam2017."} );
 	arrPages.push( {id: "fathom",
-		icon: "fa-fish",
+		icon: "fas fa-fish",
 		iconTitle: "Look at my fathom game", 
 		img: "jpg",
 		url: "https://fathomgame.github.io/",
