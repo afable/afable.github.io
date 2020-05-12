@@ -66,7 +66,7 @@
 	arrPages.push( {id: "witchr",
 		icon: "fad fa-door-closed fa-2x",
 		iconTitle: "a door", 
-		img: "jpg",
+		img: "png",
 		url: "https://fathomgame.github.io/",
 		title: "a door",
 		caption: "A game made with friends &mdash; find souls & avoid fishes. @orcajam2015"} );
