@@ -50,7 +50,7 @@
 		title: "fall",
 		caption: "48 hour game jam themed 'fall'. @orcajam2019"} );
 	arrPages.push( {id: "quotr",
-		icon: "fad fa-quote-left fa-2x",
+		icon: "fas fa-quote-left fa-2x",
 		iconTitle: "everyone needs a lil Lv", 
 		img: "png",
 		url: "https://quotr.github.io/",
