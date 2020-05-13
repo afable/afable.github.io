@@ -55,7 +55,7 @@
 		img: "png",
 		url: "https://quotr.github.io/",
 		title: "quotes",
-		caption: "Get random quotes from the indie game Undertale (everyone needs a lil Lv.)."} );
+		caption: "Random quotes from Undertale (everyone needs a lil Lv.)."} );
 	arrPages.push( {id: "cat",
 		icon: "fad fa-cat-space fa-2x",
 		iconTitle: "psychedelic & cat-tastic", 
@@ -69,7 +69,7 @@
 		img: "png",
 		url: "https://witchr.github.io/",
 		title: "a door",
-		caption: "Played w/ three.js and walked into doors. @orcajam2016"} );
+		caption: "Played w/ three.js. You walk into doors. @orcajam2016"} );
 	arrPages.push( {id: "fathom",
 		icon: "fad fa-fish fa-2x",
 		iconTitle: "find souls, avoid fishes", 
