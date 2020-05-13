@@ -41,7 +41,7 @@
 		img: "jpg", 
 		url: "https://github.com/afable",
 		title: "afable",
-		caption: "That's me. I ♥ video games and the web.<br>←Swipe for more→"} );
+		caption: "That's me. ♥ video games and the web.<br>←Swipe for more→"} );
 	arrPages.push( {id: "fall",
 		icon: "fas fa-umbrella fa-2x",
 		iconTitle: "don't fall", 
