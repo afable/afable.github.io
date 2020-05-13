@@ -69,7 +69,7 @@
 		img: "png",
 		url: "https://fathomgame.github.io/",
 		title: "a door",
-		caption: "A game made with friends &mdash; find souls & avoid fishes. @orcajam2015"} );
+		caption: "Played w/ three.js and walked into doors. @orcajam2016"} );
 	arrPages.push( {id: "fathom",
 		icon: "fad fa-fish fa-2x",
 		iconTitle: "find souls, avoid fishes", 
