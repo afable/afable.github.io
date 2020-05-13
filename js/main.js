@@ -67,7 +67,7 @@
 		icon: "fad fa-door-closed fa-2x",
 		iconTitle: "a door", 
 		img: "png",
-		url: "https://fathomgame.github.io/",
+		url: "https://witchr.github.io/",
 		title: "a door",
 		caption: "Played w/ three.js and walked into doors. @orcajam2016"} );
 	arrPages.push( {id: "fathom",
