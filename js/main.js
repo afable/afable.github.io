@@ -69,7 +69,7 @@
 		img: "png",
 		url: "https://witchr.github.io/",
 		title: "a door",
-		caption: "Played w/ three.js. You walk into doors. @orcajam2016"} );
+		caption: "Played w/ three.js &mdash; walked into doors. @orcajam2016"} );
 	arrPages.push( {id: "fathom",
 		icon: "fad fa-fish fa-2x",
 		iconTitle: "find souls, avoid fishes", 
