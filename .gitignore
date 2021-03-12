@@ -1,0 +1,4 @@
+# ignore eslint (only installed to help develop site)
+node_modules/**
+package-lock.json
+package.json
