@@ -19,7 +19,7 @@
 // ========================== Main Javascript Routine =========================
 // ============ ( encapsulate js so there are no naming conflicts ) ===========
 // ============================================================================
-( function( afable, $, undefined ) {
+( function( afable, $ ) {
 
 // ============================================================================
 // ============================= Global Variables =============================
@@ -100,7 +100,7 @@
 
 	// now create the pages by prepending to body (#afable comes last so that
 	// it is the first page element in body)
-	for ( var i = arrPages.length-1; i >= 0; --i ) {
+	for ( i = arrPages.length-1; i >= 0; --i ) {
 		// create header (from previously created strNav), main, and footer
 	var newPage = $([
 			'<div data-role="page" id="' + arrPages[i].id + '" class="ui-page">',
