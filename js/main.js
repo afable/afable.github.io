@@ -42,6 +42,13 @@
 		url: "https://github.com/afable",
 		title: "afable",
 		caption: "That's me. ♥ video games + the web.<br>←Swipe for more→"} );
+	arrPages.push( {id: "jump",
+		icon: "fas fa-cloud fa-2x",
+		iconTitle: "new beginnings", 
+		img: "png",
+		url: "https://afablee.netlify.app/jump",
+		title: "jump",
+		caption: "2 day game jam theme 'new beginnings'. @orcajam2023"} );
 	arrPages.push( {id: "fall",
 		icon: "fas fa-umbrella fa-2x",
 		iconTitle: "don't fall", 
