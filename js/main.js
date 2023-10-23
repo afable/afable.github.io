@@ -130,7 +130,7 @@
 			'							<p class="in-polaroid">' + arrPages[i].caption + '</p>',
 			'						</div>',
 			'					</a>',
-			'					<i class="img-gesture fa fa-hand-o-up fa-5x"><p class="click-me">click<br>me</p></i>',
+			'					<i class="img-gesture fad fa-hand-point-up fa-5x"><p class="click-me">click<br>me</p></i>',
 			'					<div class="img-gesture-popup"><p>Try clicking the polaroid or swiping the page.</p></div></section>',
 			'				</td>',
 			'				<td class="td-arrow"><i class="fa fa-arrow-right fa-3x"></i>',
@@ -142,7 +142,7 @@
 			'	<div data-role="footer" class="footer ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup center" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">',
 			'		<footer>',
 					
-			'			<p><a href="https://twitter.com/afab1e" target="_blank" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a> </p>',
+			'			<p><a href="https://twitter.com/afab1e" target="_blank" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a> </p>',
 			'		</footer>',
 			'	</div><!-- /footer -->',
 
