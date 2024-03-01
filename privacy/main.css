@@ -14,7 +14,6 @@ body {
 	background-attachment: fixed;
 }
 
-
 /* ========================================================================= */
 /* ========================= Main Content ========================== */
 /* ========================================================================= */
@@ -22,7 +21,7 @@ body {
 main {
 	background: linear-gradient(45deg, #aff, #ffa);
 	width: 90vw;
-	left: 2.3vw;
+	left: 3vw;
 	top: 3vh;
 	padding: 2vh;
 	margin-bottom: 6vh;
