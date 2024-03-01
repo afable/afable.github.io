@@ -1,0 +1,92 @@
+/**
+ * @author afablee@gmail.com, 2024
+ */
+
+/* ========================================================================= */
+/* ========================= Body Background ========================== */
+/* ========================================================================= */
+/* fixed background colour */
+body {
+	background: linear-gradient(225deg, #afa, #faa);
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-attachment: fixed;
+}
+
+
+/* ========================================================================= */
+/* ========================= Main Content ========================== */
+/* ========================================================================= */
+/* main  wrapper for each page should be full device height */
+main {
+	background: linear-gradient(45deg, #aff, #ffa);
+	width: 90vw;
+	left: 2.3vw;
+	top: 3vh;
+	padding: 2vh;
+	margin-bottom: 6vh;
+	position: relative;
+	border-radius: 33px;
+	overflow: auto;
+}
+
+
+/* ========================================================================= */
+/* ========================= Text Style ========================== */
+/* ========================================================================= */
+p, a, h1, h2, li { 
+	margin: 12px 33px;
+	padding: 0;
+	font-family: arial, sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	color: #444;
+}
+
+a {
+	color: blue;
+}
+
+h2 {
+	padding-top: 6px;
+}
+
+.center {
+	text-align: center;
+}
+
+.definition {
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* add section and sub-section numbering formats */
+ol {
+	/* don't show section numbers since we'll do it using css counters*/
+	list-style-type: none;
+
+	/* create a counter for section initialized to 0 */
+	counter-reset: section;
+	/* create a counter for sub-section initialized to 0 */
+	counter-reset: sub-section;
+
+	/* increment section on each ol element */
+	counter-increment: section;
+}
+
+li::before {
+	/* increment sub-section on each li element */
+	counter-increment: sub-section;
+
+	/* display (section).(sub-section) before li content */
+	content: counter(section) "." counter(sub-section);
+
+	padding-right: 12px;
+	margin-left: -34.2px;
+}
+
+/* ========================================================================= */
+/* ============================ Footer ============================= */
+/* ========================================================================= */
+
